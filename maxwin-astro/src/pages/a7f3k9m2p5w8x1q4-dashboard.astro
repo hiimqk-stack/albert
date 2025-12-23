@@ -1,0 +1,787 @@
+---
+const cookies = Astro.cookies;
+const adminToken = cookies.get('admin_token')?.value;
+
+if (!adminToken || !adminToken.startsWith('a7f3k9m2p5w8x1q4_')) {
+  return Astro.redirect('/a7f3k9m2p5w8x1q4');
+}
+
+if (Astro.request.method === 'POST') {
+  const formData = await Astro.request.formData();
+  const action = formData.get('action');
+  
+  if (action === 'logout') {
+    return new Response(null, {
+      status: 302,
+      headers: {
+        'Location': '/a7f3k9m2p5w8x1q4',
+        'Set-Cookie': 'admin_token=; Path=/; HttpOnly; Max-Age=0'
+      }
+    });
+  }
+}
+---
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin Dashboard</title>
+  
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+  <script src="/firebase-config.js"></script>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #f5f7fa;
+      min-height: 100vh;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 24px 32px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .header h1 {
+      font-size: 24px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logout-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid white;
+      color: white;
+      padding: 10px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .logout-btn:hover {
+      background: white;
+      color: #667eea;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 32px;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    
+    .stat-card {
+      background: white;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stat-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    
+    .stat-card:nth-child(1) .stat-icon {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .stat-card:nth-child(2) .stat-icon {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    
+    .stat-card:nth-child(3) .stat-icon {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+    
+    .stat-card:nth-child(4) .stat-icon {
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+    
+    .stat-label {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    
+    .stat-value {
+      color: #333;
+      font-size: 32px;
+      font-weight: 700;
+    }
+    
+    .panel {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 24px;
+    }
+    
+    .panel h2 {
+      color: #333;
+      font-size: 20px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .info-grid {
+      display: grid;
+      gap: 16px;
+    }
+    
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      align-items: center;
+    }
+    
+    .info-label {
+      color: #666;
+      font-weight: 500;
+    }
+    
+    .info-value {
+      color: #333;
+      font-weight: 600;
+      font-family: monospace;
+      background: #e9ecef;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    
+    .success-badge {
+      background: #d4edda;
+      color: #155724;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+    
+    .action-buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    
+    .action-btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .action-btn.primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    .action-btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+    
+    .action-btn.secondary {
+      background: #f8f9fa;
+      color: #333;
+      border: 2px solid #e9ecef;
+    }
+    
+    .action-btn.secondary:hover {
+      background: #e9ecef;
+    }
+    
+    .bank-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+    }
+    
+    .bank-table th {
+      background: #f8f9fa;
+      padding: 12px;
+      text-align: left;
+      font-weight: 600;
+      color: #666;
+      border-bottom: 2px solid #e9ecef;
+    }
+    
+    .bank-table td {
+      padding: 16px 12px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .bank-table tr:hover {
+      background: #f8f9fa;
+    }
+    
+    .status-badge {
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .status-active {
+      background: #d4edda;
+      color: #155724;
+    }
+    
+    .status-inactive {
+      background: #f8d7da;
+      color: #721c24;
+    }
+    
+    .table-actions {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .btn-icon {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    
+    .btn-edit {
+      background: #e3f2fd;
+      color: #1976d2;
+    }
+    
+    .btn-edit:hover {
+      background: #bbdefb;
+    }
+    
+    .btn-delete {
+      background: #ffebee;
+      color: #c62828;
+    }
+    
+    .btn-delete:hover {
+      background: #ffcdd2;
+    }
+    
+    .btn-toggle {
+      background: #fff3e0;
+      color: #f57c00;
+    }
+    
+    .btn-toggle:hover {
+      background: #ffe0b2;
+    }
+    
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    
+    .modal.active {
+      display: flex;
+    }
+    
+    .modal-content {
+      background: white;
+      padding: 32px;
+      border-radius: 16px;
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    
+    .modal-header h3 {
+      font-size: 20px;
+      color: #333;
+    }
+    
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #999;
+    }
+    
+    .close-btn:hover {
+      color: #333;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    
+    .modal-actions button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .btn-save {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    .btn-save:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+    
+    .btn-cancel {
+      background: #f8f9fa;
+      color: #333;
+    }
+    
+    .btn-cancel:hover {
+      background: #e9ecef;
+    }
+    
+    .add-account-btn {
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .add-account-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(67, 233, 123, 0.4);
+    }
+    
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .action-buttons {
+        flex-direction: column;
+      }
+      
+      .action-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>
+      <span>🛡️</span>
+      Admin Dashboard
+    </h1>
+    <form method="POST">
+      <input type="hidden" name="action" value="logout">
+      <button type="submit" class="logout-btn">Çıkış Yap</button>
+    </form>
+  </header>
+
+  <div class="container">
+    <div class="success-badge">✓ Güvenli Oturum Aktif</div>
+    
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">👥</div>
+        <div class="stat-label">Toplam Kullanıcı</div>
+        <div class="stat-value">1,234</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📊</div>
+        <div class="stat-label">Aktif Oturum</div>
+        <div class="stat-value">89</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">💰</div>
+        <div class="stat-label">Günlük Gelir</div>
+        <div class="stat-value">₺45K</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🎯</div>
+        <div class="stat-label">Dönüşüm</div>
+        <div class="stat-value">23%</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>🔐 Güvenlik Bilgileri</h2>
+      <div class="info-grid">
+        <div class="info-row">
+          <span class="info-label">Admin URL Hash</span>
+          <span class="info-value">a7f3k9m2p5w8x1q4</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">User ID Hash</span>
+          <span class="info-value">h8k2m9p3x7w5</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Access Code Hash</span>
+          <span class="info-value">r6t9y2n5v8b4</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Son Giriş</span>
+          <span class="info-value" id="loginTime"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>💳 Banka Hesapları Yönetimi</h2>
+      <button class="add-account-btn" onclick="openAddModal()">
+        <span>➕</span>
+        Yeni Hesap Ekle
+      </button>
+      
+      <table class="bank-table">
+        <thead>
+          <tr>
+            <th>Banka</th>
+            <th>Hesap Sahibi</th>
+            <th>IBAN</th>
+            <th>Durum</th>
+            <th>İşlemler</th>
+          </tr>
+        </thead>
+        <tbody id="accountsTable">
+          <!-- Accounts will be loaded from Firebase -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Hesap Düzenle</h3>
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+      </div>
+      <form id="editForm">
+        <input type="hidden" id="editId" name="id">
+        <div class="form-group">
+          <label>Banka Adı</label>
+          <input type="text" id="editBankName" name="bankName" required>
+        </div>
+        <div class="form-group">
+          <label>Hesap Sahibi</label>
+          <input type="text" id="editAccountHolder" name="accountHolder" required>
+        </div>
+        <div class="form-group">
+          <label>IBAN</label>
+          <input type="text" id="editIban" name="iban" required placeholder="TR00 0000 0000 0000 0000 0000 00">
+        </div>
+        <div class="form-group">
+          <label>Durum</label>
+          <select id="editActive" name="active">
+            <option value="true">Aktif</option>
+            <option value="false">Pasif</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-cancel" onclick="closeModal()">İptal</button>
+          <button type="submit" class="btn-save">Kaydet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="addModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Yeni Hesap Ekle</h3>
+        <button class="close-btn" onclick="closeAddModal()">&times;</button>
+      </div>
+      <form id="addForm">
+        <div class="form-group">
+          <label>Banka Adı</label>
+          <input type="text" id="addBankName" name="bankName" required>
+        </div>
+        <div class="form-group">
+          <label>Hesap Sahibi</label>
+          <input type="text" id="addAccountHolder" name="accountHolder" required>
+        </div>
+        <div class="form-group">
+          <label>IBAN</label>
+          <input type="text" id="addIban" name="iban" required placeholder="TR00 0000 0000 0000 0000 0000 00">
+        </div>
+        <div class="form-group">
+          <label>Durum</label>
+          <select id="addActive" name="active">
+            <option value="true">Aktif</option>
+            <option value="false">Pasif</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-cancel" onclick="closeAddModal()">İptal</button>
+          <button type="submit" class="btn-save">Ekle</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginTime').textContent = new Date().toLocaleString('tr-TR');
+
+    let accountsData = [];
+    const accountsRef = database.ref('bankAccounts');
+
+    function loadAccounts() {
+      accountsRef.on('value', (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+          accountsData = Object.keys(data).map(key => ({
+            id: key,
+            ...data[key]
+          }));
+        } else {
+          accountsData = [];
+        }
+        renderTable();
+      });
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('accountsTable');
+      tbody.innerHTML = accountsData.map(account => `
+        <tr data-id="${account.id}">
+          <td>${account.bankName}</td>
+          <td>${account.accountHolder}</td>
+          <td style="font-family: monospace; font-size: 13px;">${account.iban}</td>
+          <td>
+            <span class="status-badge ${account.active ? 'status-active' : 'status-inactive'}">
+              ${account.active ? 'Aktif' : 'Pasif'}
+            </span>
+          </td>
+          <td>
+            <div class="table-actions">
+              <button class="btn-icon btn-edit" onclick="openEditModal(${account.id})">
+                Düzenle
+              </button>
+              <button class="btn-icon btn-toggle" onclick="toggleAccount(${account.id})">
+                ${account.active ? 'Pasif Yap' : 'Aktif Yap'}
+              </button>
+              <button class="btn-icon btn-delete" onclick="deleteAccount(${account.id})">
+                Sil
+              </button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function openEditModal(id) {
+      const account = accountsData.find(acc => acc.id === id);
+      if (!account) return;
+
+      document.getElementById('editId').value = account.id;
+      document.getElementById('editBankName').value = account.bankName;
+      document.getElementById('editAccountHolder').value = account.accountHolder;
+      document.getElementById('editIban').value = account.iban;
+      document.getElementById('editActive').value = account.active.toString();
+      
+      document.getElementById('editModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('editModal').classList.remove('active');
+    }
+
+    function openAddModal() {
+      document.getElementById('addForm').reset();
+      document.getElementById('addModal').classList.add('active');
+    }
+
+    function closeAddModal() {
+      document.getElementById('addModal').classList.remove('active');
+    }
+
+    document.getElementById('editModal').addEventListener('click', (e) => {
+      if (e.target.id === 'editModal') closeModal();
+    });
+
+    document.getElementById('addModal').addEventListener('click', (e) => {
+      if (e.target.id === 'addModal') closeAddModal();
+    });
+
+    document.getElementById('editForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const accountId = formData.get('id');
+      const account = {
+        bankName: formData.get('bankName'),
+        accountHolder: formData.get('accountHolder'),
+        iban: formData.get('iban'),
+        active: formData.get('active') === 'true'
+      };
+
+      try {
+        await accountsRef.child(accountId).update(account);
+        closeModal();
+        alert('Hesap başarıyla güncellendi!');
+      } catch (error) {
+        console.error('Error updating account:', error);
+        alert('Güncelleme sırasında hata oluştu!');
+      }
+    });
+
+    document.getElementById('addForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const account = {
+        bankName: formData.get('bankName'),
+        accountHolder: formData.get('accountHolder'),
+        iban: formData.get('iban'),
+        active: formData.get('active') === 'true'
+      };
+
+      try {
+        await accountsRef.push(account);
+        closeAddModal();
+        alert('Hesap başarıyla eklendi!');
+      } catch (error) {
+        console.error('Error adding account:', error);
+        alert('Ekleme sırasında hata oluştu!');
+      }
+    });
+
+    async function toggleAccount(id) {
+      try {
+        const account = accountsData.find(acc => acc.id === id);
+        if (account) {
+          await accountsRef.child(id).update({ active: !account.active });
+        }
+      } catch (error) {
+        console.error('Error toggling account:', error);
+        alert('İşlem sırasında hata oluştu!');
+      }
+    }
+
+    async function deleteAccount(id) {
+      if (!confirm('Bu hesabı silmek istediğinizden emin misiniz?')) return;
+
+      try {
+        await accountsRef.child(id).remove();
+        alert('Hesap başarıyla silindi!');
+      } catch (error) {
+        console.error('Error deleting account:', error);
+        alert('Silme sırasında hata oluştu!');
+      }
+    }
+
+    loadAccounts();
+  </script>
+</body>
+</html>

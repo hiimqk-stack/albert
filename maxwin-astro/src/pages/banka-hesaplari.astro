@@ -1,0 +1,281 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banka Hesapları</title>
+  
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+  <script src="/firebase-config.js"></script>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .header {
+      text-align: center;
+      color: white;
+      margin-bottom: 40px;
+    }
+    
+    .header h1 {
+      font-size: 36px;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .header p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+    
+    .accounts-grid {
+      display: grid;
+      gap: 24px;
+    }
+    
+    .account-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: slideUp 0.5s ease-out backwards;
+    }
+    
+    .account-card:nth-child(1) { animation-delay: 0.1s; }
+    .account-card:nth-child(2) { animation-delay: 0.2s; }
+    .account-card:nth-child(3) { animation-delay: 0.3s; }
+    
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .account-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    .bank-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    
+    .bank-name {
+      font-size: 24px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    
+    .account-holder {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .iban-section {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 12px;
+      border: 2px dashed #e0e0e0;
+    }
+    
+    .iban-label {
+      font-size: 12px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .iban-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: #333;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 1px;
+      word-break: break-all;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    
+    .copy-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    
+    .copy-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+    
+    .copy-btn:active {
+      transform: scale(0.98);
+    }
+    
+    .no-accounts {
+      text-align: center;
+      color: white;
+      padding: 60px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .no-accounts h2 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 28px;
+      }
+      
+      .account-card {
+        padding: 24px;
+      }
+      
+      .iban-value {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .copy-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💳 Banka Hesaplarımız</h1>
+      <p>Para yatırma işlemleriniz için aktif banka hesaplarımız</p>
+    </div>
+
+    <div class="accounts-grid" id="accountsGrid">
+      <!-- Accounts will be loaded from Firebase -->
+    </div>
+  </div>
+
+  <script>
+    const accountsRef = database.ref('bankAccounts');
+    const accountsGrid = document.getElementById('accountsGrid');
+
+    accountsRef.on('value', (snapshot) => {
+      const data = snapshot.val();
+      accountsGrid.innerHTML = '';
+
+      if (data) {
+        const accounts = Object.keys(data).map(key => ({
+          id: key,
+          ...data[key]
+        })).filter(account => account.active);
+
+        if (accounts.length > 0) {
+          accounts.forEach(account => {
+            const card = document.createElement('div');
+            card.className = 'account-card';
+            card.innerHTML = `
+              <div class="bank-icon">🏦</div>
+              <div class="bank-name">${account.bankName}</div>
+              <div class="account-holder">
+                <span>👤</span>
+                <span>${account.accountHolder}</span>
+              </div>
+              <div class="iban-section">
+                <div class="iban-label">IBAN Numarası</div>
+                <div class="iban-value">
+                  <span class="iban-text">${account.iban}</span>
+                  <button class="copy-btn" onclick="copyToClipboard('${account.iban.replace(/\s/g, '')}')">
+                    📋 Kopyala
+                  </button>
+                </div>
+              </div>
+            `;
+            accountsGrid.appendChild(card);
+          });
+        } else {
+          showNoAccounts();
+        }
+      } else {
+        showNoAccounts();
+      }
+    });
+
+    function showNoAccounts() {
+      accountsGrid.innerHTML = `
+        <div class="no-accounts">
+          <h2>Şu anda aktif hesap bulunmuyor</h2>
+          <p>Lütfen daha sonra tekrar kontrol edin.</p>
+        </div>
+      `;
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.target;
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '✓ Kopyalandı!';
+        btn.style.background = 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)';
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        }, 2000);
+      }).catch(err => {
+        alert('Kopyalama başarısız oldu. Lütfen manuel olarak kopyalayın.');
+      });
+    }
+  </script>
+</body>
+</html>

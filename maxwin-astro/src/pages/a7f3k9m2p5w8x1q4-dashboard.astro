@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 const cookies = Astro.cookies;
 const adminToken = cookies.get('admin_token')?.value;
 

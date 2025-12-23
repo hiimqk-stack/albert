@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*.log
+.env
+.DS_Store
+# crawled/ - now tracked for project files
+*.tsbuildinfo
+.vscode/
+.idea/
+coverage/
+maxwin-astro/node_modules/
+maxwin-astro/dist/
+maxwin-astro/.astro/
+maxwin-astro/public/
+crawled/

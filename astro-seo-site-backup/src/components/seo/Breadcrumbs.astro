@@ -1,0 +1,105 @@
+---
+/**
+ * Breadcrumbs Component
+ * SEO-optimized breadcrumb navigation with Schema.org markup
+ */
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    item: new URL(item.url, Astro.site).href
+  }))
+};
+---
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    {items.map((item, index) => (
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        {index < items.length - 1 ? (
+          <>
+            <a itemprop="item" href={item.url}>
+              <span itemprop="name">{item.name}</span>
+            </a>
+            <meta itemprop="position" content={String(index + 1)} />
+            <span class="separator" aria-hidden="true">›</span>
+          </>
+        ) : (
+          <>
+            <span itemprop="name" aria-current="page">{item.name}</span>
+            <meta itemprop="position" content={String(index + 1)} />
+          </>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<style>
+  .breadcrumbs {
+    padding: 12px 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumbs li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .breadcrumbs a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumbs span[aria-current="page"] {
+    color: #666;
+    font-weight: 500;
+  }
+
+  .separator {
+    color: #999;
+    font-size: 16px;
+  }
+
+  @media (max-width: 640px) {
+    .breadcrumbs {
+      padding: 10px 16px;
+      font-size: 13px;
+    }
+  }
+</style>

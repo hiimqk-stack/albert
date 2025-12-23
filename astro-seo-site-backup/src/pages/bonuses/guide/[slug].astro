@@ -1,0 +1,255 @@
+---
+/**
+ * Intent-Based Guide Pages (Informational Intent)
+ * URL: /bonuses/guide/[slug]
+ * 
+ * For queries like: "X nedir", "X nasıl çalışır", educational content
+ */
+
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SEOComplete from '../../../components/seo/SEOComplete.astro';
+import Breadcrumbs from '../../../components/seo/Breadcrumbs.astro';
+import AuthorBox from '../../../components/seo/AuthorBox.astro';
+import FreshnessIndicator from '../../../components/seo/FreshnessIndicator.astro';
+import RelatedLinks from '../../../components/seo/RelatedLinks.astro';
+import { generateArticleSchema, generateBreadcrumbSchema } from '../../../utils/seo/generateSchema';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('bonus-guides');
+  
+  return guides.map((guide) => ({
+    params: { slug: guide.slug },
+    props: { guide }
+  }));
+}
+
+interface Props {
+  guide: CollectionEntry<'bonus-guides'>;
+}
+
+const { guide } = Astro.props;
+const { Content } = await guide.render();
+
+// Robots directive
+const robotsContent = guide.data.shouldIndex ? 'index, follow' : 'noindex, follow';
+
+// E-E-A-T Author
+const author = guide.data.author;
+const reviewedBy = author.name;
+
+// Freshness
+const publishedAt = guide.data.publishedAt;
+const updatedAt = guide.data.updatedAt;
+
+// Link Throttling
+const parentHub = guide.data.parentHub;
+const relatedPages = guide.data.relatedPages;
+
+// Breadcrumbs
+const breadcrumbs = [
+  { name: 'Ana Sayfa', url: '/' },
+  { name: 'Bonus Bilgileri', url: '/bonuses' },
+  { name: 'Rehberler', url: '/bonuses/guide' },
+  { name: guide.data.title, url: `/bonuses/guide/${guide.data.slug}` }
+];
+
+// Schema
+const articleSchema = generateArticleSchema({
+  headline: guide.data.title,
+  description: guide.data.description,
+  datePublished: publishedAt.toISOString(),
+  dateModified: updatedAt.toISOString(),
+  author: author.name
+});
+
+const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+
+// Difficulty badge
+const difficultyLabels = {
+  beginner: 'Başlangıç',
+  intermediate: 'Orta',
+  advanced: 'İleri'
+};
+
+const difficultyColors = {
+  beginner: '#28a745',
+  intermediate: '#ffc107',
+  advanced: '#dc3545'
+};
+---
+
+<BaseLayout>
+  <SEOComplete
+    slot="head"
+    title={guide.data.title}
+    description={guide.data.description}
+    keywords={guide.data.keywords}
+    ogType="article"
+    schema={[articleSchema, breadcrumbSchema]}
+    article={{
+      publishedTime: publishedAt.toISOString(),
+      modifiedTime: updatedAt.toISOString(),
+      section: 'Bonus Rehberleri',
+      tags: ['guide', guide.data.topic, 'educational']
+    }}
+  />
+  
+  <meta slot="head" name="robots" content={robotsContent} />
+
+  <Breadcrumbs items={breadcrumbs} />
+
+  <article class="guide-page informational">
+    <header class="guide-header">
+      <span class="content-type">📚 Rehber</span>
+      <h1>{guide.data.title}</h1>
+      <p class="lead">{guide.data.description}</p>
+      
+      <div class="guide-meta">
+        <span class="topic-badge">{guide.data.topic}</span>
+        <span 
+          class="difficulty-badge"
+          style={`background-color: ${difficultyColors[guide.data.difficulty]}`}
+        >
+          {difficultyLabels[guide.data.difficulty]}
+        </span>
+      </div>
+    </header>
+    
+    <FreshnessIndicator 
+      publishedAt={publishedAt}
+      updatedAt={updatedAt}
+      reviewedBy={reviewedBy}
+    />
+
+    <div class="guide-content educational-content">
+      <Content />
+    </div>
+
+    <section class="responsible-gaming-reminder">
+      <h2>Sorumlu Oyun Hatırlatması</h2>
+      <p>
+        Bu rehber yalnızca bilgilendirme amaçlıdır. Kumar bağımlılık yapabilir.
+        Lütfen <a href="/sorumlu-oyun">sorumlu oyun kurallarına</a> uyun. 18+.
+      </p>
+    </section>
+
+    <AuthorBox 
+      name={author.name}
+      slug={author.slug}
+      title={author.title}
+      experience={author.experience}
+    />
+
+    <RelatedLinks 
+      parentHub={parentHub}
+      parentHubLabel="Tüm Rehberler"
+      relatedPages={relatedPages}
+      showCompliance={true}
+    />
+  </article>
+</BaseLayout>
+
+<style>
+  .guide-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .guide-header {
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid #e0e0e0;
+  }
+
+  .content-type {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #1565c0;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .guide-header h1 {
+    font-size: clamp(24px, 5vw, 36px);
+    margin-bottom: 16px;
+    color: #1a1a1a;
+  }
+
+  .lead {
+    font-size: 18px;
+    color: #555;
+    max-width: 650px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+  }
+
+  .guide-meta {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .topic-badge {
+    background: #f0f0f0;
+    color: #333;
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 14px;
+  }
+
+  .difficulty-badge {
+    color: white;
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .guide-content {
+    line-height: 1.8;
+    font-size: 17px;
+    color: #333;
+  }
+
+  .guide-content :global(h2) {
+    margin-top: 40px;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+  }
+
+  .guide-content :global(p) {
+    margin-bottom: 16px;
+  }
+
+  .responsible-gaming-reminder {
+    background: #e8f5e9;
+    padding: 24px;
+    border-radius: 12px;
+    margin: 40px 0;
+    border-left: 4px solid #4caf50;
+  }
+
+  .responsible-gaming-reminder h2 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #2e7d32;
+  }
+
+  .responsible-gaming-reminder p {
+    margin: 0;
+    color: #1b5e20;
+  }
+
+  .responsible-gaming-reminder a {
+    color: #1b5e20;
+    font-weight: 600;
+  }
+</style>

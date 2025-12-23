@@ -1,0 +1,35 @@
+{
+  "name": "playwright-recursive-crawler",
+  "version": "1.0.0",
+  "description": "Playwright-based recursive web crawler with network file capturing",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "crawl": "tsx src/index.ts",
+    "crawl:env": "tsx crawl-from-env.ts",
+    "example": "tsx example.ts",
+    "install:browsers": "playwright install chromium"
+  },
+  "keywords": [
+    "playwright",
+    "crawler",
+    "web-scraper",
+    "recursive",
+    "network-capture"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.40.1",
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}

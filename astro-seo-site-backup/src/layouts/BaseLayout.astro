@@ -1,0 +1,72 @@
+---
+import SEO from '../components/SEO.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonical?: string;
+  noindex?: boolean;
+  type?: 'website' | 'article' | 'product';
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  schema?: Record<string, any>;
+}
+
+const {
+  title,
+  description,
+  image,
+  canonical,
+  noindex = false,
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  author,
+  schema
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="tr" data-theme="dark" data-type="Desktop">
+  <head>
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      canonical={canonical}
+      noindex={noindex}
+      type={type}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      author={author}
+      schema={schema}
+    />
+    <link rel="icon" type="image/x-icon" href="/cdn.maxwin580.com/assets/plat/prd/Img/partners/1247/favicon.ico" />
+    
+    <!-- Original Site CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    
+    <link href="/cdn.maxwin580.com/assets/plat/prd/CW/GPB/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <link href="/cdn.maxwin580.com/assets/plat/prd/CW/GPB/Content/Utils/swiper.css" rel="stylesheet" />
+    <link href="/cdn.maxwin580.com/assets/plat/prd/CW/GPB/Content/components/cwDynamicIcons.css" rel="stylesheet" />
+    <link href="/cdn.maxwin580.com/assets/plat/prd/CW/GPB/Content/skinner/skinner-layout_desk.css" rel="stylesheet" />
+    <link href="/cdn.maxwin580.com/assets/plat/prd/CW/GPB/Content/paymentDesktop.css" rel="stylesheet" />
+    <link href="/cdn.maxwin580.com/assets/plat/prd/CW/GPB/Content/components/dynamicBanners_v1.0.css" rel="stylesheet" />
+    <link href="/cdn.maxwin580.com/assets/plat/prd/CW/GPB/Content/components/responsible-gaming.css" rel="stylesheet" />
+    <link href="/cdn.maxwin580.com/assets/plat/prd/CW/GPB/Content/components/popups/registration.css" rel="stylesheet" />
+    <link href="/cdn.maxwin580.com/assets/plat/prd/CW/GPB/Content/partners/1247.css" rel="stylesheet" />
+    <link href="/cdn.maxwin580.com/assets/plat/prd/Img/Partners/1247/CustomCSS/customWeb.css" rel="stylesheet" />
+    <link href="/cdn.maxwin580.com/assets/plat/prd/CW/GPB/Content/components/seoTexts.css" rel="stylesheet" />
+    <link href="/cdn.maxwin580.com/assets/plat/prd/CW/GPB/Content/components/dynamicFeaturedItems.css" rel="stylesheet" />
+    <link href="/cdn.maxwin580.com/assets/plat/prd/CW/GPB/Content/components/sliders/storySlider.css" rel="stylesheet" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<!-- Original site CSS is used instead of custom styles -->

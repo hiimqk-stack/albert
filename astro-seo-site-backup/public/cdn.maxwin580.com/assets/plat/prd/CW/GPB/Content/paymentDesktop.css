@@ -1,0 +1,4136 @@
+
+/*default payment system logo*/
+.tl_payment_icon {
+    background-position: 0 -304px;
+} 
+
+.ingcepbank {
+    background-position-y: -4051px;
+}
+
+.pttcepbank {
+    background-position-y: -4103px;
+}
+
+.kuveytturkcepbank {
+    background-position-y: -4259px;
+}
+
+.uzkard {
+    background-position-y: -4311px;
+}
+
+.apcopay {
+    background-position-y: -4571px;
+}
+
+.halkbank {
+    background-position-y: -4987px;
+}
+
+.ecopayz {
+    background-position-y: -5039px;
+}
+
+.para247 {
+    background-position-y: -5568px;
+}
+
+.vistapara {
+    background-position-y: -5515px;
+}
+
+.qr {
+    background-position-y: -5303px;
+}
+
+.cannon {
+    background-position: 0 -1708px;
+}
+
+span.tl_payment_icon.help2pay
+span.tl_payment_icon.helpTwopay {
+    background-position: 0 -5729px;
+    background-color: #fdda06;
+}
+
+.ripple {
+    background-position: 0 -5410px;
+}
+
+.bitcoin {
+    background-position: 0 -5357px;
+}
+
+span.accmobilecommerce {
+    height: 50px !important;
+    background-position-y: -5825px;
+}
+
+.davidqr {
+    background-position-y: -6607px;
+}
+
+.papara {
+    background-position: 0 -7079px;
+}
+
+.mldpaykasa {
+    background-position: 0 -7239px;
+}
+
+.mldqrref {
+    background-position: 0 -7292px;
+}
+
+.mldjetonvoucher {
+    background-position: 0 -7186px;
+}
+
+.mldjetonwallet {
+    background-position: 0 -7133px;
+}
+
+.anindahavale, .anindahavaleoffline {
+    background-position: 0 -9130px;
+}
+
+.paytopays {
+    background-position: 0 -9702px;
+}
+
+/*.kreditkart {
+    background-position: 0 -9762px;
+}
+*/
+.kartbekart {
+    background-position: 0 -27582px;
+}
+
+.exchangeripg {
+    background-position: 0 -1656px;
+}
+
+.anindapapara {
+    background-position: 0 -10061px;
+}
+
+.expressqr {
+    background-position: 0 -10122px;
+}
+
+.runpayonline {
+    background-position: 0 -13310px;
+}
+
+.bpcjcepbank {
+    background-position: 0 -10477px;
+}
+
+.bpcjinstantcepbank {
+    background-position: 0 -10778px;
+}
+
+.bpcjinstantqr {
+    background-position: 0 -10838px;
+}
+
+.bpcjcryptopay {
+    background-position: 0 -10719px;
+}
+
+.bpcjcommunitybank {
+    background-position: 0 -10659px;
+}
+
+.interswitch {
+    background-position: 0 -11138px;
+}
+
+.sobflous {
+    background-position: 0 -10898px;
+}
+
+.pagoefectivo {
+    background-position: 0 -11859px;
+}
+
+.novabankaonline {
+    background-position: -266px -8441px;
+}
+
+.toditocash {
+    background-position: 0 -11799px;
+}
+
+.cmtcuzdan {
+    background-position: 0 -12039px;
+}
+
+.coinpayment {
+    background-position: 0 -12100px;
+}
+
+.tipocash {
+    background-position: -640px -1660px;
+    /*background-color: rgba(0,0,0,.3);*/
+}
+
+.accflutterwave {
+    background-position: -269px -2573px;
+}
+
+.favvpay {
+    background-position: -269px -2885px;
+}
+
+.astropaycard {
+    background-position: 0 -9190px;
+}
+
+.cartipay {
+    background-position: -269px -2781px;
+}
+
+.cartipal {
+    background-position: -269px -2833px;
+}
+
+.tl_payment_icon.muchbetter {
+    background-position: 0 -12218px;
+}
+
+.justpay {
+    background-position: -269px -2625px;
+}
+
+.directa24 {
+    background-position: -266px -2467px;
+}
+
+.qrzero {
+    background-position: -266px -2521px;
+}
+
+.cashtocode {
+    background-position: -269px -2677px;
+}
+
+.indianpaymentmobile {
+    background-position: -269px -2989px;
+}
+
+.indianpaymentbanktransfer {
+    background-position: -267px -3041px;
+}
+
+.creditcardoffline {
+    background-position: -269px -2573px;
+}
+
+.sticpay {
+    background-position: -269px -3093px;
+}
+
+.jetcmt {
+    background-position: -269px -3145px;
+}
+
+.anindapaparaoffline {
+    background-position: 0 -10061px;
+}
+
+.exchangergift {
+    background-position: -269px -3301px;
+}
+
+.expresshavale {
+    background-position: -269px -3353px;
+}
+
+.bim, .bimretirosoffline {
+    background-position: -269px -3405px;
+}
+
+.qrkod {
+    background-position: -269px -3457px;
+}
+
+.kredikartoffline1 {
+    background-position: -269px -3977px;
+}
+
+.kredikartoffline2 {
+    background-position: -269px -4029px;
+}
+
+.kredikartoffline3 {
+    background-position: -269px -4081px;
+}
+
+.kredikartoffline4 {
+    background-position: -269px -4133px;
+}
+
+.expressbrl {
+    background-position: -269px -3353px;
+}
+
+.finalpay {
+    background-position: -269px -4133px;
+}
+
+.cmt {
+    background-position: -269px -4498px;
+}
+
+/*.peer2peer {
+    background-position: 0 -304px;
+}*/
+
+.paysafeskrill {
+    background-position: 0 -8880px;
+}
+
+.mldcreditcardtransfer {
+    background-position: -268px -2571px;
+}
+
+.atm {
+    background-position: 0 -10599px;
+}
+
+.payfixoffline {
+    background-position: -267px -8694px;
+}
+
+.tl_payment_icon.uzcard {
+    background-position: -267px -8542px;
+}
+
+.parspayment {
+    background-position: -266px -8992px;
+}
+
+.pardakhtp2p {
+    background-position: -266px -9093px;
+}
+
+/*taken from partner's css*/
+.confirmeddeposit {
+    background-color: #1a1a1a;
+    text-transform: uppercase;
+    border-radius: 2px;
+    outline: none;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+    color: #fff;
+}
+
+.confdeposit {
+    background-color: #3F3D3E;
+    text-transform: uppercase;
+    border-radius: 2px;
+    outline: none;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.confdeposit:hover {
+    background-color: #1a1a1a;
+}
+
+.win.flex_width_300 {
+    flex: 0 0 300px !important;
+}
+
+.win.flex_width_125 {
+    flex: 0 0 125px !important;
+    padding: 0 !important;
+    margin-right: 3px;
+    text-align: center;
+}
+
+#cancelwithdraw {
+    background-color: #3F3D3E;
+    text-transform: uppercase;
+    border-radius: 2px;
+    outline: none;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 120px;
+}
+
+#cancelwithdraw:hover {
+    background-color: #1a1a1a;
+}
+/*over of*/ 
+
+/*Deposit and Withdraw Popups*/
+
+.hour_minute_container {
+    margin: 0 auto;
+    width: 160px;
+}
+
+.day_month_year_cont {
+    margin: 0 auto;
+    width: 240px;
+}
+
+.day_month_year_cont > :nth-child(-n + 2),
+.hour_minute_container > :first-child {
+    margin-right: 12px;
+}
+
+.tl_payment_cont {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 40px;
+    padding-bottom: 70px;
+}
+
+.tl_my_acc_title {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    min-height: 20px;
+    line-height: 20px;
+}
+
+.tl_payment_block,
+.tl_payment_block_inter,
+.tl_payment_inner_block {
+    width: 100%;
+    min-height: 95px;
+    background-color: #2b2b2b;
+    color: #fff;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    -moz-transition: background-color .2s ease;
+    -webkit-transition: background-color .2s ease;
+    transition: background-color .2s ease;
+}
+
+.tl_payment_block:hover,
+.tl_payment_block_inter:hover,
+.tl_payment_inner_block:hover {
+    background-color: #1a1a1a;
+}
+
+.tl_payment_block.active,
+.tl_payment_inner_block.active
+.tl_payment_block_inter.active {
+    background-color: #1a1a1a;
+}
+
+.tl_payment_head {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    padding: 10px 12px;
+    align-items: center;
+    min-height: 100px;
+    transition: 0.2s linear 0s;
+}
+
+.tl_payment_block.active .tl_payment_head,
+.tl_payment_inner_block.active .tl_payment_head,
+.tl_payment_block_inter.active .tl_payment_head {
+    min-height: 120px;
+    margin-bottom: 12px;
+}
+
+.tl_payment_body,
+.tl_payment_body_inter,
+.tl_payment_inner_body {
+    position: relative;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 24px;
+    transition: height 0.2s linear 0s;
+}
+
+.tl_payment_block.active .tl_payment_body,
+.tl_payment_inner_block.active .tl_payment_inner_body,
+.tl_payment_block_inter.active .tl_payment_body_inter {
+    min-height: 160px;
+    overflow: visible;
+    height: auto;
+    padding: 0;
+    flex: 4;
+}
+
+.tl_payment_block.tl_info_block.active .tl_payment_body,
+.tl_payment_inner_block.tl_info_block.active .tl_payment_inner_body,
+.tl_payment_block_inter.tl_info_block.active .tl_payment_body_inter {
+    height: 0px;
+}
+
+.tl_payment_block .tl_payment_col,
+.tl_payment_inner_block .tl_payment_col,
+.tl_payment_block_inter .tl_payment_col {
+    height: auto;
+}
+
+.relativeDP > button {
+    position: absolute;
+    top: 20px;
+    right: 8px;
+    height: 36px;
+    width: 22px;
+    font-size: 27px;
+    color: #1652a8;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.tl_payment_icon {
+    background-image: url(../Img/pw_icons_sprite.png);
+    display: inline-block;
+}
+
+.splited_input_block .short_input + .reg_err_mess:after {
+    right: -5px !important;
+}
+
+.depUpdate {
+    text-transform: uppercase;
+    border-radius: 2px;
+    outline: none;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 0 15px;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+/*Payment icons*/
+.skrill {
+    background-position: 0 -772px;
+}
+
+.neteller {
+    background-position: 0 -720px;
+}
+
+.safecharge {
+    background-position: 0 -1344px;
+}
+
+.arca {
+    background-position: 0 -200px;
+}
+
+.visa_master_arca {
+    background-position: 0 -304px;
+}
+
+.conversetransfer, .bank_transfer, .irbetbankiransfer {
+    background-position: 0 -668px;
+}
+
+.idram_wallet {
+    background-position: 0 -11739px;
+}
+
+.idram_terminal {
+    background-position: -269px -5017px;
+}
+
+.redeembonus {
+    background-position: 0 0;
+}
+
+.mobidram_wallet {
+    background-position: 0 -616px;
+}
+
+.mobidram_terminal {
+    background-position: -269px -5121px;
+}
+
+.betshop {
+    background-position: 0 -408px;
+}
+
+.easypay {
+    background-position: 0 -564px;
+}
+
+.telcell_terminal {
+    background-position: 0 -207px;
+}
+
+.interkassa {
+    background-position: 0 -2521px;
+}
+
+/*.run88 {
+    background-position: 0 -1916px;
+}*/
+
+.koreanpayment {
+    background-position: 0 -1916px;
+}
+
+.perfectmoney {
+    background-position: 0 -1968px;
+}
+
+.exchanger, .exchanger2, .parsianexchanger {
+    background-position: 0 -1865px;
+}
+
+.accyandex {
+    background-position: 0 -2469px;
+}
+
+.accqiwi {
+    background-position: 0 -928px;
+}
+
+.accwebmoney {
+    background-position: 0 -876px;
+}
+
+.perfectmoneyewalet {
+    background-position: 0 -1188px;
+}
+
+.accbankcards {
+    background-position: 0 -304px;
+}
+
+.webmoney {
+    background-position-y: -876px;
+}
+
+.transfertoaccount {
+    background-position: 0 -1500px;
+}
+
+.ptthavale {
+    background-position: 0 -1292px;
+}
+
+.isbankasicepmatik {
+    background-position: 0 -1032px;
+}
+
+.garantibank {
+    background-position: 0 -980px;
+}
+
+.akbank {
+    background-position: 0 -1136px;
+}
+
+.yapikredi, .yapikredicebehavale {
+    background-position: 0 -1084px;
+}
+
+.finansbank {
+    background-position: 0 -2781px;
+}
+
+.cepbank {
+    background-position: 0 -2833px;
+}
+
+.vakifbank {
+    background-position: 0 -2885px;
+}
+
+.ziraat {
+    background-position: 0 -2937px;
+}
+
+.molekulawebmoney {
+    background-position: 0 -876px;
+}
+
+.vuzu {
+    background-position: 0 -3474px;
+}
+
+.garantionecepbank {
+    background-position: 0 -3422px;
+}
+
+.mpesa {
+    background-position: 0 -3525px;
+}
+
+.paybill {
+    background-position: 0 -3525px;
+}
+
+.paypal2 {
+    background-position: 0 -824px;
+}
+
+.paysafecard2 {
+    background-position: 0 -8760px;
+}
+
+.bitcoin2 {
+    background-position: 0 -5357px;
+}
+
+.skrill2 {
+    background-position: 0 -772px;
+}
+
+.perfectmoney2 {
+    background-position: 0 -1968px;
+}
+
+.webmoney2 {
+    background-position-y: -876px;
+}
+
+.accalfaclick {
+    background-position: 0 -3632px;
+}
+
+.accmoneta {
+    background-position: 0 -3579px;
+}
+
+.voucher {
+    background-position: 0 -8700px;
+}
+
+.asiahawala, .asiahawalaonline {
+    background-position: 0 -3684px;
+}
+
+.fastpay {
+    background-position: 0 -3737px;
+}
+
+.fastpayoffline {
+    background-position: 0 -6553px;
+}
+
+.denizbank {
+    background-position: 0 -3841px;
+}
+
+.promsvyazbank {
+    background-position: 0 -3947px;
+}
+
+.woocommerce {
+    background-position: 0 -3895px;
+}
+
+.paybox {
+    background-position: 0 -3895px;
+}
+
+.privebetbank {
+    background-position: 0 -1500px;
+}
+
+.exchangerp {
+    background-position: 0 -1424px;
+}
+
+.nonsamanbank {
+    background-position: 0px -4467px;
+}
+
+.samanbankwithdrawl {
+    background-position: 0px -4519px;
+}
+
+.novabanka {
+    background-position: 0 -4831px;
+}
+
+.ethereum {
+    background-position: 0 -5463px;
+}
+
+.accentpay {
+    background-position: 0 -6153px;
+}
+
+.lateral, .lateralalternative {
+    background-position: 0 -6765px;
+}
+
+.hipay {
+    background-position: 0 -6871px;
+}
+
+/*.winpay {
+    background-position: 0 -6818px;
+}*/
+
+.winpay {
+    background-position: -267px -6247px;
+}
+
+.giftshopvoucher {
+    background-position: 0 -7451px;
+}
+
+.jetonwallet {
+    background-position: 0 -7980px;
+}
+
+.envoypay {
+    background-position: 0 -8037px;
+}
+
+.paygiga {
+    background-position: 0 -8217px;
+}
+
+.paykasa {
+    background-position: 0 -8277px;
+}
+
+.cardpay {
+    background-position: 0 -8339px;
+}
+
+.withdrawal.c2c {
+    background-position: 0 -8460px;
+}
+
+.c2c {
+    background-position: 0 -8399px;
+}
+
+.paysafecard {
+    background-position: 0 -8880px;
+}
+
+.rocketpay {
+    background-position: 0 -8940px;
+}
+
+.mldinstantbanking {
+    background-position: 0 -9070px;
+}
+
+.mldcommunitybanking {
+    background-position: 0 -9000px;
+}
+
+.cepbankoffline {
+    background-position: 0 -5251px;
+}
+
+.hizliqr {
+    background-position: 0 -7292px;
+}
+
+.airtelmtn {
+    background-position: 0 -9250px;
+}
+
+.paystack {
+    background-position: 0 -9522px;
+}
+
+.rave {
+    background-position: 0 -9582px;
+}
+
+.daybankinternal {
+    background-position: 0 -10001px;
+}
+
+.epro {
+    background-position: 0 -10367px;
+}
+
+.zotapay {
+    background-position: 0 -10305px;
+}
+
+.master {
+    background-position: 0 -4883px;
+}
+
+.visa {
+    background-position: 0 -4935px;
+}
+
+form#zotapay {
+    flex-wrap: wrap;
+}
+
+.hizliqroffline {
+    background-position: 0 -10245px;
+}
+
+.paysafecardoffline {
+    background-position: 0 -8760px;
+}
+
+.coinoffline {
+    background-position: 0 -6973px;
+}
+
+.banktransfer {
+    background-position: 0 -4831px;
+}
+
+/*Payment icons*/
+.tl_payment_block .tl_payment_head .tl_icon_col {
+    width: 86px;
+    height: 45px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.tl_icon_col_DP {
+    line-height: 55px;
+    height: 45px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.tl_payment_block .tl_payment_head .tl_desc_col {
+    width: 100%;
+    flex: 3;
+    cursor: auto;
+    height: auto;
+    padding: 0 12px;
+}
+
+.tl_payment_block_inter > .tl_payment_head .tl_desc_col {
+    width: 500px;
+    cursor: auto;
+    height: auto;
+    padding: 0 12px;
+}
+
+.tl_payment_block .tl_payment_head .tl_info_col,
+.tl_payment_block_inter .tl_payment_head .tl_info_col {
+    width: auto;
+    flex: 1;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.tl_payment_block .tl_payment_head .tl_min_max_col,
+.tl_payment_block_inter .tl_payment_head .tl_min_max_col {
+    flex: 1;
+    width: auto;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tl_payment_block .tl_payment_head .tl_payment_icon {
+    width: 86px;
+    height: 42px;
+    min-width: 86px;
+    border-radius: 4px;
+}
+
+.tl_payment_block .tl_payment_head .tl_payment_desc,
+.tl_payment_block_inter .tl_payment_head .tl_payment_desc {
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.tl_payment_block .tl_payment_head .tl_info_link,
+.tl_payment_block_inter .tl_payment_head .tl_info_link {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 0 5px;
+}
+
+.tl_payment_block .tl_payment_head .tl_info_link > .tx,
+.tl_payment_block_inter .tl_payment_head .tl_info_link > .tx {
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.tl_payment_block .tl_payment_head .tl_info_link .tl_info_icon,
+.tl_payment_block .tl_payment_head .tl_info_link .tl_clock_icon,
+.tl_payment_block .tl_payment_head .tl_info_link .tl_percent_icon,
+.tl_payment_block_inter .tl_payment_head .tl_info_link .tl_info_icon,
+.tl_payment_block_inter .tl_payment_head .tl_info_link .tl_clock_icon,
+.tl_payment_block_inter .tl_payment_head .tl_info_link .tl_percent_icon {
+    margin-right: 5px
+}
+
+.tl_payment_block .tl_payment_head .tl_info_link .tl_info_icon:before,
+.tl_payment_block .tl_payment_head .tl_info_link .tl_clock_icon:before,
+.tl_payment_block .tl_payment_head .tl_info_link .tl_percent_icon:before,
+.tl_payment_block_inter .tl_payment_head .tl_info_link .tl_info_icon:before,
+.tl_payment_block_inter .tl_payment_head .tl_info_link .tl_clock_icon:before,
+.tl_payment_block_inter .tl_payment_head .tl_info_link .tl_percent_icon:before {
+    vertical-align: middle;
+}
+
+.tl_payment_block .tl_payment_head .tl_min_max,
+.tl_payment_block_inter .tl_payment_head .tl_min_max {
+    margin: 5px 0px;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.tl_payment_block .tl_payment_head .tl_min_max .tl_min_max_key,
+.tl_payment_block_inter .tl_payment_head .tl_min_max .tl_min_max_key {
+    display: inline-block;
+    min-width: 36px;
+}
+
+.tl_payment_block .tl_payment_body .tl_input_popup,
+.tl_payment_block .tl_payment_body .tl_sel_custom_popup_reg,
+.tl_payment_block_inter .tl_payment_body_inter .tl_input_popup,
+.tl_payment_block_inter .tl_payment_body_inter .tl_sel_custom_popup_reg {
+    border-color: transparent;
+}
+
+.avl {
+    min-width: 70px;
+}
+
+.tl_payment_block .tl_deposit_button {
+    text-transform: uppercase;
+    border-radius: 2px;
+    outline: none;
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.tl_payment_block .tl_payment_body .field-validation-error,
+.tl_payment_inner_block .tl_payment_inner_body .field-validation-error {
+    color: #ff0000;
+    font-size: 13px;
+}
+
+.tl_payment_block .tl_payment_body .successmassage, .tl_payment_block .tl_payment_body .errormassage {
+    position: static;
+    line-height: 40px;
+}
+
+.tl_payment_block .tl_payment_body .field-success-msg,
+.tl_payment_inner_block .tl_payment_inner_body .field-success-msg {
+    position: absolute;
+    color: #ffffff;
+    bottom: 5px;
+    margin-left: 13px;
+    font-size: 13px;
+}
+
+.tl_payment_body.transition > p {
+    padding: 0 10px 8px;
+}
+
+.tl_payment_block.active .tl_payment_body_details {
+    color: #999;
+    font-size: 16px;
+    flex: 1;
+    flex-shrink: 0;
+    white-space: nowrap;
+    min-height: inherit;
+    padding: 0;
+    padding-top: 25px;
+}
+
+/*Interkassa*/
+.curency_name {
+    margin-left: 5px;
+}
+
+.payment_name {
+    display: block;
+    padding-bottom: 8px;
+    font-weight: bold;
+}
+
+.name {
+    font-size: 14px;
+    padding-bottom: 4px;
+    text-transform: capitalize;
+}
+
+.sub_form_flex {
+    position: relative;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#depButton {
+    margin-top: 18px;
+}
+
+.sub_tl_payment_padd {
+    margin: 10px 6px;
+    display: flex;
+    flex-direction: column;
+    position: relative
+}
+
+.tl_payment_body form {
+    flex-wrap: wrap;
+    padding: 20px 10px
+}
+
+.sub_tl_payment_body {
+    display: none;
+    min-height: 90px;
+}
+
+.sub_tl_payment_head {
+    min-height: 90px;
+}
+
+
+.sub_tl_payment_block {
+    margin: 20px 0;
+    background-color: #bfbfbf;
+    padding: 24px;
+    min-width: 992px;
+}
+
+.sub_tl_payment_block .sub_tl_payment_head .tl_info_col {
+    width: 300px;
+    align-items: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.sub_tl_payment_block .sub_tl_payment_head .tl_payment_icon {
+    width: 86px;
+    height: 42px;
+    min-width: 86px;
+    border-radius: 4px;
+}
+
+.sub_tl_payment_block .sub_tl_payment_head .tl_desc_col {
+    width: 555px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    cursor: auto;
+    height: auto;
+    padding: 0 12px;
+}
+
+.sub_tl_payment_block .sub_tl_payment_head .tl_min_max_col {
+    width: 230px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sub_tl_payment_block .sub_tl_payment_head .tl_info_link {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 0 5px;
+}
+
+.sub_tl_payment_head {
+    width: 100%;
+    height: 95px;
+    cursor: pointer;
+    padding: 0 12px;
+    align-items: center;
+}
+
+.sub_tl_payment_block .sub_tl_payment_head .tl_min_max {
+    margin: 5px 0;
+    width: 100%;
+}
+
+.backEndMsg {
+    position: relative;
+    margin-left: 6px;
+    font-size: 13px;
+}
+
+.sub_tl_payment_icon {
+    width: 86px;
+    height: 42px;
+    min-width: 86px;
+    border-radius: 4px;
+    background-image: url('/Img/common/interkassa_sprite.png');
+    display: inline-block;
+}
+
+.qiwi_qiwi_transfer_rub {
+    background-position: 0 -924px;
+}
+
+.visa_xplat_transfer_rub {
+    background-position: 0 -1344px;
+}
+
+.visa_p2p_tasprivat_uah {
+    background-position: 0 -1344px;
+}
+
+.mastercard_p2p_tasprivat_uah {
+    background-position: 0 -504px;
+}
+
+.visa_p2p_tasnotprivat_uah {
+    background-position: 0 -1344px;
+}
+
+.mastercard_p2p_tasnotprivat_uah {
+    background-position: 0 -504px;
+}
+
+.mastercard_xplat_transfer_rub {
+    background-position: 0 -504px;
+}
+
+.mastercard_cpaytrz_merchant_eur {
+    background-position: 0 -504px;
+}
+
+.mastercard_cpaytrz_merchant_rub {
+    background-position: 0 -504px;
+}
+
+.mastercard_elb_transfer_eur {
+    background-position: 0 -504px;
+}
+
+.advcash_advcash_transferAdvCash_rub {
+    background-position: 0 0;
+}
+
+.advcash_advcash_transferAdvCash_usd {
+    background-position: 0 0;
+}
+
+.payeer_advcash_transferEcurrency_rub {
+    background-position: 0 0;
+}
+
+.yandexmoney_xplat_transfer2_rub {
+    background-position: 0 -1470px;
+}
+
+.mts_shop_mobile_rub {
+    background-position: 0 -672px;
+}
+
+.megafone_shop_mobile_rub {
+    background-position: 0 -546px;
+}
+
+.beeline_shop_mobile_rub {
+    background-position: 0 -126px;
+}
+
+.rbkmoney_shop_mm_rub {
+    background-image: url('/Img/pw_icons_sprite.png');
+    background-position: 0 -1604px;
+}
+
+.moneta_shop_mm_rub {
+    background-image: url('/Img/pw_icons_sprite.png');
+    background-position: 0 -1604px;
+}
+
+.vk_shop_mm_rub {
+    background-image: url('/Img/pw_icons_sprite.png');
+    background-position: 0 -1604px;
+}
+
+.paypal_shop_mm_usd {
+    background-image: url('/Img/pw_icons_sprite.png');
+    background-position: 0 -824px;
+}
+
+.facebook_shop_mm_usd {
+    background-image: url('/Img/pw_icons_sprite.png');
+    background-position: 0 -1604px;
+}
+
+.google_shop_mm_usd {
+    background-image: url('/Img/pw_icons_sprite.png');
+    background-position: 0 -1604px;
+}
+
+.w1_w1_transfer_usd {
+    background-position: 0 -1386px;
+}
+
+.w1_w1_transfer_uah {
+    background-position: 0 -1386px;
+}
+
+.w1_w1_transfer_eur {
+    background-position: 0 -1386px;
+}
+
+.perfectmoney_perfectmoney_transfer_usd {
+    background-position: 0 -798px;
+}
+
+.perfectmoney_perfectmoney_transfer_eur {
+    background-position: 0 -798px;
+}
+
+.perfectmoney_perfectmoney_merchant_eur {
+    background-position: 0 -1820px;
+}
+
+.perfectmoney_perfectmoney_merchant_usd {
+    background-position: 0 -1820px;
+}
+
+.nixmoney_nixmoney_merchant_usd {
+    background-position: 0 -1777px;
+}
+
+.nixmoney_nixmoney_merchant_eur {
+    background-position: 0 -1777px;
+}
+
+.nixmoney_nixmoney_transfer_eur {
+    background-position: 0 -1777px;
+}
+
+.webmoneyoffline {
+    background-position: 0 -876px;
+}
+
+/*Interkassa*/
+
+@media screen and (max-width: 1500px) {
+    /*Interkassa*/
+    .sub_tl_payment_block .sub_tl_payment_head .tl_min_max_col {
+        width: 190px;
+    }
+
+    .sub_tl_payment_block .sub_tl_payment_head .tl_info_col {
+        width: 210px;
+    }
+
+    /*my acc*/
+    .tl_payment_block .tl_payment_head .tl_info_col,
+    .tl_payment_block_inter .tl_payment_head .tl_info_col {
+        flex-wrap: wrap;
+        flex: 1;
+    }
+
+    .tl_payment_block .tl_payment_head .tl_info_link,
+    .tl_payment_block_inter .tl_payment_head .tl_info_link {
+        width: 100%;
+    }
+
+    .tl_payment_block .tl_payment_head .tl_min_max_col,
+    .tl_payment_block_inter .tl_payment_head .tl_min_max_col,
+    .tl_payment_block.active .tl_payment_body_details {
+        font-size: 14px;
+    } 
+
+    .tl_payment_block_inter > .tl_payment_head .tl_desc_col {
+        width: 395px;
+    }
+}
+
+/*Withdrawal methods loader gif start*/
+.tl_methods_loader_cont {
+    min-width: 105px;
+    margin-top: 20px;
+    display: none;
+}
+
+.tl_methods_loader_cont .tl_loader {
+    height: 30px;
+    width: 30px;
+}
+
+.tl_methods_loader_cont .tl_load_msg {
+    height: 36px;
+    line-height: 36px;
+    font-size: 13px;
+    margin-left: 8px;
+    color: #999;
+}
+
+/*Withdrawal methods loader gif end*/
+
+.transfers.tl_loader {
+    position: absolute;
+    left: 20px;
+} 
+
+.depozit_under_text, .withdrawal_under_text {
+    text-align: center;
+    font-size: 14px;
+    padding: 15px;
+}
+
+span.paybox {
+    background-position: -266px -8743px;
+}
+
+.cardtocard {
+    background-position: 0 -6100px;
+}
+
+.payment_lbl, a.payment_lbl {
+    color: #fff;
+} 
+
+.creditcard {
+    background-position: 0 -6394px;
+}
+
+.fastbank_en {
+    background-position: 0 -8580px;
+}
+
+.fastbank_tr {
+    background-position: 0 -8580px;
+}
+
+.qrcep {
+    background-position: 0 -6291px;
+}
+
+.paparaIframe_en {
+    background-position: 0 -9821px;
+}
+
+.paparaIframe_tr {
+    background-position: 0 -9821px;
+}
+
+.anindahavaleiframe_en {
+    background-position: 0 -9130px;
+}
+
+.anindahavaleiframe_tr {
+    background-position: 0 -9130px;
+}
+
+.instantbankiframe_en {
+    background-position: 0 -9070px;
+}
+
+.instantbankiframe_tr {
+    background-position: 0 -9070px;
+}
+
+.envoyiframe_en {
+    background-position: 0 -11559px;
+}
+
+.envoyiframe_tr {
+    background-position: 0 -11559px;
+}
+
+.paygigaiframe_en {
+    background-position: 0 -11499px;
+}
+
+.paygigaiframe_tr {
+    background-position: 0 -11499px;
+}
+
+.rocketpayiframe_en {
+    background-position: 0 -11619px;
+}
+
+.rocketpayiframe_tr {
+    background-position: 0 -11619px;
+}
+
+.expressqriframe_en, .expressqriframe_tr, .expressqriframe_ar, .expressqriframe_az, .expressqriframe_de, .expressqriframe_es, .expressqriframe_ru, .expressqriframe_fa {
+    background-position: 0 -10122px;
+}
+
+.hizliqriframe_en, .hizliqriframe_tr, .hizliqriframe_ar, .hizliqriframe_az, .hizliqriframe_de, .hizliqriframe_es, .hizliqriframe_ru, .hizliqriframe_fa {
+    background-position: 0 -11018px;
+} 
+
+.cep_bank {
+    background-position: 0 -5251px;
+}
+
+/*IrbetAll End*/
+#payemnetpopupnew .tl_payment_icon {
+    background-image: url(../Img/pw_icons_sprite.png);
+    display: inline-block;
+    width: 86px;
+    height: 42px;
+    min-width: 86px;
+    border-radius: 4px;
+}
+
+#payemnetpopupnew .modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+#payemnetpopupnew .modal-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    background-color: #333333;
+    color: white;
+    line-height: 64px;
+}
+
+#payemnetpopupnew .show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+#payemnetpopupnew #tabclose {
+    width: 88px;
+    background: #999999;
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+}
+/*OPTIMIZATION*/
+
+.tl_payment_block .tl_payment_head .tl_icon_col.crypto {
+    width: 115px;
+    height: 65px;
+    min-width: 86px;
+    border-radius: 4px;
+}
+
+.crypto_icon {
+    background-image: url(../Img/common/crypto.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    min-width: 86px;
+    border-radius: 4px;
+}
+
+.tl_payment_block.tl_info_block.active #detailsDiv_creditcard,
+.tl_payment_block.tl_info_block.active #detailsDiv_fastbank,
+.tl_payment_block.tl_info_block.active #detailsDiv_paparaIframe,
+.tl_payment_block.tl_info_block.active #detailsDiv_anindahavaleiframe,
+.tl_payment_block.tl_info_block.active #detailsDiv_instantbankiframe,
+.tl_payment_block.tl_info_block.active #detailsDiv_envoyiframe,
+.tl_payment_block.tl_info_block.active #detailsDiv_paygigaiframe,
+.tl_payment_block.tl_info_block.active #detailsDiv_rocketpayiframe,
+.tl_payment_block.tl_info_block.active #detailsDiv_expressqriframe,
+.tl_payment_block.tl_info_block.active #detailsDiv_hizliqriframe,
+.tl_payment_block.tl_info_block.active #detailsDiv_qrcep,
+.tl_payment_block.tl_info_block.active #detailsDiv_cep_bank,
+.tl_payment_block.tl_info_block.active #detailsDiv_crypto {
+    height: 100%;
+}
+/*Dynamic Payment styles Start*/
+
+.tl_line_break {
+    height: 0;
+    width: 100%;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    background-color: #333333;
+    color: white;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0
+}
+
+
+.modal-header {
+    position: absolute;
+    top: 41%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+    background-color: #2b2b2b;
+    color: white;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0
+}
+
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transition: 0.2s linear 0s;
+}
+
+.close-button:hover {
+    opacity: 0.7;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    z-index: 100;
+}
+
+#CancelActiveBonusYes {
+    width: 88px;
+    background: #999999;
+    border: none;
+    padding: 5px;
+}
+
+#CancelActiveBonusNo {
+    width: 88px;
+    background: #ef3f18;
+    border: none;
+    padding: 5px;
+    color: white
+}
+
+.cardExNumber {
+    text-align: center;
+    margin: 0 auto;
+    width: 60px;
+    padding: 0 5px;
+    outline: none;
+    font-size: 13px;
+    height: 36px;
+    border: 0;
+    border-radius: 2px;
+    line-height: 36px;
+    -webkit-transition: border-color 0.3s ease;
+    -moz-transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease;
+    color: #999;
+}
+
+.cardExNumberHide {
+    display: none;
+}
+
+.tl_payment_padd label.error {
+    position: absolute;
+    /*bottom: -20px;*/
+    left: 0;
+    width: 234px;
+    min-height: 35px;
+    background: #ffffff;
+    border-radius: 2px;
+    padding: 10px;
+    z-index: 12;
+    font-size: 14px;
+    color: #ff0000;
+    display: none !important;
+}
+
+.tl_payment_padd label.error:before {
+    content: "";
+    border: 7px solid transparent;
+    border-color: transparent transparent #ffffff transparent;
+    position: absolute;
+    top: -14px;
+    left: 10px;
+}
+
+.tl_payment_padd {
+    position: relative;
+    align-self: flex-end;
+    margin: 0 6px;
+}
+
+.tl_payment_padd:hover label.error {
+    display: block !important;
+}
+/*Dynamic Payment styles End*/
+
+.papara_desc {
+    margin-left: 90px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.papara_cannonbet_desc {
+    margin-left: 1%;
+    font-size: 15px;
+    color: #fff;
+    margin-top: 2%;
+}
+
+.papara_bymaske_desc {
+    margin-left: 1%;
+    font-size: 15px;
+    color: #fff;
+    margin-top: 2%;
+}
+
+.deposit_payment_block .tl_min_max_key {
+    width: auto;
+}
+
+.deposit_payment_block .tl_min_max_value {
+    font-size: 85%;
+}
+
+.err_mess_dis span {
+    display: inline;
+}
+
+.pay_logo_styles {
+    max-height: 48px;
+    max-width: 200px;
+}
+
+#paymentMethodstyle span.lbl {
+    min-height: 40px;
+    position: relative;
+}
+
+#paymentMethodstyle span.lbl label {
+    position: absolute;
+    bottom: 0;
+}
+
+.telcell_visa_mastercard {
+    background-position: 0 -6713px;
+}
+
+/*deposit warning popup*/
+.deposit-warning-popup {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.deposit-warning-popup-text {
+    background: var(--cwModalBg, #060606);
+    border: 5px solid  var(--cwModalBg2Hover, #6e6e6e);
+    width: 500px;
+    min-height: 260px;
+    color: var(--cwModalTxt, #fff);
+    padding: 30px;
+    font-size: 17px;
+    line-height: 23px;
+    display: flex;
+    flex-direction: column;
+}
+
+.deposit-warning-popup-button {
+    padding: 10px 20px;
+    border-radius: 27px;
+    border: 2px solid var(--cwModalAccent, #f00);
+    color:var(--cwModalTxt, #fff) ;
+    margin: 30px auto 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*Minipay popup styles*/
+.deposit-warning-popup-button_continue {
+    padding: 10px 20px;
+    border-radius: 27px;
+    border: 2px solid #07eb62;
+    color: #fff;
+    margin: 30px auto 0;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    right: 80px;
+    top: 40px;
+}
+
+.deposit-warning-popup-button_cancel {
+    padding: 10px 20px;
+    border-radius: 27px;
+    border: 2px solid #f00;
+    color: #fff;
+    margin: 30px auto 0;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    left: 80px;
+    bottom: 34px;
+}
+
+.deposit-warning-popup-button_close {
+    padding: 10px 20px;
+    border-radius: 27px;
+    border: 2px solid #f00;
+    color: #fff;
+    margin: 30px auto 0;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    top: 30px;
+}
+
+.deposit-warning-popup-text_error {
+    background: #060606;
+    border: 5px solid #6e6e6e;
+    width: 455px;
+    min-height: 260px;
+    color: #fff;
+    padding: 30px;
+    font-size: 17px;
+    line-height: 23px;
+    display: flex;
+    flex-direction: column;
+}
+/*end*/
+
+span.Withdrawablespan {
+    width: auto !important;
+}
+/*deposit popup*/
+
+
+.toppay {
+    background-position: -269px -4341px
+}
+
+.QRCode-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /*border: 1px solid #999;*/
+}
+
+.close-popup-QRCode {
+    float: right;
+    cursor: pointer;
+}
+
+.bitcoinpaygate {
+    background-position: 0px -5357px;
+}
+
+.xpresspay {
+    background-position: -269px -4549px;
+}
+
+/*.isettle {
+	background-position: -269px -4449px;
+}*/
+
+.offlinebanktransfer {
+    background-position: -269px -3249px;
+}
+
+.anindakredikarti {
+    background-position: -265px -4755px;
+}
+
+.isettlecreditcard {
+    background-position: 0 -304px;
+}
+
+.isettleqrcode {
+    background-position: -266px -5584px;
+}
+
+.isettlecepbank {
+    background-position: -265px -5276px;
+}
+
+.isettlepapara {
+    background-position: 0 -9821px;
+}
+
+.isettlecommunitybanking {
+    background-position: -269px -6447px;
+}
+
+.isettlecryptocurrency {
+    background-position: -269px -5329px;
+}
+
+.isettlejetonwallet {
+    background-position: 0 -7981px;
+}
+
+.isettlepaykasa {
+    background-position: 0 -8279px;
+}
+
+.isettlemultibanco {
+    background-position: -269px -5533px;
+}
+
+.isettlesticpaywallet {
+    background-position: -269px -3093px;
+}
+
+.isettleiwallet {
+    background-position: -269px -5431px;
+}
+
+.isettlevenuspoint {
+    background-position: -269px -5634px;
+}
+
+.isettleglobepaywallet {
+    background-position: -269px -5380px;
+}
+
+.isettlepayfix {
+    background-position: -264px -7164px;
+}
+
+.isettleanindapapara {
+    background-position: 0 -10061px;
+}
+
+.isettleanindaqr {
+    background-position: -264px -7009px;
+}
+
+.isettleanindakredikarti {
+    background-position: -266px -4756px
+}
+
+.isettleautomatedpapara {
+    background-position: -262px -14960px;
+}
+
+.faturapay {
+    background-position: -269px -5686px;
+}
+
+.paysafecardipay {
+    background-position: 0 -8880px;
+}
+
+.xbonkliker {
+    background-position: -269px -5992px;
+}
+
+.ecommerce {
+    background-position: 0px -4831px;
+}
+
+.luqapaycepbank {
+    background-position: -269px -6604px;
+}
+
+.luqapayinstantqr {
+    background-position: -269px -6553px;
+}
+
+.luqapaycryptopay {
+    background-position: -269px -6502px;
+}
+
+.neosurf {
+    background-position: -269px -6399px;
+}
+
+.mldcepbank {
+    background-position: 0 -5251px;
+}
+
+.kredikarticekim {
+    background-position: -267px -6349px;
+}
+
+.isettleanindahavale {
+    background-position: 0 -9130px;
+}
+
+.axesspaydirect {
+    background-position: -267px -6706px;
+}
+
+.peer2peer {
+    background-position: 0 -13405px;
+}
+
+.anindaqr {
+    background-position: -266px -7010px;
+}
+
+/*.atlaspay {
+    background-position: -267px -7114px;
+}*/
+.tl_payment_icon.atlaspay {
+    background-position: -266px -9406px;
+}
+
+.withdrawal.atlaspay {
+    background-position: -266px -9354px;
+}
+
+.payfix {
+    background-position: -267px -7165px;
+}
+
+.jumbo {
+    background-position: -267px -7216px;
+}
+
+.envoyqrkod {
+    background-position: -266px -7828px;
+}
+
+.envoyhizlihavale {
+    background-position: 0 -9941px;
+}
+
+.tl_payment_icon.interac {
+    background-position: -267px -8339px;
+}
+
+.withdrawal.interac {
+    background-position: -353px -11737px;
+}
+
+.tl_payment_icon.interacachwithdraw {
+    background-position: -353px -11737px;
+}
+
+.tl_payment_icon.gopaypro {
+    background-position: -266px -8185px;
+}
+
+.tl_payment_icon.hizlipapara {
+    background-position: -266px -8491px;
+}
+
+.tl_payment_icon.paymero {
+    background-position: -266px -8491px;
+}
+
+.tl_payment_icon.paymerobanktransfer {
+    background-position: -266px -13725px;
+}
+
+.tl_payment_icon.paymerop2p {
+    background-position: -88px -12589px;
+}
+
+.tl_payment_icon.paymeroquickpay {
+    background-position: -266px -8491px;
+}
+
+.tl_payment_icon.paymeroqr {
+    background-position: -266px -8491px;
+}
+
+.tl_payment_icon.paymerovirtualaccount {
+    background-position: -264px -13917px;
+}
+
+.tl_payment_icon.kianpay {
+    background-position: -266px -8841px;
+}
+
+.tl_payment_icon.airpay {
+    background-position: -266px -9246px
+}
+
+.paysafevoucherdirect {
+    background-position: -266px -9196px;
+}
+
+.tl_payment_icon.qiwi {
+    background-position: -266px -8792px;
+}
+
+.papara {
+    background-position: 0 -7079px;
+}
+
+.maksiparabanktransfer {
+    background-position: -266px -9724px;
+}
+
+.maksiparacmt {
+    background-position: -266px -9512px;
+}
+
+.maksiparapayfix {
+    background-position: -266px -9565px;
+}
+
+.maksiparacrypto {
+    background-position: -266px -9671px;
+}
+
+.maksiparamefete {
+    background-position: -266px -9830px;
+}
+
+.maksiparacreditcard {
+    background-position: -266px -9618px;
+}
+
+.anindabtc {
+    background-position: -266px -9459px;
+}
+
+.rupee {
+    background-position: -266px -10787px;
+}
+
+.tether {
+    background-position: -266px -10931px;
+}
+
+.tosla {
+    background-position: -266px -11171px;
+}
+
+.paycell {
+    background-position: -266px -11074px;
+}
+
+.mefete {
+    background-position: -266px -11026px;
+}
+
+.banktransferofflinemethod {
+    background-position: 0px -4831px;
+}
+
+.smsuplata {
+    background-position: -266px -11610px;
+}
+
+.smsuplatapostpaid {
+    background-position: -266px -11659px;
+}
+
+.kortimilli {
+    background-position: -266px -10980px;
+}
+
+.odendibilvippapara {
+    background-position: 0 -9821px;
+}
+
+.odendibilcreditcard {
+    background-position: -266px -11561px;
+}
+
+.odendibilpep {
+    background-position: -266px -11561px;
+}
+
+.odendibilhizlihavale {
+    background-position: -266px -11561px;
+}
+
+.odendibilpapara {
+    background-position: 0 -9821px;
+}
+
+.odendibilcmt {
+    background-position: -266px -11561px;
+}
+
+.odendibilcepbank {
+    background-position: -266px -5276px;
+}
+
+.odendibilqr {
+    background-position: -266px -11561px;
+}
+
+.dargahipg {
+    background-position: -266px -11856px;
+}
+
+.minipay {
+    background-position: -266px -11757px;
+}
+
+.accmonetixwallet {
+    background-position: -265px -12909px;
+}
+
+.instapayspapara {
+    background-position: -265px -13101px;
+}
+
+.valuecredit {
+    background-position: -266px -13293px;
+}
+
+.instapaysmft {
+    background-position: -265px -13867px;
+}
+
+.instapayskredikarti {
+    background-position: 0px -13551px;
+}
+
+.instapayscepbank {
+    background-position: 0 -12319px;
+}
+
+.pigabank {
+    background-position: 0 -12369px;
+}
+
+.redinpapara {
+    background-position: 0 -12419px;
+}
+
+.instapaysepapara {
+    background-position: 0 -12561px;
+}
+
+.accindonesianonlinebanking {
+    background-position: 0 -1812px;
+}
+
+.accindonesianatmandbanktransfer {
+    background-position: 0 -1812px;
+}
+
+.accmalaysianonlinebanking {
+    background-position: 0 -1812px;
+}
+
+.accthailandonlinebanking {
+    background-position: 0 -1812px;
+}
+
+.accthailandqrbanking {
+    background-position: 0 -1812px;
+}
+
+.accjapanesep2conlinebanking {
+    background-position: 0 -1812px;
+}
+
+.accindianonlinebanking {
+    background-position: 0 -1812px;
+}
+
+.accvietnamonlinebanking {
+    background-position: 0 -1812px;
+}
+
+.accchinaunionpay {
+    background-position: 0 -1812px;
+}
+
+.payminobanktransfer {
+    background-position: 0 -12975px;
+}
+
+.payminocreditcard {
+    background-position: -265px -4755px;
+}
+
+.payminopaparastandard {
+    background-position: 0 -10061px;
+}
+
+.payminocepbank {
+    background-position: -266px -5276px;
+}
+
+.payminofastqrcode {
+    background-position: -267px -7012px;
+}
+
+.payminocoins {
+    background-position: 0 -12883px;
+}
+
+.payminobitcoinstandard {
+    background-position: -266px -9459px;
+}
+
+.payminofastpapara {
+    background-position: 0 -13021px;
+}
+
+.payminopayfix {
+    background-position: 0 -12929px;
+}
+
+.mldanindacc {
+    background-position: 0 -13068px;
+}
+
+.mldanindapapara {
+    background-position: 0 -13117px;
+}
+
+.piastrixwallet {
+    background-position: 0 -12745px;
+}
+
+.jibgatedirect {
+    background-position: 0 -13214px;
+}
+
+.cryptocurrencies {
+    background-position: 0 -13501px;
+}
+
+.hexopaycard {
+    background-position: 0 -304px;
+}
+
+.hexopaycashtocode {
+    background-position: 0 -13778px;
+}
+
+.mldcrypto {
+    background-position: 0 -13733px;
+}
+
+.mldepara {
+    background-position: 0 -13688px;
+}
+
+.mldmft {
+    background-position: 0 -13778px;
+}
+
+.mldpaparapay {
+    background-position: 0 -13117px;
+}
+
+.mldpayfix {
+    background-position: -265px -8694px;
+}
+
+.mldpaygate {
+    background-position: 0 45px;
+}
+
+.mldrpn {
+    background-position: 0 45px;
+}
+
+.mldbankwithdraw {
+    background-position: 0 -13643px;
+}
+
+.mlddirecta24 {
+    background-position: 0 45px;
+}
+
+.astropayonetouch {
+    background-position: 0 -13823px;
+}
+
+.gopay {
+    background-position: 0 -14004px;
+}
+
+.expresshizliqr {
+    background-position: 0 -13958px;
+}
+
+.minipayhavale {
+    background-position: -264px -14057px;
+}
+
+.expresscepbank {
+    background-position: 0 -5251px;
+}
+
+.expresspapara {
+    background-position: -267px -4651px;
+}
+
+.expresscreditcard {
+    background-position: 0 -13913px;
+}
+
+.expresspayfix {
+    background-position: -265px -8694px;
+}
+
+.expresscoin {
+    background-position: 0 -5357px;
+}
+
+.expresspay {
+    background-position: -264px -14011px;
+}
+
+.instapayssecpay {
+    background-position: 0 -14144px;
+}
+
+.anindamftpayment {
+    background-position: 0 -14097px;
+}
+
+.platbamobilom {
+    background-position: -264px -14103px;
+}
+
+.hizlicapapara {
+    background-position: -176px -14045px;
+}
+
+.niubiz {
+    background-position: 0 -304px;
+}
+
+.payfa {
+    background-position: -88px -13073px;
+}
+
+.cardtocardiranianmarket {
+    background-position: -177px -13293px;
+}
+
+.instapaysexpresshavale {
+    background-position: -88px -12413px;
+}
+
+.paybol {
+    background-position: -353px -10951px;
+}
+
+.bcpoffline {
+    background-position: -88px -12633px;
+}
+
+.interbankoffline {
+    background-position: 0 -14402px;
+}
+
+.yape {
+    background-position: -88px -12677px;
+}
+
+.paparapays {
+    background-position: 0 -14451px;
+}
+
+.luqapayinstantcepbank {
+    background-position: -88px -13337px;
+}
+
+.lypa {
+    background-position: 0 -3527px;
+}
+
+.anindamefete {
+    background-position: 0 -14097px;
+}
+
+.manualpapara {
+    background-position: -88px -13381px;
+}
+
+.eztransfer {
+    background-position: -177px -13470px;
+}
+
+.bitpace {
+    background-position: -266px -5327px;
+}
+
+.bitpaceltc {
+    background-position: -352px -12804px;
+}
+
+.bitpaceeth {
+    background-position: -352px -12714px;
+}
+
+.bitpacebch {
+    background-position: -352px -12625px;
+}
+
+.bitpaceusdt {
+    background-position: -352px -12894px;
+}
+
+.bitpacelink {
+    background-position: -352px -12759px;
+}
+
+.bitpaceusdc {
+    background-position: -352px -12849px;
+}
+
+.bitpacexrp {
+    background-position: -352px -12939px;
+}
+
+.bitpacebtc {
+    background-position: -352px -12669px;
+}
+
+.zpay {
+    background-position: 0 -13868px;
+}
+
+.moneymatrix {
+    background-position: -177px -13868px;
+}
+/*
+.monnetdebitcreditcard {
+    background-position: -177px -13824px;
+}
+
+.monnetcash {
+    background-position: -177px -13780px;
+}
+
+.monnetbanktransfer {
+    background-position: -177px -13736px;
+}
+
+.monnetcash_ec {
+    background-position: -177px -13648px;
+}
+
+.monnetbanktransfer_ec {
+    background-position: -177px -13736px;
+}
+
+.monnetbanktransfer_pe {
+    background-position: -177px -13692px;
+}
+
+.monnetdebitcreditcard_cl {
+    background-position: -177px -13824px;
+}
+
+.monnetcash_cl {
+    background-position: -177px -13780px;
+}
+
+.monnetbanktransfer_cl {
+    background-position: -177px -13736px;
+}
+*/
+.dragontech {
+    background-position: -268px -2571px;
+}
+
+.hizlicahavale {
+    background-position: -177px -13956px;
+}
+
+.hizlicacard {
+    background-position: -176px -14001px;
+}
+
+.hayhaycuzdan {
+    background-position: -176px -14177px;
+}
+
+.payminosuperhizlihayhay {
+    background-position: -262px -14377px;
+}
+
+.hemenodehavale {
+    background-position: 616px -14559px;
+}
+
+.hemenodemefete {
+    background-position: 616px -14515px;
+}
+
+.hemenodevippapara {
+    background-position: 617px -14469px;
+}
+
+.ctcwtf {
+    background-position: 703px -15079px;
+}
+
+.jetoncash {
+    background-position: -88px -14190px;
+}
+
+.fasthavale {
+    background-position: -176px -14307px;
+}
+
+.scotiabank {
+    background-position: -176px -14135px;
+}
+
+.bbvacontinental {
+    background-position: -176px -14091px;
+}
+
+.apcopayfastpay {
+    background-position-y: -4571px;
+}
+
+.banktransferofflinekorean {
+    background-position: -637px -1710px;
+}
+
+.monnify {
+    background-position: -176px -14264px;
+}
+
+.iqmoney {
+    background-position: -176px -14350px;
+}
+
+.dragontechcard {
+    background-position: -268px -2571px;
+}
+
+.piastrixcard {
+    background-position: 0 -12745px;
+}
+
+.instapayspep {
+    background-position: -265px -13101px;
+}
+
+.instapaysviphavale {
+    background-position: -265px -13101px;
+}
+
+.expresspay2 {
+    background-position: 0 -14495px;
+}
+
+.expresspay3 {
+    background-position: 0 -14539px;
+}
+
+.expresspay4 {
+    background-position: 0 -14583px;
+}
+
+.expresspay5 {
+    background-position: 0 -14627px;
+}
+
+.movenpaybanktransfer {
+    background-position: 0 -14716px;
+}
+
+.movenpaycreditcard {
+    background-position: 0 -14761px;
+}
+
+.movenpaypapara {
+    background-position: 0 -14671px;
+}
+
+.movenpaycrypto {
+    background-position: 0 -14806px;
+}
+
+.coindirect {
+    background-position: -175px -14843px;
+}
+
+.ipasspay {
+    background-position: -174px -15027px;
+}
+
+.allpapara {
+    background-position: -262px -14738px;
+}
+
+.interkassaalternative {
+    background-position: -637px -1710px;
+}
+
+.interkassadirectalternative {
+    background-position: -637px -1710px;
+}
+
+.maksiparapapara {
+    background-position: -266px -9777px;
+}
+
+.depozitron {
+    background-position: -351px -9029px
+}
+
+.envoycreditcard {
+    background-position: -351px -9162px
+}
+/*Albatross CardNumbers list*/
+.short_input {
+    width: 85px !important;
+    text-align: center;
+}
+
+.tl_payment_col {
+    position: relative;
+}
+
+.card_number_albatross {
+    display: none;
+    text-align: center;
+    position: absolute;
+    margin: 0 auto;
+    width: 60px;
+    padding: 0 5px;
+    outline: none;
+    font-size: 13px;
+    height: 36px;
+    border: 0;
+    border-radius: 2px;
+    line-height: 36px;
+    -webkit-transition: border-color 0.3s ease;
+    -moz-transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease;
+    color: #999;
+}
+
+#CardId_albatross {
+    width: 234px;
+    margin-left: 10px;
+}
+
+.flex .number_id_flex_albatross {
+    background-color: #fff;
+}
+
+.number_id_flex_albatross #CardId_albatross.card_number_albatross {
+    position: static;
+    width: auto;
+    color: #000;
+    font-size: 13px;
+}
+
+.hideAlbatross {
+    display: none;
+}
+
+.showAlbatross {
+    display: inline-block;
+}
+
+.remove_span_albatross {
+    position: absolute;
+    color: #ff1313;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    -moz-transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.remove_span_albatross:hover {
+    color: #d80606;
+}
+
+.remove_span_albatross:before {
+    content: "\E412";
+    font-family: 'iconsdinamicmenu';
+    font-size: 35px;
+    line-height: 0.7;
+}
+
+#firstPart, #idram_firstPart {
+    left: 0;
+}
+
+#secondPart, #idram_secondPart {
+    right: 0;
+} 
+
+#dvSavedCard_saman {
+    position: relative;
+    top: 17px;
+    left: 5px;
+    width: 100%;
+}
+
+#dvSavedCard_nonsaman {
+    position: relative;
+    top: 17px;
+    left: 5px;
+    width: 100%;
+}
+/*Albatross CardNumbers list end*/
+
+.kassa24ecommerce {
+    background-position: -266px -9043px;
+}
+
+.justpaycash {
+    background-position: -266px -9301px
+}
+
+.tl_payment_col .tl_input_popup,
+.tl_payment_col .tl_sel_custom_popup_reg,
+.tl_payment_col .tl_sel_custom_popup_reg_selected {
+    min-width: 234px;
+}
+
+.vipkredikartioffline {
+    background-position: -266px -10202px;
+}
+
+.kredikartiborcodemeoffline {
+    background-position: -266px -10148px;
+}
+
+.gpwebpay {
+    background-position: -266px -10254px;
+}
+
+.paymentcenter {
+    /*background-position: -266px -10307px;*/
+    background-position: 0 -304px;
+}
+
+.cryptoonline {
+    background-position: -266px -10835px;
+}
+
+.accrussianp2pbankcards {
+    background-position: 0 -304px;
+}
+
+.kassa24wallet {
+    background-position: -266px -11317px;
+}
+.remove_span_PaymentCenter {
+    position: absolute;
+    color: #ff1313;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    -moz-transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.remove_span_PaymentCenter:hover {
+    color: #d80606;
+}
+
+.remove_span_PaymentCenter:before {
+    content: "\E412";
+    font-family: 'iconsdinamicmenu';
+    font-size: 35px;
+    line-height: 0.7;
+}
+
+.remove_span_ZPay {
+    position: absolute;
+    color: #ff1313;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    -moz-transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.remove_span_ZPay:hover {
+    color: #d80606;
+}
+
+.remove_span_ZPay:before {
+    content: "\E412";
+    font-family: 'iconsdinamicmenu';
+    font-size: 35px;
+    line-height: 0.7;
+}
+
+.iconwithdraw {
+    background-position: -266px -13437px;
+}
+
+.luqapayjetoncrypto {
+    background-position: -266px -13389px;
+}
+
+.kriptoparaoffline_text {
+    width: 100%;
+    margin: 20px 6px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.kriptoparaoffline {
+    background-position: -265px -13485px;
+}
+
+.luqapaycommunitypaparatransfer {
+    background-position: -266px -13629px;
+}
+
+.luqapaycommunitybanktransfer {
+    background-position: -266px -13677px;
+}
+
+.ackrilsdopuna {
+    background-position: -266px -13581px;
+}
+
+.pepoffline {
+    background-position: 0 -12469px;
+}
+ 
+#withdraw .input-validation-error + .reg_err_mess:after,
+#deposit .input-validation-error + .reg_err_mess:after {
+    content: "!";
+    position: absolute;
+    top: -27px;
+    right: 12px;
+    display: inline-block;
+    z-index: 10;
+    height: 16px;
+    width: 16px;
+    font-size: 15px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.anindatransferpapara {
+    background-position: 0 -12791px;
+}
+
+.anindatransferpaparaauto {
+    background-position: 0 -12699px;
+}
+
+.anindatransferbanktransfer {
+    background-position: 0 -12837px;
+}
+
+.gatepal {
+    background-position: -266px -11856px;
+}
+
+.container_logo_dynamic {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo_wrapper_dynamic {
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 86px !important;
+    height: 42px !important;
+    min-width: 86px;
+}
+
+.beeline_mpay_transfer_rub {
+    background-position: 0 -127px;
+}
+
+.mts_mpay_transfer_rub {
+    background-position: 0 -670px;
+}
+
+.megafon_mpay_transfer_rub {
+    background-position: 0 -545px;
+}
+
+.tele2_mpay_transfer_rub {
+    background-position: 0 -1217px;
+}
+
+.visa_p2p_transfer20111_uah {
+    background-position: 0 -1556px;
+}
+
+.visa_p2p_transfer20111p_uah {
+    background-position: 0 -1342px;
+}
+
+.visa_triplec_transfer_rub {
+    background-position: 0 -1342px;
+}
+
+.mastercard_p2p_transfer20111p_uah {
+    background-position: 0 -1601px;
+}
+
+.mastercard_p2p_transfer20111_uah {
+    background-position: 0 -505px;
+}
+
+.mastercard_triplec_transfer_rub {
+    background-position: 0 -505px;
+}
+
+.kyivstar_pgps_mobile_uah {
+    background-position: 0 -1732px;
+}
+
+.vodafone_pgps_mobile_uah {
+    background-position: 0 -1645px;
+}
+
+.lifecell_pgps_mobile_uah {
+    background-position: 0 -1687px;
+}
+
+.cardtocardoffline {
+    background-position: 0 -10958px;
+}
+
+body .ui-dialog .ui-dialog-content.modal_popup_min_height {
+    overflow: inherit !important;
+}
+
+.mizrahitfahotoffline {
+    background-position: 0 -1756px;
+}
+
+.bankdiscountoffline {
+    background-position: 0 -1665px;
+}
+
+.dateError.error_color {
+    margin-bottom: 17px;
+}
+
+.bankhapoalimoffline {
+    background-position: 0 -1576px;
+}
+
+.doarisraeloffline {
+    background-position: 0 -1397px;
+}
+
+.bankleumioffline {
+    background-position: 0 -1485px;
+}
+
+.dargahkhodakr {
+    background-position: -348px -14782px;
+}
+
+.cryptotron {
+    background-position: -352px -7098px;
+}
+
+.cryptobtc {
+    background-position: -352px -6960px;
+}
+
+.cryptoeth {
+    background-position: -352px -7006px;
+}
+
+.cryptotether {
+    background-position: -352px -7421px;
+}
+
+.tl_payment_icon.withdrawal.cryptotether {
+    background-position: -353px -11359px;
+}
+
+.cryptotethertrc20 {
+    background-position: -353px -11359px;
+}
+
+
+.cryptobch {
+    background-position: -352px -7144px;
+}
+
+.cryptodoge {
+    background-position: -352px -7189px;
+}
+
+.cryptoltc {
+    background-position: -352px -7235px;
+}
+
+.cryptobusd {
+    background-position: -352px -7374px;
+}
+
+.cryptobnb {
+    background-position: -352px -7282px;
+}
+
+.cryptousdc {
+    background-position: -352px -7328px;
+}
+
+
+/*Directa24Aggregator withdrawal banks logos*/
+
+.BancoAmazonas {
+    background-position: -176px -12369px;
+}
+
+.BancoDelAustro {
+    background-position: -176px -12413px;
+}
+
+.BanecuadorBP {
+    background-position: -176px -12457px;
+}
+
+.BancoGeneralRuminahuiSA {
+    background-position: -176px -12501px;
+}
+
+.BancoBolivariano {
+    background-position: -176px -12545px;
+}
+
+.BancoCapital {
+    background-position: -176px -12589px;
+}
+
+.BancoCityBank {
+    background-position: -177px -12633px;
+}
+
+.BancoDesarrolloDeLosPueblosSA {
+    background-position: -177px -12677px;
+}
+
+.BancoDelbankSA {
+    background-position: -177px -12721px;
+}
+
+.BancoCentralDelEcuador {
+    background-position: -177px -12765px;
+}
+
+.BancoDeGuayaquilSA {
+    background-position: -177px -12809px;
+}
+
+.BancoInternacional {
+    background-position: -177px -12853px;
+}
+
+.BancoDelLitoralSA {
+    background-position: -177px -12897px;
+}
+
+.BancoDeLoja {
+    background-position: -177px -12941px;
+}
+
+.BancoMachala {
+    background-position: -177px -12985px;
+}
+
+.ComercialDeManabi {
+    background-position: -177px -13029px;
+}
+
+.BancoDelPacifico {
+    background-position: -177px -13073px;
+}
+
+.BancoPichinchaCA {
+    background-position: -177px -13117px;
+}
+
+.BancoProcreditSA {
+    background-position: -177px -13161px;
+}
+
+.ProdubancoPromerica {
+    background-position: -177px -13205px;
+}
+
+.BancoSolidario {
+    background-position: -177px -13249px;
+}
+
+/*end*/
+
+.luqapaycryptowallet {
+    background-position: -266px -13341px;
+}
+
+.BancoDeCreditoDelPeru {
+    background-position: 0 -15122px;
+}
+
+.Interbank {
+    background-position: 0 -15077px;
+}
+
+.Citibank {
+    background-position: 0 -14851px;
+}
+
+.Scotiabank {
+    background-position: 0 -15032px;
+}
+
+.BBVAContinental {
+    background-position: 0 -14987px;
+}
+
+.BancoDeLaNacion {
+    background-position: 0 -14942px;
+}
+
+.BancoDeComercio {
+    background-position: -175px -14666px;
+}
+
+.BancoFinanciero {
+    background-position: -175px -14710px;
+}
+
+[class*="BancoInteramericanoDeFinanzas"] {
+    background-position: 0 -14897px;
+}
+
+.CrediscotiaFinanciera {
+    background-position: 0 -15168px;
+}
+
+.MiBanco {
+    background-position: -88px -14733px;
+}
+
+.BancoGNBPeruSA {
+    background-position: -88px -14778px;
+}
+
+.BancoFalabella {
+    background-position: -88px -14822px;
+}
+
+.Santander {
+    background-position: -88px -14866px;
+}
+
+.CajaMetropolitanaDeLima {
+    background-position: -88px -14910px;
+}
+
+.CajaMunicipalDeAhorroYCreditoPiuraSAC {
+    background-position: -88px -15174px;
+}
+
+.CajaMunicipalDeAhorroYCreditoTrujillo {
+    background-position: -88px -14954px;
+}
+
+.CajaMunicipalDeAhorroYCreditoArequipa {
+    background-position: -88px -14998px;
+}
+
+.CajaMunicipalDeAhorroYCreditoSullana {
+    background-position: -88px -15042px;
+}
+
+.CajaMunicipalDeAhorroYCreditoCuzco {
+    background-position: -175px -14754px;
+}
+
+.CajaMunicipalDeAhorroYCreditoHuancayo {
+    background-position: -88px -15086px;
+}
+
+.plin {
+    background-position: -175px -14977px;
+}
+
+.piastrixaggregatorpiastrixwallet {
+    background-position: 0 -12745px;
+}
+
+.piastrixaggregatorperfectmoney {
+    background-position: 0 -1188px;
+}
+
+.piastrixaggregatorbitcoin {
+    background-position: 0 -5357px;
+}
+
+.piastrixaggregatorethereum {
+    background-position: 0 -5463px;
+}
+
+.piastrixaggregatortethererc20 {
+    background-position: -266px -10931px;
+}
+
+.piastrixaggregatortethertrc20 {
+    background-position: -266px -10931px;
+}
+
+.piastrixaggregatorwebmoney {
+    background-position-y: -876px;
+}
+
+.piastrixaggregatorvisamc {
+    background-position: -266px -10095px;
+}
+
+.tl_payment_icon.withdrawal.piastrixaggregatorlifecell {
+    background-position: 0 -1687px;
+    background-image: url(/Img/common/interkassa_sprite.png) !important;
+}
+
+.tl_payment_icon.withdrawal.piastrixaggregatorvodafone {
+    background-position: 0 -1645px;
+    background-image: url(/Img/common/interkassa_sprite.png) !important;
+}
+
+.tl_payment_icon.withdrawal.piastrixaggregatorkyivstar {
+    background-position: 0 -1732px;
+    background-image: url(/Img/common/interkassa_sprite.png) !important;
+}
+
+.irpay {
+    background-position: -349px -14916px;
+}
+
+.monokripto {
+    background-position: -350px -14693px;
+}
+
+.bankwire {
+    background-position: -349px -15006px;
+}
+
+.apspapara {
+    background-position: 0px -9821px;
+}
+
+
+#agentbankdivsone {
+    display: inline;
+    width: 100px;
+    height: 120px;
+    padding: 8px;
+    margin-left: 20px;
+    position: relative;
+    left: 14px;
+    background-color: #2E2E2E;
+    font-size: 13px;
+}
+
+#agentbankdivstwo {
+    display: inline;
+    width: 100px;
+    height: 120px;
+    padding: 8px;
+    margin-left: 20px;
+    position: relative;
+    left: 24px;
+    background-color: #2E2E2E;
+    font-size: 13px;
+}
+
+#agentbankdivsthree {
+    display: inline;
+    width: 100px;
+    height: 120px;
+    padding: 8px;
+    margin-left: 20px;
+    position: relative;
+    left: 5px;
+    background-color: #2E2E2E;
+    font-size: 13px;
+}
+
+
+#maindiv {
+    float: left;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    background-color: #191919;
+    display: flex;
+    position: relative;
+}
+
+
+#logodiv {
+    width: 100px;
+    height: 150px;
+    margin: 5px;
+    padding: 0;
+}
+
+#bodydiv {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 0;
+    margin-top: 0;
+    width: 100%;
+    height: 250px;
+    top: 0;
+}
+
+#footerdiv {
+    clear: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
+
+
+#maindivar {
+    float: left;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    background-color: #191919;
+    display: flex;
+    position: relative;
+}
+
+
+#logodivar {
+    width: 100px;
+    height: 150px;
+    margin: 5px;
+    padding: 0;
+}
+
+#bodydivar {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 0;
+    margin-top: 0;
+    width: 100%;
+    height: 250px;
+    top: 0;
+}
+
+#footerdivar {
+    clear: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
+
+#agentbankdivsonear {
+    display: inline;
+    width: 100px;
+    height: 120px;
+    padding: 8px;
+    margin-right: 20px;
+    position: relative;
+    left: 14px;
+    background-color: #2E2E2E;
+    font-size: 13px;
+}
+
+#agentbankdivstwoar {
+    display: inline;
+    width: 100px;
+    height: 120px;
+    padding: 8px;
+    margin-right: 30px;
+    position: relative;
+    left: 24px;
+    background-color: #2E2E2E;
+    font-size: 13px;
+}
+
+#agentbankdivsthreear {
+    display: inline;
+    width: 100px;
+    height: 120px;
+    padding: 8px;
+    margin-right: 11px;
+    position: relative;
+    left: 5px;
+    background-color: #2E2E2E;
+    font-size: 13px;
+}
+
+.mpay {
+    background-position: 0px -13598px;
+}
+
+.propaypaparabank {
+    background-position: -353px -7513px;
+}
+
+.propayhavale {
+    background-position: -353px -7607px;
+}
+
+.propaypep {
+    background-position: -353px -7560px;
+}
+
+/*ddddddddddddddddddddddd*/
+
+.cupisqiwi {
+    background-position: -353px -8093px;
+}
+
+.cupisvisa {
+    background-position: -353px -8181px;
+}
+
+.cupismastercard {
+    background-position: -353px -8005px;
+}
+
+.cupismaestro {
+    background-position: -353px -7961px;
+}
+
+.cupismir {
+    background-position: -353px -8049px;
+}
+
+.cupisyandexmoney {
+    background-position: -353px -8269px;
+}
+
+.cupisapplepay {
+    background-position: -353px -8225px;
+}
+
+.cupisgooglepay {
+    background-position: -353px -7917px;
+}
+
+.cupissamsungpay {
+    background-position: -353px -8137px;
+}
+
+.cupiswallet {
+    background-position: -353px -7873px;
+}
+
+.cupissberpay {
+    background-position: -353px -7785px;
+}
+
+.cupismts {
+    background-position: -353px -7741px;
+}
+
+.cupisbelline {
+    background-position: -353px -7653px;
+}
+
+.cupistele2 {
+    background-position: -353px -7829px;
+}
+
+.cupismegafon {
+    background-position: -353px -7697px;
+}
+
+.cupisbankcards {
+    background-position: 1px -7398px;
+}
+
+.cupisbankaccounts {
+    background-position: 0px -4831px;
+}
+
+.cupisalfaclick {
+    background-position: 1px -3632px;
+}
+
+.cupiswebmoney {
+    background-position: 1px -876px;
+}
+
+.cupiscyberplatpochtabank {
+    background-position: -353px -8313px;
+}
+
+.cupiscyberplattinkoff {
+    background-position: -353px -8404px;
+}
+
+.cupiscyberplatrosbank {
+    background-position: -353px -8358px;
+}
+
+.manuel {
+    background-position: -353px -8672px;
+}
+
+.hemenodepep {
+    background-position: -353px -8628px;
+}
+
+.kredikartoffline1 {
+    background-position: -354px -8898px;
+}
+
+.directa24india {
+    background-position: -353px -8986px;
+}
+
+.payznetkredikarti {
+    background-position: -353px -8718px;
+}
+
+.payznethavale {
+    background-position: -353px -8718px;
+}
+
+.luqapayupi {
+    background-position: -353px -9162px;
+}
+
+.luqapayindiannetbanking {
+    background-position: -353px -9162px;
+}
+
+.odendibilkriptopay {
+    background-position: -353px -9206px
+}
+
+.envoycreditcard {
+    background-position: -351px -9250px;
+}
+
+.vevopaykredikarti {
+    background-position: -353px -9384px;
+}
+
+.vevopayhavale {
+    background-position: -353px -9339px;
+}
+
+.vevopaymefete {
+    background-position: -353px -9430px;
+}
+
+.vevopayparazula {
+    background-position: -353px -9479px;
+}
+
+.vevopayfups {
+    background-position: -353px -9294px
+}
+
+.paymee {
+    background-position: -353px -9522px;
+}
+
+.AlbatrosBottomTextLineHeight {
+    line-height: 1.4;
+    margin: 0px 0 0 6px;
+}
+
+.mobilebanking {
+    background-position: -353px -9568px;
+}
+
+.payznethavale {
+    background-position: -353px -9613px;
+}
+
+.astropayphonepe {
+    background-position: -353px -9704px;
+}
+
+.astropaypaytm {
+    background-position: -353px -9881px;
+}
+
+.astropaynetbanking {
+    background-position: -353px -10013px;
+}
+
+.astropayupi {
+    background-position: -353px -9747px;
+}
+
+.astropayairtelmoney {
+    background-position: -353px -9658px;
+}
+
+.astropayolamoney {
+    background-position: -353px -9925px;
+}
+
+.astropayfreecharge {
+    background-position: -353px -9792px;
+}
+
+.astropaypayzapp {
+    background-position: -353px -9969px;
+}
+
+.astropayneteller {
+    background-position: -353px -9837px;
+}
+
+.vevopaycmtcuzdan {
+    background-position: -353px -10057px;
+}
+
+.zaincashoffline {
+    background-position: -353px -10148px;
+}
+
+.wishmoney {
+    background-position: -353px -10236px;
+}
+
+.propaycrypto {
+    background-position: -353px -10281px;
+}
+
+.maksiparahayhay {
+    background-position: -353px -10416px;
+}
+
+.maksiparapep {
+    background-position: -353px -10371px;
+}
+
+.monnetdebitcreditcard {
+    background-position: -353.7px -10549px;
+}
+
+.monnetcashecuador {
+    background-position: -353.5px -10594px;
+}
+
+.monnetcashperu {
+    background-position: -353.5px -10639px;
+}
+
+.monnetbanktransferperu {
+    background-position: -353.5px -10639px;
+}
+
+.monnetbanktransferecuador {
+    background-position: -353.5px -10594px;
+}
+
+.monnetcash {
+    background-position: -352.7px -10504px;
+}
+
+.monnetbanktransfer {
+    background-position: -177px -13736px;
+}
+
+.anindamefetekreditkard {
+    background-position: -353px -10774px;
+}
+
+.anindamefetehavale {
+    background-position: -353px -10729px;
+}
+
+/*dynamic descriptions*/
+.dinamic_Desc ul, ol {
+    list-style-type: revert !important;
+    padding-left: 18px;
+}
+
+
+.gcash {
+    background-position: -353px -10818px;
+}
+
+.clicktopay {
+    background-position: -353px -10907px;
+}
+
+.wlpayment {
+    background-position: -353px -10996px;
+}
+
+.aspaycreditcard {
+    background-position: -353px -11084px;
+}
+
+.cubopayboleto {
+    background-position: -353px -11129px;
+}
+
+.cubopaycryptocurrency {
+    background-position: -353px -11266px;
+}
+
+.cubopaypicpay {
+    background-position: -353px -11174px;
+}
+
+.cubopaypix {
+    background-position: -353px -11220px;
+} 
+ 
+.facilitowithdrawal {
+    background-position: 86px 3832px;
+}
+
+/*deposit error message*/
+.wallet_id_err .reg_err_mess span {
+    position: static;
+}
+
+.wallet_id_err {
+    align-self: flex-start
+}
+
+#cashier.collapse_btn h3 > a {
+    height: auto;
+}
+
+#withdraw .reg_err_mess span,
+#deposit .reg_err_mess span {
+    top: 2px;
+    border-radius: 0 0 2px 2px;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+#withdraw .input-validation-error,
+#deposit .input-validation-error {
+    padding-right: 35px;
+}
+
+#withdraw .input-validation-error + .reg_err_mess:after,
+#deposit .input-validation-error + .reg_err_mess:after {
+    content: "!";
+    position: absolute;
+    top: -27px;
+    right: 12px;
+    display: inline-block;
+    z-index: 10;
+    height: 16px;
+    width: 16px;
+    font-size: 15px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+#withdraw .input-validation-error.hide + .reg_err_mess:after,
+#deposit .input-validation-error.hide + .reg_err_mess:after {
+    display: none;
+}
+
+#withdraw .reg_err_mess span:before,
+#deposit .reg_err_mess span:before {
+    display: none
+}
+
+.telcell_visa_mastercard {
+    background-position: -269px -3821px;
+}
+
+.telcell_terminal {
+    background-position: -269px -5173px;
+}
+
+.easypay_visa_mastercard {
+    background-position: -269px -4913px;
+}
+
+.toto_terminal {
+    background-position: -266px -7418px;
+}
+
+.easypay {
+    background-position: -269px -4965px;
+}
+
+.idram_wallet {
+    background-position: -269px -5069px;
+}
+
+.idram_terminal {
+    background-position: -269px -5017px;
+}
+
+.mobidram_wallet {
+    background-position: 0 -616px;
+}
+
+.mobidram_terminal {
+    background-position: -269px -5121px;
+}
+
+.converse_terminal {
+    background-position: -269px -4861px;
+}
+
+.betshop {
+    background-position: -269px -4809px;
+}
+
+.arca {
+    background-position: -269px -5225px;
+}
+
+.visa_master_arca {
+    background-position: -269px -5225px;
+}
+
+.transfer {
+    background-position: -267px -7267px;
+}
+
+.umob {
+    background-position: -353px -11312px;
+}
+
+.daybankinternal {
+    background-position: 0px -3790px;
+}
+
+.pix {
+    background-position: -352px -12355px;
+}
+
+.paydaddys {
+    background-position: -353px -11594px;
+}
+
+.cryptosol {
+    background-position: -353px -11831px;
+}
+
+.cryptoxmr {
+    background-position: -353px -11875px;
+}
+
+.superhizlihavalepapara {
+    background-position: -353px -12015px;
+}
+
+.superhizlihavaleparazula {
+    background-position: -353px -11922px;
+}
+
+.superhizlihavalebanktransfer {
+    background-position: -353px -11968px;
+}
+
+.cryptoshibainueth {
+    background-position: -353px -12117px;
+}
+
+.cryptoshibainubsc {
+    background-position: -352px -12068px;
+}
+
+.vizapay {
+    background-position: -352px -12220px;
+}
+
+.payneteasy {
+    background-position: -351px -12264px;
+}
+
+.payneteasycreditcard {
+    background-position: -351px -12264px;
+}
+
+.payneteasydragontech {
+    background-position: -351px -12264px;
+}
+
+.ccoffline {
+    background-position: 0.5px -304px;
+}
+
+.webpay {
+    background-position: -352px -12400px;
+}
+
+.payfac2c {
+    background-position: -352px -12445px;
+}
+
+.safirpapara {
+    background-position: -352px -12580px;
+}
+
+.safirhavale {
+    background-position: -352px -12535px;
+}
+
+.safircrypto {
+    background-position: -352px -12490px;
+}
+
+.manotoviewdynamiclogos {
+    width: 298px;
+    height: 78px;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-image: none;
+    border-radius: 5%;
+}
+
+.dynemiclogosizeWeb {
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-image: none !important;
+}
+
+.irDiv {
+    width: 30px;
+    background-color: #fff;
+    height: 36px;
+    position: relative;
+    display: inline-flex;
+    outline: none;
+    font-size: 13px;
+    height: 36px;
+    border: 0;
+    border-radius: 2px;
+    line-height: 36px;
+    -webkit-transition: border-color 0.3s ease;
+    -moz-transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease;
+    text-align: center;
+    color: black;
+    justify-content: center;
+}
+
+.telInputWrap #Nonsamanbank_ShebaNumber {
+    min-width: 201px;
+    width: 201px;
+}
+
+.inputdivsforpopaps {
+    display: block;
+    padding-top: 10px;
+}
+
+.LoyalBahisBonusIframe {
+    width: 100%;
+    height: 200px;
+    display: block;
+    padding: 5px;
+    margin-bottom: 8px;
+    border: 3px solid red;
+}
+
+.GrandpashabetGivebonusDv {
+    width: 100%;
+    height: 100px;
+    display: block;
+    padding: 5px;
+    margin-bottom: 8px;
+    border: 4px solid #222907;
+    border-radius: 5px;
+
+}
+
+#dvGiveBonus {
+    margin-left: 15px;
+    align-items: center;
+    display: flex;
+}
+
+#cashier_iframe_wrapper {
+    height: 600px;
+}

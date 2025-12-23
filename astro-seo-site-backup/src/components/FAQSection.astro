@@ -1,0 +1,113 @@
+---
+// FAQ Section Component with Schema.org FAQPage
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FAQ[];
+  title?: string;
+}
+
+const { faqs, title = "Sık Sorulan Sorular" } = Astro.props;
+
+// Schema.org FAQPage JSON-LD
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<section class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
+  <h2>{title}</h2>
+  <div class="faq-container">
+    {faqs.map((faq) => (
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">{faq.question}</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">{faq.answer}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- FAQ Schema.org JSON-LD -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<style>
+  .faq-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px 20px;
+  }
+
+  .faq-section h2 {
+    font-size: clamp(28px, 5vw, 38px);
+    color: var(--color-primary, #1a1a1a);
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+  }
+
+  .faq-container {
+    display: grid;
+    gap: 20px;
+  }
+
+  .faq-item {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+
+  .faq-item:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-accent, #ff6b00);
+    transform: translateY(-2px);
+  }
+
+  .faq-item h3 {
+    font-size: 18px;
+    color: var(--color-accent, #ff6b00);
+    margin-bottom: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .faq-item p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .faq-section {
+      margin: 40px auto;
+      padding: 30px 15px;
+    }
+
+    .faq-item {
+      padding: 20px;
+    }
+
+    .faq-item h3 {
+      font-size: 16px;
+    }
+
+    .faq-item p {
+      font-size: 14px;
+    }
+  }
+</style>

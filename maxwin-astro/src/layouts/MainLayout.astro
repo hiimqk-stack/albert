@@ -1,0 +1,269 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  canonicalUrl?: string;
+}
+
+const { 
+  title, 
+  description = "Maxwin584, Türkiye'nin en popüler online casino ve spor bahisleri platformudur.",
+  keywords = "online casino, bahis sitesi, canlı casino, slot oyunları, spor bahisleri",
+  canonicalUrl = "https://maxwin584.com/"
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark" data-type="Desktop">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description}>
+    <meta name="keywords" content={keywords}>
+    <meta name="author" content="Maxwin584">
+    <link rel="canonical" href={canonicalUrl}>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={canonicalUrl}>
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content="/cdn.maxwin584.com/plat/prd/Img/partners/1247/logo.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content={canonicalUrl}>
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    
+    <meta name="revisit-after" content="1 Days">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Türkçe">
+    <meta name="google" content="notranslate">
+    
+    <link rel="shortcut icon" href="/cdn.maxwin584.com/plat/prd/Img/partners/1247/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/cdn.maxwin584.com/plat/prd/Img/partners/1247/favicon.ico" type="image/x-icon">
+    
+    <!-- Scripts -->
+    <script is:inline src="/cdn.maxwin584.com/plat/prd/CW/GPB/Scripts/jquery-2.2.4.js"></script>
+    <script is:inline src="/cdn.maxwin584.com/plat/prd/CW/GPB/Scripts/jquery-ui-1.12.1.js"></script>
+    <script is:inline src="/cdn.maxwin584.com/plat/prd/CW/GPB/Scripts/jquery.dialogOptions.js"></script>
+    <script is:inline src="/cdn.maxwin584.com/plat/prd/CW/GPB/Scripts/custom-select.js"></script>
+    <script is:inline src="/cdn.maxwin584.com/plat/prd/CW/GPB/Scripts/modernizr-2.8.3.js"></script>
+    <script is:inline src="/cdn.maxwin584.com/plat/prd/CW/GPB/Scripts/Utils/swiper.js"></script>
+    
+    <!-- Styles - Orijinal sırayla -->
+    <link href="/cdn.maxwin584.com/plat/prd/CW/GPB/Content/themes/base/jquery-ui.css" rel="stylesheet">
+    <link href="/cdn.maxwin584.com/plat/prd/CW/GPB/Content/Utils/swiper.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="/cdn.maxwin584.com/plat/prd/CW/GPB/Content/components/cwDynamicIcons.css" rel="stylesheet">
+    <link href="/cdn.maxwin584.com/plat/prd/CW/GPB/Content/skinner/skinner-layout_desk.css" rel="stylesheet">
+    <link href="/cdn.maxwin584.com/plat/prd/CW/GPB/Content/paymentDesktop.css" rel="stylesheet">
+    <link href="/cdn.maxwin584.com/plat/prd/CW/GPB/Content/components/dynamicBanners_v1.0.css" rel="stylesheet">
+    <link href="/cdn.maxwin584.com/plat/prd/CW/GPB/Content/components/responsible-gaming.css" rel="stylesheet">
+    <link href="/cdn.maxwin584.com/plat/prd/CW/GPB/Content/components/popups/registration.css" rel="stylesheet">
+    <link href="/cdn.maxwin584.com/plat/prd/CW/GPB/Content/partners/1247.css" rel="stylesheet">
+    <link href="/cdn.maxwin584.com/plat/prd/Img/Partners/1247/CustomCSS/customWeb.css" rel="stylesheet">
+    
+    <style is:global>
+        /* Tawk.to Branding Hide */
+        a[href*="tawk.to/?utm_source"],
+        a[href*="tawk.to"][style*="border-radius: 100px"] {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+            position: absolute !important;
+            left: -9999px !important;
+        }
+        
+        iframe[src*="embed.tawk.to"] {
+            clip-path: inset(0 0 35px 0) !important;
+            margin-bottom: -35px !important;
+        }
+        
+        div[class^="tawk-"],
+        div[id^="tawk-"] {
+            overflow: hidden !important;
+        }
+
+        /* Mobile Responsive Global Styles */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .wrapper {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                padding: 0 15px;
+            }
+
+            body {
+                font-size: 14px;
+            }
+
+            /* Hide desktop-only elements */
+            .desktop-only {
+                display: none !important;
+            }
+
+            /* Mobile utility classes */
+            .mobile-hidden {
+                display: none !important;
+            }
+
+            .mobile-visible {
+                display: block !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wrapper {
+                padding: 0 10px;
+            }
+
+            body {
+                font-size: 13px;
+            }
+        }
+
+        /* Responsive images */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Responsive buttons */
+        .tl_btn {
+            padding: 10px 20px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .tl_btn {
+                padding: 8px 15px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tl_btn {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <slot />
+    
+    <!-- Fake Login Script -->
+    <script is:inline>
+        $(document).ready(function() {
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+                var username = localStorage.getItem('username');
+                if (username) {
+                    var headerRight = $('.js_fixed_header_right');
+                    if (headerRight.length) {
+                        headerRight.find('.loginDialog, .registerDialog').hide();
+                        if (!headerRight.find('.user-welcome').length) {
+                            var userHtml = '<a href="/para-yatir" class="tl_btn h-bg-primary" style="margin-right: 10px; padding: 8px 20px; font-size: 13px; background: linear-gradient(135deg, #ff6b00, #ff8533); border: none; color: #fff; text-decoration: none;">Para Yatır</a>' +
+                                '<div class="user-welcome d-flex align-items-center" style="color: #ACF000; font-weight: 500; margin-right: 15px;">' +
+                                '<span>Merhaba, <strong>' + username + '</strong></span>' +
+                                '<button class="tl_btn logout-btn" style="margin-left: 15px; padding: 8px 15px; font-size: 12px;" onclick="logoutUser()">Çıkış</button>' +
+                                '</div>';
+                            headerRight.prepend(userHtml);
+                        }
+                    }
+                }
+            }
+        });
+        
+        function logoutUser() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('username');
+            location.reload();
+        }
+    </script>
+    
+    <!-- Custom Chat Button -->
+    <div id="custom-chat-btn" class="custom-chat-button">
+        <img src="/cdn.maxwin584.com/assets/canli-destek.jpeg" alt="Canlı Destek" onclick="if(typeof Tawk_API!=='undefined')Tawk_API.maximize();">
+    </div>
+    
+    <style>
+        .custom-chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 2147483646;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .custom-chat-button:hover {
+            transform: scale(1.05);
+        }
+
+        .custom-chat-button img {
+            width: 70px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .custom-chat-button {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .custom-chat-button img {
+                width: 55px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .custom-chat-button {
+                bottom: 12px;
+                right: 12px;
+            }
+
+            .custom-chat-button img {
+                width: 50px;
+            }
+        }
+    </style>
+    
+    <!-- Tawk.to Script -->
+    <script is:inline>
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        Tawk_API.onLoad = function(){
+            Tawk_API.hideWidget();
+        };
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/6946582ede01f3197cce6a32/1jctcgtip';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+</body>
+</html>

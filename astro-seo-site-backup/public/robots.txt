@@ -1,0 +1,12 @@
+# ==============================================
+# Maxwin580 - DEVELOPMENT MODE
+# ==============================================
+# BLOCK ALL - Domain alınana kadar index KAPALI
+# Domain alındığında bu dosyayı güncelleyeceğiz
+# ==============================================
+
+User-agent: *
+Disallow: /
+
+# Sitemap (hazır olsun, domain gelince açılacak)
+Sitemap: https://maxwin580.com/sitemap-index.xml

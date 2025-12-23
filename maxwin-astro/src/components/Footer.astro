@@ -1,0 +1,197 @@
+---
+---
+
+<footer class="tl_footer">
+    <div class="wrapper">
+        <div class="footer__content d-flex justify-content-between">
+            <div class="footer__column">
+                <h4>Hakkımızda</h4>
+                <p>Maxwin584, Türkiye'nin en güvenilir online casino ve bahis platformudur.</p>
+            </div>
+            <div class="footer__column">
+                <h4>Hızlı Linkler</h4>
+                <ul>
+                    <li><a href="/">Ana Sayfa</a></li>
+                    <li><a href="/casino">Casino</a></li>
+                    <li><a href="/sport">Spor Bahisleri</a></li>
+                    <li><a href="/promotions">Promosyonlar</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h4>Destek</h4>
+                <ul>
+                    <li><a href="#" onclick="if(typeof Tawk_API!=='undefined')Tawk_API.maximize();">Canlı Destek</a></li>
+                    <li><a href="/para-yatir">Para Yatırma</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom text-center">
+            <p>&copy; 2024 Maxwin584. Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .tl_footer {
+        background: var(--footer-bg, #0d1117);
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 40px 0 20px;
+        margin-top: 40px;
+    }
+    
+    .footer__content {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+    
+    .footer__column {
+        flex: 1;
+        min-width: 200px;
+    }
+    
+    .footer__column h4 {
+        color: #ACF000;
+        font-size: 16px;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+    
+    .footer__column p,
+    .footer__column li {
+        color: rgba(255,255,255,0.6);
+        font-size: 14px;
+        line-height: 1.8;
+    }
+    
+    .footer__column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer__column a {
+        color: rgba(255,255,255,0.6);
+        text-decoration: none;
+        transition: color 0.2s;
+        display: inline-block;
+        padding: 3px 0;
+    }
+    
+    .footer__column a:hover {
+        color: #ACF000;
+    }
+    
+    .footer__bottom {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .footer__bottom p {
+        color: rgba(255,255,255,0.4);
+        font-size: 13px;
+        margin: 0;
+    }
+
+    /* Tablet Styles */
+    @media (max-width: 1024px) {
+        .tl_footer {
+            padding: 35px 0 15px;
+            margin-top: 30px;
+        }
+
+        .footer__content {
+            gap: 30px;
+        }
+
+        .footer__column {
+            min-width: 180px;
+        }
+
+        .footer__column h4 {
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .footer__column p,
+        .footer__column li {
+            font-size: 13px;
+        }
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+        .tl_footer {
+            padding: 30px 0 15px;
+            margin-top: 30px;
+        }
+
+        .footer__content {
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .footer__column {
+            flex: none;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .footer__column h4 {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .footer__column p {
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .footer__column li {
+            font-size: 13px;
+            padding: 5px 0;
+        }
+
+        .footer__bottom {
+            margin-top: 25px;
+            padding-top: 15px;
+        }
+
+        .footer__bottom p {
+            font-size: 12px;
+        }
+    }
+
+    /* Small Mobile Styles */
+    @media (max-width: 480px) {
+        .tl_footer {
+            padding: 25px 0 15px;
+            margin-top: 25px;
+        }
+
+        .footer__content {
+            gap: 20px;
+        }
+
+        .footer__column h4 {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .footer__column p,
+        .footer__column li {
+            font-size: 12px;
+        }
+
+        .footer__bottom {
+            margin-top: 20px;
+            padding-top: 12px;
+        }
+
+        .footer__bottom p {
+            font-size: 11px;
+        }
+    }
+</style>

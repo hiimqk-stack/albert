@@ -1,0 +1,171 @@
+{
+  "faqPage": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Çevrim şartı neden var?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Çevrim şartı, platformların bonus kötüye kullanımını önlemek için uyguladığı bir güvenlik önlemidir. Kullanıcıların bonusu alıp doğrudan çekmesini engelleyerek, bonusun oyun deneyimini artırmak amacıyla kullanılmasını sağlar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Çevrim şartını tamamlamak ne kadar sürer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Süre, çevrim katsayısına, oyun tercihlerinize ve bahis miktarlarınıza bağlıdır. Örneğin, 1,000 TL bonus (25x çevrim = 25,000 TL bahis) ile günde 50 TL bahis yapıyorsanız yaklaşık 500 gün sürer. Ancak günde 500 TL bahis yapıyorsanız 50 günde tamamlanabilir. Platform genellikle 30-60 gün süre tanır."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bonus ile kazandığım para benim mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bonus ile kazandığınız para, çevrim şartı tamamlanana kadar bonus bakiyesi olarak kalır. Çevrim tamamlandığında, maksimum kazanç limitine kadar olan tutar gerçek bakiyenize dönüşür ve çekilebilir hale gelir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bonusu iptal edebilir miyim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Çoğu platformda bonusu manuel olarak iptal edebilirsiniz. Ancak iptal ettiğinizde bonus ve bonus ile elde ettiğiniz kazançlar silinir. Sadece orijinal yatırdığınız tutar (varsa) hesabınızda kalır."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Free spin kazançları direkt çekilebilir mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hayır, free spin kazançları genellikle bonus bakiyesine eklenir ve kendine özgü bir çevrim şartı vardır. Bu çevrim şartını tamamladıktan sonra kazançlar çekilebilir hale gelir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cashback çevrim şartı var mı?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cashback bonusları genellikle düşük çevrim şartına sahiptir (5x-10x) veya tamamen çevrimsiz olabilir. Bu, platforma göre değişkenlik gösterir. Cashback şartlarını mutlaka kontrol edin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bonuslar gerçekten değer sağlar mı?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bu, bonus şartlarına ve oyun alışkanlıklarınıza bağlıdır. Düşük çevrim şartlı (20x-25x), uzun süreli (30+ gün) ve slot oyunlarını tercih eden kullanıcılar için bonuslar değer sağlayabilir. Yüksek çevrim şartlı (40x+), kısa süreli veya masa oyunu tercih eden kullanıcılar için bonus almamak daha uygun olabilir."
+        }
+      }
+    ]
+  },
+  "breadcrumb": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Ana Sayfa",
+        "item": "https://maxwin580.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Rehberler",
+        "item": "https://maxwin580.com/rehber"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Casino Bonusları Nasıl Kullanılır",
+        "item": "https://maxwin580.com/rehber/casino-bonuslari-nasil-kullanilir"
+      }
+    ]
+  },
+  "article": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Casino Bonusları Nasıl Kullanılır: Kapsamlı Bilgilendirme Rehberi",
+    "description": "Casino bonusları nasıl çalışır? Çevrim şartları nedir, bonus türleri nelerdir? Hoş geldin bonusu, free spin ve cashback'in avantaj ve dezavantajlarını öğrenin.",
+    "image": "https://maxwin580.com/assets/images/casino-bonuslari-og.jpg",
+    "author": {
+      "@type": "Organization",
+      "name": "Maxwin580",
+      "url": "https://maxwin580.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Maxwin580",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://maxwin580.com/assets/images/logo.png"
+      }
+    },
+    "datePublished": "2024-12-17",
+    "dateModified": "2024-12-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://maxwin580.com/rehber/casino-bonuslari-nasil-kullanilir"
+    },
+    "articleSection": "Rehberler",
+    "keywords": "casino bonusları, çevrim şartı, hoş geldin bonusu, bonus kullanımı, free spin",
+    "wordCount": 3000,
+    "inLanguage": "tr-TR",
+    "about": {
+      "@type": "Thing",
+      "name": "Casino Bonus Sistemleri"
+    },
+    "educationalUse": "Bilgilendirme",
+    "isAccessibleForFree": true
+  },
+  "howTo": {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Casino Bonusu Nasıl Kullanılır?",
+    "description": "Casino bonuslarını etkili bir şekilde kullanmak için adım adım rehber",
+    "totalTime": "PT30M",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Bonus Şartlarını Okuyun",
+        "text": "Bonus almadan önce çevrim şartı katsayısını, oyun katkı oranlarını, maksimum bahis limitini, süre kısıtlamasını ve istisna oyunları kontrol edin.",
+        "itemListElement": [
+          {
+            "@type": "HowToDirection",
+            "text": "Çevrim şartı katsayısını kontrol edin"
+          },
+          {
+            "@type": "HowToDirection",
+            "text": "Oyun katkı oranlarını inceleyin"
+          },
+          {
+            "@type": "HowToDirection",
+            "text": "Maksimum bahis limitini öğrenin"
+          }
+        ]
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Bonus Aktivasyonu",
+        "text": "Bonusu otomatik, manuel, kod ile veya e-posta linki ile aktive edin. Aktivasyon yöntemini platform belirler."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Bonus Takibi",
+        "text": "Hesap panelinde çevrim durumunu kontrol edin. Kalan çevrim miktarı ve bonus/gerçek bakiye ayrımını takip edin."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Çevrim Tamamlama",
+        "text": "Çevrim şartı tamamlandığında bonus bakiyesi gerçek bakiyeye dönüşür. Maksimum kazanç limiti uygulanarak para çekme işlemi yapılabilir."
+      }
+    ]
+  }
+}

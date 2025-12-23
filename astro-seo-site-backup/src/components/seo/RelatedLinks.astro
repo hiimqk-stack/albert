@@ -1,0 +1,159 @@
+---
+/**
+ * RelatedLinks Component
+ * Internal Link Throttling - Controlled related links section
+ * Max 5 related links + parent hub + compliance link
+ */
+
+export interface Props {
+  parentHub: string;
+  parentHubLabel?: string;
+  relatedPages: string[];
+  showCompliance?: boolean;
+}
+
+const { 
+  parentHub, 
+  parentHubLabel = 'Tüm Bonus Rehberleri',
+  relatedPages = [],
+  showCompliance = true
+} = Astro.props;
+
+// Limit to max 5 related pages (link throttling)
+const limitedRelated = relatedPages.slice(0, 5);
+
+// Map slugs to readable labels (simple version)
+const getLabel = (path: string) => {
+  const slug = path.split('/').pop() || path;
+  return slug
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, l => l.toUpperCase());
+};
+---
+
+<aside class="related-links-section">
+  <h3 class="related-title">İlgili İçerikler</h3>
+  
+  <nav class="related-nav">
+    <!-- Parent Hub Link (always first, prominent) -->
+    <a href={parentHub} class="hub-link">
+      <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      {parentHubLabel}
+    </a>
+    
+    <!-- Related Pages (max 5) -->
+    {limitedRelated.length > 0 && (
+      <ul class="related-list">
+        {limitedRelated.map(page => (
+          <li>
+            <a href={page}>{getLabel(page)}</a>
+          </li>
+        ))}
+      </ul>
+    )}
+    
+    <!-- Compliance Link (always present for iGaming) -->
+    {showCompliance && (
+      <a href="/sorumlu-oyun" class="compliance-link">
+        <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        Sorumlu Oyun
+      </a>
+    )}
+  </nav>
+</aside>
+
+<style>
+  .related-links-section {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+  }
+  
+  .related-title {
+    font-size: 1rem;
+    color: #333;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .related-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .hub-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: #0066cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.2s ease;
+  }
+  
+  .hub-link:hover {
+    background: #0052a3;
+  }
+  
+  .hub-link .icon {
+    flex-shrink: 0;
+  }
+  
+  .related-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .related-list li a {
+    display: block;
+    padding: 0.625rem 1rem;
+    background: white;
+    color: #333;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+  }
+  
+  .related-list li a:hover {
+    background: #e9ecef;
+    border-color: #dee2e6;
+  }
+  
+  .compliance-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: #198754;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    transition: background 0.2s ease;
+  }
+  
+  .compliance-link:hover {
+    background: #157347;
+  }
+  
+  .compliance-link .icon {
+    flex-shrink: 0;
+  }
+</style>

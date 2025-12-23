@@ -1,0 +1,55 @@
+---
+// Hero Section - First 100 Words Optimization (Golden Zone)
+// Search intent optimized content
+
+interface Props {
+  title: string;
+  subtitle: string;
+  features: string[];
+  cta?: {
+    text: string;
+    link: string;
+  };
+}
+
+const { title, subtitle, features, cta } = Astro.props;
+---
+
+<div class="seo-intro">
+  <h1>{title}</h1>
+  <p set:html={subtitle}></p>
+  
+  <p>
+    {features.map((feature) => (
+      <>✅ <strong>{feature}</strong><br /></>
+    ))}
+  </p>
+
+  {cta && (
+    <p><strong>{cta.text}</strong></p>
+  )}
+</div>
+
+<style>
+  /* Original site CSS for .seo-intro */
+  .seo-intro { 
+    max-width: 1200px; 
+    margin: 20px auto; 
+    padding: 20px; 
+    background: #f9f9f9; 
+    border-left: 4px solid #ff6b00; 
+  }
+  .seo-intro h1 { 
+    color: #1a1a1a; 
+    font-size: 28px; 
+    margin-bottom: 15px; 
+  }
+  .seo-intro p { 
+    line-height: 1.8; 
+    color: #333; 
+    margin-bottom: 12px; 
+  }
+  .seo-intro strong { 
+    color: #ff6b00; 
+  }
+</style>

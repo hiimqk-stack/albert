@@ -1,0 +1,306 @@
+---
+---
+
+<div class="tl_header_fixed header__top">
+    <div class="wrapper d-flex align-items-center justify-content-between">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menü">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <a class="header__logo" href="/">
+            <img src="/cdn.maxwin584.com/plat/prd/Img/partners/1247/logo.png" alt="Maxwin584" class="tl_header_logo">
+        </a>
+        
+        <div class="tl_header_top_middle flex-grow-1 d-flex align-items-center">
+            <div class="tl_promo_links d-flex">
+                <a href="/promotions" class="header__top-promolink d-flex align-items-center" title="Bonus Talep Et!">
+                    <i class="dynamic_icon"></i>
+                    <span>Bonus Talep Et!</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="header__fixed-right d-flex align-items-center js_fixed_header_right">
+            <a class="registerDialog tl_btn h-bg-primary" href="/register">ÜYE OL</a>
+            <a class="loginDialog tl_btn cw_sign_in_button" href="/login">ÜYE GİRİŞİ</a>
+            
+            <div class="tl_drop_down tl_acc_lang d-flex tl_btn ternBtn" title="Dil Seçimi">
+                <span style="color: rgba(255,255,255,0.7); font-size: 10px; margin-right: 5px; text-transform: uppercase; letter-spacing: 0.5px;">Dil:</span>
+                <a class="d-flex header__dropdown-menu align-items-center" href="#" data-toggle="dropdown">
+                    <span class="flex-shrink-0 lang tr"></span>
+                    <i class="dynamic_icon dynamic_icon-arrow"></i>
+                </a>
+                <div class="links_container scrolled__content">
+                    <a class="tl_dropdown_style d-flex px-1 js_language_bar_link en" href="/en">
+                        <span class="flex-grow-1 text-truncate text-left">English</span>
+                        <span class="flex-shrink-0 lang en"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="tl_header_bot_row dynamic_menu header__bottom d-flex align-items-center" id="mainNav">
+    <div class="tl_header_bot_row_fix flex align-items-center">
+        <div class="tl_header_navigation tl_bot_header_cont">
+            <a href="/" class="tl_nav_item">Ana Sayfa</a>
+            <a href="/casino" class="tl_nav_item">Casino</a>
+            <a href="/sport" class="tl_nav_item">Spor</a>
+            <a href="/esport" class="tl_nav_item">E-Spor</a>
+            <a href="/promotions" class="tl_nav_item">Promosyonlar</a>
+        </div>
+    </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<style>
+    /* Mobile Menu Toggle Button */
+    .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 1001;
+    }
+
+    .mobile-menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: #ACF000;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Mobile Overlay */
+    .mobile-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .mobile-overlay.active {
+        display: block;
+        opacity: 1;
+    }
+
+    /* Desktop Header Styles */
+    .tl_header_fixed {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: var(--header-bg, #1a1d2e);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .header__logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .tl_header_logo {
+        height: 40px;
+        width: auto;
+    }
+
+    .header__fixed-right {
+        gap: 10px;
+    }
+
+    .tl_header_bot_row {
+        background: var(--nav-bg, #0d1117);
+        padding: 12px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .tl_header_navigation {
+        display: flex;
+        gap: 5px;
+        width: 100%;
+    }
+
+    .tl_nav_item {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        padding: 8px 20px;
+        border-radius: 5px;
+        transition: all 0.2s;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .tl_nav_item:hover {
+        background: rgba(172, 240, 0, 0.1);
+        color: #ACF000;
+    }
+
+    /* Tablet Styles */
+    @media (max-width: 1024px) {
+        .tl_header_logo {
+            height: 35px;
+        }
+
+        .tl_nav_item {
+            padding: 8px 15px;
+            font-size: 13px;
+        }
+
+        .header__top-promolink span {
+            font-size: 12px;
+        }
+
+        .tl_drop_down span {
+            font-size: 9px !important;
+        }
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+        .mobile-menu-toggle {
+            display: flex;
+        }
+
+        .tl_header_fixed .wrapper {
+            padding: 10px 15px;
+        }
+
+        .tl_header_logo {
+            height: 30px;
+        }
+
+        .header__logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .tl_header_top_middle {
+            display: none !important;
+        }
+
+        .header__fixed-right {
+            gap: 5px;
+        }
+
+        .header__fixed-right .tl_btn {
+            padding: 6px 10px;
+            font-size: 11px;
+        }
+
+        .tl_drop_down {
+            padding: 6px 8px !important;
+        }
+
+        .tl_drop_down span {
+            display: none;
+        }
+
+        /* Mobile Navigation */
+        .tl_header_bot_row {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 280px;
+            height: 100vh;
+            padding: 80px 0 20px;
+            background: var(--nav-bg, #0d1117);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tl_header_bot_row.active {
+            left: 0;
+        }
+
+        .tl_header_navigation {
+            flex-direction: column;
+            gap: 0;
+            padding: 0 20px;
+        }
+
+        .tl_nav_item {
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .tl_nav_item:last-child {
+            border-bottom: none;
+        }
+    }
+
+    /* Small Mobile Styles */
+    @media (max-width: 480px) {
+        .tl_header_logo {
+            height: 26px;
+        }
+
+        .header__fixed-right .tl_btn {
+            padding: 5px 8px;
+            font-size: 10px;
+        }
+
+        .registerDialog {
+            display: none !important;
+        }
+
+        .tl_header_bot_row {
+            width: 260px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const overlay = document.getElementById('mobileOverlay');
+
+        function toggleMenu() {
+            menuToggle?.classList.toggle('active');
+            mainNav?.classList.toggle('active');
+            overlay?.classList.toggle('active');
+            document.body.style.overflow = mainNav?.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuToggle?.addEventListener('click', toggleMenu);
+        overlay?.addEventListener('click', toggleMenu);
+
+        const navItems = document.querySelectorAll('.tl_nav_item');
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    toggleMenu();
+                }
+            });
+        });
+    });
+</script>

@@ -1,0 +1,609 @@
+---
+/**
+ * Geo-Based Bonus Pages
+ * Nested dynamic route for country-specific bonus content
+ * 
+ * URL Structure:
+ * /bonuses/welcome-bonus/tr/
+ * /bonuses/welcome-bonus/uk/
+ * /bonuses/welcome-bonus/de/
+ * 
+ * SEO Benefits:
+ * - Country-specific content (no duplicate content)
+ * - Local regulations explained
+ * - Legal disclaimers per country
+ * - No hreflang needed (country in path)
+ * - Zero JavaScript (static HTML)
+ */
+
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SEOComplete from '../../../components/seo/SEOComplete.astro';
+import Breadcrumbs from '../../../components/seo/Breadcrumbs.astro';
+import AuthorBox from '../../../components/seo/AuthorBox.astro';
+import FreshnessIndicator from '../../../components/seo/FreshnessIndicator.astro';
+import RelatedLinks from '../../../components/seo/RelatedLinks.astro';
+import { generateFAQSchema, generateArticleSchema, generateBreadcrumbSchema } from '../../../utils/seo/generateSchema';
+
+// Generate static paths for all geo-bonus combinations
+export async function getStaticPaths() {
+  const bonusesGeo = await getCollection('bonuses-geo');
+  const bonuses = await getCollection('bonuses');
+  
+  return bonusesGeo.map((geoBonus) => ({
+    params: { 
+      slug: geoBonus.data.bonusSlug,
+      country: geoBonus.data.country
+    },
+    props: { 
+      geoBonus,
+      // Find the base bonus for additional data
+      baseBonus: bonuses.find(b => b.data.slug === geoBonus.data.bonusSlug)
+    }
+  }));
+}
+
+interface Props {
+  geoBonus: CollectionEntry<'bonuses-geo'>;
+  baseBonus?: CollectionEntry<'bonuses'>;
+}
+
+const { geoBonus, baseBonus } = Astro.props;
+const { Content } = await geoBonus.render();
+
+// Canonical Strategy for Variants
+const canonicalStrategy = geoBonus.data.canonicalStrategy || 'self';
+let canonicalUrl: string;
+
+switch (canonicalStrategy) {
+  case 'parent':
+    canonicalUrl = new URL(`/bonuses/${geoBonus.data.bonusSlug}`, Astro.site).href;
+    break;
+  case 'hub':
+    canonicalUrl = new URL('/bonuses', Astro.site).href;
+    break;
+  case 'self':
+  default:
+    canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+}
+
+// Override if specified
+if (geoBonus.data.canonicalOverride) {
+  canonicalUrl = new URL(geoBonus.data.canonicalOverride, Astro.site).href;
+}
+
+// Lifecycle Management
+const isRetired = geoBonus.data.lifecycleStatus === 'retired' || geoBonus.data.lifecycleStatus === 'archived';
+
+// Selective indexing (lifecycle + shouldIndex + canonical combined)
+let robotsContent = 'index, follow';
+if (isRetired || !geoBonus.data.shouldIndex) {
+  robotsContent = 'noindex, follow';
+}
+
+// Content Freshness
+const publishedAt = geoBonus.data.publishedAt || geoBonus.data.updatedAt;
+const updatedAt = geoBonus.data.updatedAt;
+
+// E-E-A-T Author
+const author = geoBonus.data.author || {
+  name: 'Maxwin580 Editöryal Ekibi',
+  slug: 'editorial-team',
+  title: 'Editorial Team',
+  experience: 'Sektör uzmanları'
+};
+const reviewedBy = geoBonus.data.reviewedBy || author.name;
+
+// Link Throttling
+const parentHub = geoBonus.data.parentHub || '/bonuses';
+const relatedPages = geoBonus.data.relatedPages || [];
+
+// Breadcrumb navigation
+const breadcrumbs = [
+  { name: 'Ana Sayfa', url: '/' },
+  { name: 'Bonus Bilgileri', url: '/bonuses' },
+  { name: baseBonus?.data.title || geoBonus.data.bonusSlug, url: `/bonuses/${geoBonus.data.bonusSlug}` },
+  { name: geoBonus.data.countryName, url: `/bonuses/${geoBonus.data.bonusSlug}/${geoBonus.data.country}` }
+];
+
+// Generate FAQ Schema
+const faqSchema = generateFAQSchema(
+  geoBonus.data.faq.map(item => ({
+    question: item.question,
+    answer: item.answer
+  }))
+);
+
+// Generate Article Schema with proper freshness
+const articleSchema = generateArticleSchema({
+  headline: geoBonus.data.title,
+  description: geoBonus.data.description,
+  datePublished: publishedAt.toISOString(),
+  dateModified: updatedAt.toISOString(),
+  author: author.name
+});
+
+// Generate Breadcrumb Schema
+const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+
+// Availability status colors
+const statusColors = {
+  available: '#28a745',
+  restricted: '#dc3545',
+  'requires-verification': '#ffc107',
+  'unclear': '#6c757d'
+};
+
+const statusLabels = {
+  available: 'Yasal ve Düzenlenmiş',
+  restricted: 'Kısıtlı/Yasal Değil',
+  'requires-verification': 'Doğrulama Gerektirir',
+  'unclear': 'Belirsiz Durum'
+};
+
+// Country flag emoji map
+const countryFlags: Record<string, string> = {
+  tr: '🇹🇷',
+  uk: '🇬🇧',
+  de: '🇩🇪',
+  us: '🇺🇸',
+  ca: '🇨🇦',
+  au: '🇦🇺',
+  fr: '🇫🇷',
+  es: '🇪🇸',
+  it: '🇮🇹',
+  nl: '🇳🇱',
+  se: '🇸🇪',
+  no: '🇳🇴',
+  fi: '🇫🇮',
+  dk: '🇩🇰',
+  pl: '🇵🇱',
+  br: '🇧🇷',
+  mx: '🇲🇽',
+  ar: '🇦🇷',
+  cl: '🇨🇱',
+  jp: '🇯🇵',
+  kr: '🇰🇷',
+  in: '🇮🇳',
+  nz: '🇳🇿',
+  ie: '🇮🇪',
+  at: '🇦🇹',
+  be: '🇧🇪',
+  ch: '🇨🇭',
+  pt: '🇵🇹',
+  gr: '🇬🇷',
+  cz: '🇨🇿',
+  ro: '🇷🇴',
+  hu: '🇭🇺',
+};
+---
+
+<BaseLayout>
+  <SEOComplete
+    slot="head"
+    title={geoBonus.data.title}
+    description={geoBonus.data.description}
+    keywords={geoBonus.data.keywords}
+    ogType="article"
+    ogImage={`/assets/images/bonuses/${geoBonus.data.bonusSlug}-${geoBonus.data.country}-og.jpg`}
+    schema={[articleSchema, faqSchema, breadcrumbSchema]}
+    article={{
+      publishedTime: publishedAt.toISOString(),
+      modifiedTime: updatedAt.toISOString(),
+      section: 'Geo-Specific Bonus Information',
+      tags: [geoBonus.data.country, geoBonus.data.bonusSlug, 'geo-bonus']
+    }}
+  />
+  
+  <!-- Canonical Strategy for Variants -->
+  <link slot="head" rel="canonical" href={canonicalUrl} />
+  
+  <!-- Selective indexing (lifecycle + canonical strategy) -->
+  <meta slot="head" name="robots" content={robotsContent} />
+
+  <Breadcrumbs items={breadcrumbs} />
+
+  <article class="geo-bonus-page">
+    <!-- Header Section -->
+    <header class="geo-header">
+      <div class="country-flag">
+        {countryFlags[geoBonus.data.country] || '🌍'}
+      </div>
+      <h1>{geoBonus.data.title}</h1>
+      <p class="lead">{geoBonus.data.description}</p>
+      
+      <div class="geo-meta">
+        <span class="country-badge">{geoBonus.data.countryName}</span>
+        <span 
+          class="status-badge" 
+          style={`background-color: ${statusColors[geoBonus.data.availabilityStatus]}`}
+        >
+          {statusLabels[geoBonus.data.availabilityStatus]}
+        </span>
+      </div>
+    </header>
+    
+    <!-- Content Freshness Indicator -->
+    <FreshnessIndicator 
+      publishedAt={publishedAt}
+      updatedAt={updatedAt}
+      reviewedBy={reviewedBy}
+      contentVersion={geoBonus.data.contentVersion}
+    />
+
+    <!-- Legal Disclaimer (Prominent) -->
+    <aside class="legal-disclaimer-box">
+      <h2>⚖️ Yasal Uyarı - {geoBonus.data.countryName}</h2>
+      <p>{geoBonus.data.legalDisclaimer}</p>
+      {geoBonus.data.localRegulations && (
+        <details>
+          <summary>Yerel Düzenlemeler</summary>
+          <p>{geoBonus.data.localRegulations}</p>
+        </details>
+      )}
+    </aside>
+
+    <!-- Localized Intro -->
+    <section class="localized-intro">
+      <h2>Genel Bakış</h2>
+      <p class="intro-text">{geoBonus.data.localizedIntro}</p>
+    </section>
+
+    <!-- Main Content (from Markdown) -->
+    <div class="geo-content">
+      <Content />
+    </div>
+
+    <!-- FAQ Section (Geo-Specific) -->
+    <section class="geo-faq">
+      <h2>Sıkça Sorulan Sorular - {geoBonus.data.countryName}</h2>
+      <div class="faq-list">
+        {geoBonus.data.faq.map((item) => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Base Bonus Link (if available) -->
+    {baseBonus && (
+      <section class="base-bonus-link">
+        <h2>Genel Bilgi</h2>
+        <p>
+          Bu bonus türü hakkında genel (ülkeye özel olmayan) bilgi için:{' '}
+          <a href={`/bonuses/${baseBonus.data.slug}`}>
+            {baseBonus.data.title}
+          </a>
+        </p>
+      </section>
+    )}
+
+    <!-- Other Countries -->
+    <section class="other-countries">
+      <h2>Diğer Ülkeler</h2>
+      <p>Bu bonus türü hakkında diğer ülkelere özel bilgiler:</p>
+      <ul class="country-list">
+        <li><a href={`/bonuses/${geoBonus.data.bonusSlug}/tr`}>🇹🇷 Türkiye</a></li>
+        <li><a href={`/bonuses/${geoBonus.data.bonusSlug}/uk`}>🇬🇧 United Kingdom</a></li>
+        <li><a href={`/bonuses/${geoBonus.data.bonusSlug}/de`}>🇩🇪 Deutschland</a></li>
+      </ul>
+    </section>
+
+    <!-- Responsible Gambling Reminder -->
+    <section class="responsible-gaming-reminder">
+      <h2>Sorumlu Oyun Hatırlatması</h2>
+      <p>
+        Bu bilgiler yalnızca eğitim amaçlıdır ve {geoBonus.data.countryName} yerel 
+        yasalarına göre düzenlenmiştir. Kumar bağımlılık yapabilir.
+      </p>
+      <p>
+        Lütfen <a href="/sorumlu-oyun">sorumlu oyun kurallarına</a> uyun. 
+        18+ yaş sınırı geçerlidir.
+      </p>
+    </section>
+    
+    <!-- E-E-A-T Author Box -->
+    <AuthorBox 
+      name={author.name}
+      slug={author.slug}
+      title={author.title}
+      experience={author.experience}
+    />
+    
+    <!-- Related Links (Link Throttling) -->
+    <RelatedLinks 
+      parentHub={parentHub}
+      parentHubLabel="Tüm Bonus Rehberleri"
+      relatedPages={relatedPages}
+      showCompliance={true}
+    />
+
+    <!-- Final Legal Footer -->
+    <footer class="legal-footer">
+      <p>
+        <strong>Önemli Uyarı:</strong> Bu içerik yalnızca bilgilendirme amaçlıdır. 
+        {geoBonus.data.countryName} yerel yasalarını dikkate alın. Yasal durumunuz 
+        hakkında profesyonel hukuki danışmanlık alın. Bu içerik hiçbir platformu 
+        önermez veya teşvik etmez.
+      </p>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .geo-bonus-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .geo-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #e0e0e0;
+  }
+
+  .country-flag {
+    font-size: 64px;
+    margin-bottom: 16px;
+  }
+
+  .geo-header h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    margin-bottom: 16px;
+    color: #1a1a1a;
+  }
+
+  .lead {
+    font-size: 18px;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 24px;
+    line-height: 1.6;
+  }
+
+  .geo-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+
+  .country-badge {
+    background: #007bff;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+
+  .status-badge {
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .legal-disclaimer-box {
+    background: #fff3cd;
+    border: 3px solid #ffc107;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+  }
+
+  .legal-disclaimer-box h2 {
+    margin-top: 0;
+    color: #856404;
+    font-size: 22px;
+  }
+
+  .legal-disclaimer-box p {
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+
+  .legal-disclaimer-box details {
+    margin-top: 16px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .legal-disclaimer-box summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #856404;
+  }
+
+  .localized-intro {
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    padding: 24px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+  }
+
+  .localized-intro h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #1565c0;
+  }
+
+  .intro-text {
+    margin: 0;
+    line-height: 1.7;
+    color: #333;
+  }
+
+  .geo-content {
+    margin-bottom: 48px;
+    line-height: 1.8;
+  }
+
+  .geo-content h2 {
+    font-size: 28px;
+    margin: 40px 0 20px;
+    color: #1a1a1a;
+  }
+
+  .geo-content h3 {
+    font-size: 22px;
+    margin: 32px 0 16px;
+    color: #333;
+  }
+
+  .geo-faq {
+    margin-bottom: 48px;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+  }
+
+  .geo-faq h2 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .faq-item {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .faq-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    color: #007bff;
+    margin-bottom: 12px;
+  }
+
+  .faq-item[open] summary {
+    margin-bottom: 16px;
+  }
+
+  .faq-item p {
+    margin: 0;
+    line-height: 1.7;
+    color: #555;
+  }
+
+  .base-bonus-link {
+    background: #e8f5e9;
+    border-left: 4px solid #4caf50;
+    padding: 24px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+  }
+
+  .base-bonus-link h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #2e7d32;
+  }
+
+  .base-bonus-link a {
+    color: #2e7d32;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .other-countries {
+    margin-bottom: 48px;
+  }
+
+  .other-countries h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .country-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .country-list li {
+    background: #f0f0f0;
+    border-radius: 8px;
+  }
+
+  .country-list a {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .country-list a:hover {
+    background: #007bff;
+    color: white;
+  }
+
+  .responsible-gaming-reminder {
+    background: #ffebee;
+    border: 2px solid #f44336;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 48px;
+  }
+
+  .responsible-gaming-reminder h2 {
+    margin-top: 0;
+    color: #c62828;
+    font-size: 22px;
+  }
+
+  .responsible-gaming-reminder a {
+    color: #c62828;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .legal-footer {
+    background: #f8f9fa;
+    border-top: 3px solid #dc3545;
+    padding: 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  .legal-footer strong {
+    color: #dc3545;
+  }
+
+  @media (max-width: 768px) {
+    .country-flag {
+      font-size: 48px;
+    }
+
+    .geo-meta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .country-list {
+      flex-direction: column;
+    }
+  }
+</style>

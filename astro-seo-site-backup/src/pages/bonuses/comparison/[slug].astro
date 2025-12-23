@@ -1,0 +1,335 @@
+---
+/**
+ * Intent-Based Comparison Pages (Commercial Intent)
+ * URL: /bonuses/comparison/[slug]
+ * 
+ * For queries like: "X vs Y", "en iyi X", decision-making content
+ */
+
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SEOComplete from '../../../components/seo/SEOComplete.astro';
+import Breadcrumbs from '../../../components/seo/Breadcrumbs.astro';
+import AuthorBox from '../../../components/seo/AuthorBox.astro';
+import FreshnessIndicator from '../../../components/seo/FreshnessIndicator.astro';
+import RelatedLinks from '../../../components/seo/RelatedLinks.astro';
+import { generateArticleSchema, generateBreadcrumbSchema } from '../../../utils/seo/generateSchema';
+
+export async function getStaticPaths() {
+  const comparisons = await getCollection('bonus-comparisons');
+  
+  return comparisons.map((comparison) => ({
+    params: { slug: comparison.slug },
+    props: { comparison }
+  }));
+}
+
+interface Props {
+  comparison: CollectionEntry<'bonus-comparisons'>;
+}
+
+const { comparison } = Astro.props;
+const { Content } = await comparison.render();
+
+// Robots directive
+const robotsContent = comparison.data.shouldIndex ? 'index, follow' : 'noindex, follow';
+
+// E-E-A-T Author
+const author = comparison.data.author;
+const reviewedBy = author.name;
+
+// Freshness
+const publishedAt = comparison.data.publishedAt;
+const updatedAt = comparison.data.updatedAt;
+
+// Link Throttling
+const parentHub = comparison.data.parentHub;
+const relatedPages = comparison.data.relatedPages;
+
+// Breadcrumbs
+const breadcrumbs = [
+  { name: 'Ana Sayfa', url: '/' },
+  { name: 'Bonus Bilgileri', url: '/bonuses' },
+  { name: 'Karşılaştırmalar', url: '/bonuses/comparison' },
+  { name: comparison.data.title, url: `/bonuses/comparison/${comparison.data.slug}` }
+];
+
+// Schema
+const articleSchema = generateArticleSchema({
+  headline: comparison.data.title,
+  description: comparison.data.description,
+  datePublished: publishedAt.toISOString(),
+  dateModified: updatedAt.toISOString(),
+  author: author.name
+});
+
+const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+
+// Comparison type labels
+const comparisonTypeLabels = {
+  vs: 'Karşılaştırma',
+  'best-for': 'En İyi Seçim',
+  ranking: 'Sıralama',
+  overview: 'Genel Bakış'
+};
+
+const comparisonTypeColors = {
+  vs: '#9c27b0',
+  'best-for': '#ff9800',
+  ranking: '#2196f3',
+  overview: '#607d8b'
+};
+---
+
+<BaseLayout>
+  <SEOComplete
+    slot="head"
+    title={comparison.data.title}
+    description={comparison.data.description}
+    keywords={comparison.data.keywords}
+    ogType="article"
+    schema={[articleSchema, breadcrumbSchema]}
+    article={{
+      publishedTime: publishedAt.toISOString(),
+      modifiedTime: updatedAt.toISOString(),
+      section: 'Bonus Karşılaştırmaları',
+      tags: ['comparison', comparison.data.comparisonType, 'commercial']
+    }}
+  />
+  
+  <meta slot="head" name="robots" content={robotsContent} />
+
+  <Breadcrumbs items={breadcrumbs} />
+
+  <article class="comparison-page commercial">
+    <header class="comparison-header">
+      <span class="content-type">⚖️ Karşılaştırma</span>
+      <h1>{comparison.data.title}</h1>
+      <p class="lead">{comparison.data.description}</p>
+      
+      <div class="comparison-meta">
+        <span 
+          class="type-badge"
+          style={`background-color: ${comparisonTypeColors[comparison.data.comparisonType]}`}
+        >
+          {comparisonTypeLabels[comparison.data.comparisonType]}
+        </span>
+        <span class="items-badge">
+          {comparison.data.itemsCompared.length} öğe karşılaştırılıyor
+        </span>
+      </div>
+      
+      <div class="items-compared">
+        {comparison.data.itemsCompared.map((item, index) => (
+          <span class="compared-item">
+            {item}
+            {index < comparison.data.itemsCompared.length - 1 && <span class="vs-divider">vs</span>}
+          </span>
+        ))}
+      </div>
+    </header>
+    
+    <FreshnessIndicator 
+      publishedAt={publishedAt}
+      updatedAt={updatedAt}
+      reviewedBy={reviewedBy}
+    />
+
+    <div class="comparison-content table-driven">
+      <Content />
+    </div>
+
+    <section class="comparison-disclaimer">
+      <h2>⚠️ Önemli Not</h2>
+      <p>
+        Bu karşılaştırma bilgilendirme amaçlıdır ve hiçbir platformu önermez. 
+        Bonus şartları değişebilir. Güncel bilgi için platformların resmi 
+        sayfalarını kontrol edin.
+      </p>
+    </section>
+
+    <section class="responsible-gaming-reminder">
+      <h2>Sorumlu Oyun Hatırlatması</h2>
+      <p>
+        Bu karşılaştırma yalnızca bilgilendirme amaçlıdır. Kumar bağımlılık yapabilir.
+        Lütfen <a href="/sorumlu-oyun">sorumlu oyun kurallarına</a> uyun. 18+.
+      </p>
+    </section>
+
+    <AuthorBox 
+      name={author.name}
+      slug={author.slug}
+      title={author.title}
+      experience={author.experience}
+    />
+
+    <RelatedLinks 
+      parentHub={parentHub}
+      parentHubLabel="Tüm Karşılaştırmalar"
+      relatedPages={relatedPages}
+      showCompliance={true}
+    />
+  </article>
+</BaseLayout>
+
+<style>
+  .comparison-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .comparison-header {
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid #e0e0e0;
+  }
+
+  .content-type {
+    display: inline-block;
+    background: #f3e5f5;
+    color: #7b1fa2;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .comparison-header h1 {
+    font-size: clamp(24px, 5vw, 36px);
+    margin-bottom: 16px;
+    color: #1a1a1a;
+  }
+
+  .lead {
+    font-size: 18px;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+  }
+
+  .comparison-meta {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .type-badge {
+    color: white;
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .items-badge {
+    background: #f0f0f0;
+    color: #333;
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 14px;
+  }
+
+  .items-compared {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .compared-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .vs-divider {
+    background: #e0e0e0;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+  }
+
+  .comparison-content {
+    line-height: 1.8;
+    font-size: 17px;
+    color: #333;
+  }
+
+  .comparison-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+  }
+
+  .comparison-content :global(th),
+  .comparison-content :global(td) {
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+  }
+
+  .comparison-content :global(th) {
+    background: #f5f5f5;
+    font-weight: 600;
+  }
+
+  .comparison-content :global(tr:nth-child(even)) {
+    background: #fafafa;
+  }
+
+  .comparison-disclaimer {
+    background: #fff3e0;
+    padding: 24px;
+    border-radius: 12px;
+    margin: 40px 0 24px;
+    border-left: 4px solid #ff9800;
+  }
+
+  .comparison-disclaimer h2 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #e65100;
+  }
+
+  .comparison-disclaimer p {
+    margin: 0;
+    color: #bf360c;
+  }
+
+  .responsible-gaming-reminder {
+    background: #e8f5e9;
+    padding: 24px;
+    border-radius: 12px;
+    margin: 24px 0 40px;
+    border-left: 4px solid #4caf50;
+  }
+
+  .responsible-gaming-reminder h2 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #2e7d32;
+  }
+
+  .responsible-gaming-reminder p {
+    margin: 0;
+    color: #1b5e20;
+  }
+
+  .responsible-gaming-reminder a {
+    color: #1b5e20;
+    font-weight: 600;
+  }
+</style>

@@ -1,0 +1,306 @@
+---
+/**
+ * Editorial Policy Page
+ * E-E-A-T Trust Layer - Demonstrates editorial standards and accountability
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEOComplete from '../components/seo/SEOComplete.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'Ana Sayfa', url: '/' },
+  { name: 'Yayın Politikası', url: '/yayin-politikasi' }
+];
+
+const pageTitle = 'Yayın Politikası | Maxwin580';
+const pageDescription = 'Maxwin580 içerik standartları, editöryal politikası ve kalite güvence süreçleri hakkında bilgi edinin.';
+---
+
+<BaseLayout>
+  <SEOComplete
+    slot="head"
+    title={pageTitle}
+    description={pageDescription}
+    ogType="website"
+  />
+
+  <Breadcrumbs items={breadcrumbs} />
+
+  <article class="editorial-policy">
+    <header class="policy-header">
+      <h1>Yayın Politikamız</h1>
+      <p class="lead">
+        Maxwin580 olarak, okuyucularımıza doğru, güncel ve tarafsız bilgi sunmayı 
+        taahhüt ediyoruz. Bu sayfa, içerik üretim süreçlerimiz ve kalite 
+        standartlarımız hakkında bilgi vermektedir.
+      </p>
+    </header>
+
+    <section class="policy-section">
+      <h2>📝 İçerik Standartlarımız</h2>
+      <p>
+        Tüm içeriklerimiz aşağıdaki standartlara uygun olarak hazırlanmaktadır:
+      </p>
+      <ul>
+        <li>
+          <strong>Uzman İncelemesi:</strong> Her içerik, konusunda deneyimli 
+          editörler tarafından incelenir ve onaylanır.
+        </li>
+        <li>
+          <strong>Kaynak Belgeleme:</strong> Bilgiler güvenilir kaynaklardan 
+          derlenir ve gerektiğinde kaynak gösterilir.
+        </li>
+        <li>
+          <strong>Tarafsızlık:</strong> Hiçbir platform önerilmez veya teşvik 
+          edilmez. İçerikler tamamen bilgilendirme amaçlıdır.
+        </li>
+        <li>
+          <strong>Uyumluluk:</strong> Tüm içerikler yerel yasal düzenlemelere 
+          ve sorumlu oyun ilkelerine uygun hazırlanır.
+        </li>
+      </ul>
+    </section>
+
+    <section class="policy-section">
+      <h2>🔄 Doğruluk ve Güncelleme</h2>
+      <p>
+        Bilgilerin güncel kalması bizim için önceliktir:
+      </p>
+      <ul>
+        <li>
+          <strong>Düzenli Kontrol:</strong> Tüm içerikler periyodik olarak 
+          gözden geçirilir ve güncellenir.
+        </li>
+        <li>
+          <strong>Tarih Şeffaflığı:</strong> Her sayfada yayın ve son güncelleme 
+          tarihleri açıkça belirtilir.
+        </li>
+        <li>
+          <strong>Hızlı Düzeltme:</strong> Hata bildirimleri 48 saat içinde 
+          değerlendirilir ve gerekli düzeltmeler yapılır.
+        </li>
+        <li>
+          <strong>Versiyon Takibi:</strong> Önemli içerik değişiklikleri 
+          belgelenir ve takip edilir.
+        </li>
+      </ul>
+    </section>
+
+    <section class="policy-section">
+      <h2>⚖️ Bağımsızlık ve Tarafsızlık</h2>
+      <p>
+        Maxwin580 bağımsız bir bilgi platformudur:
+      </p>
+      <ul>
+        <li>
+          <strong>Ticari Bağımsızlık:</strong> İçeriklerimiz hiçbir bahis 
+          platformu tarafından sponsor edilmez veya yönlendirilmez.
+        </li>
+        <li>
+          <strong>Tarafsız Analiz:</strong> Karşılaştırmalar ve analizler 
+          objektif kriterlere dayanır.
+        </li>
+        <li>
+          <strong>Reklam Politikası:</strong> Reklam içerikleri açıkça 
+          belirtilir ve editoryal içerikten ayrı tutulur.
+        </li>
+        <li>
+          <strong>Çıkar Çatışması:</strong> Potansiyel çıkar çatışmaları 
+          şeffaf bir şekilde açıklanır.
+        </li>
+      </ul>
+    </section>
+
+    <section class="policy-section">
+      <h2>👥 Editöryal Ekibimiz</h2>
+      <p>
+        İçeriklerimiz konusunda uzman kişiler tarafından hazırlanmaktadır:
+      </p>
+      <ul>
+        <li>
+          <strong>Deneyim:</strong> Ekip üyelerimiz en az 3+ yıllık sektör 
+          deneyimine sahiptir.
+        </li>
+        <li>
+          <strong>Uzmanlık Alanları:</strong> Bonus analizi, risk değerlendirmesi, 
+          yasal düzenlemeler, sorumlu oyun.
+        </li>
+        <li>
+          <strong>Sürekli Eğitim:</strong> Ekibimiz sektördeki gelişmeleri 
+          yakından takip eder.
+        </li>
+      </ul>
+      <p>
+        Editörlerimiz hakkında daha fazla bilgi için 
+        <a href="/authors">yazarlar sayfamızı</a> ziyaret edebilirsiniz.
+      </p>
+    </section>
+
+    <section class="policy-section">
+      <h2>🛡️ Sorumlu Oyun Taahhüdü</h2>
+      <p>
+        Sorumlu oyun ilkeleri tüm içeriklerimizin temelini oluşturur:
+      </p>
+      <ul>
+        <li>
+          Her içerikte sorumlu oyun hatırlatması yer alır.
+        </li>
+        <li>
+          18+ yaş uyarısı tüm sayfalarda görünürdür.
+        </li>
+        <li>
+          Kumar bağımlılığı ile ilgili yardım kaynakları her zaman erişilebilirdir.
+        </li>
+        <li>
+          Teşvik edici veya abartılı dil kullanılmaz.
+        </li>
+      </ul>
+      <p>
+        Detaylı bilgi için <a href="/sorumlu-oyun">Sorumlu Oyun</a> sayfamızı 
+        ziyaret edin.
+      </p>
+    </section>
+
+    <section class="policy-section">
+      <h2>📧 İletişim</h2>
+      <p>
+        Geri bildirimleriniz bizim için değerlidir:
+      </p>
+      <ul>
+        <li>
+          <strong>Düzeltme Talepleri:</strong> İçeriklerdeki hataları bildirmek 
+          için <a href="/iletisim">iletişim formunu</a> kullanabilirsiniz.
+        </li>
+        <li>
+          <strong>İçerik Önerileri:</strong> Ele alınmasını istediğiniz konuları 
+          bize iletebilirsiniz.
+        </li>
+        <li>
+          <strong>Şikayetler:</strong> Her türlü şikayet 48 saat içinde 
+          değerlendirilir.
+        </li>
+      </ul>
+    </section>
+
+    <section class="policy-section last-updated">
+      <h2>📅 Politika Güncellemeleri</h2>
+      <p>
+        Bu yayın politikası düzenli olarak gözden geçirilir ve güncellenir. 
+        Önemli değişiklikler bu sayfada duyurulur.
+      </p>
+      <p>
+        <strong>Son güncelleme:</strong> Aralık 2024
+      </p>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .editorial-policy {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .policy-header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 2px solid #e0e0e0;
+  }
+
+  .policy-header h1 {
+    font-size: clamp(28px, 5vw, 40px);
+    margin-bottom: 16px;
+    color: #1a1a1a;
+  }
+
+  .lead {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .policy-section {
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .policy-section:last-child {
+    border-bottom: none;
+  }
+
+  .policy-section h2 {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+  }
+
+  .policy-section p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 16px;
+  }
+
+  .policy-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .policy-section li {
+    position: relative;
+    padding: 12px 0 12px 28px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .policy-section li:last-child {
+    border-bottom: none;
+  }
+
+  .policy-section li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+  }
+
+  .policy-section li strong {
+    color: #1a1a1a;
+  }
+
+  .policy-section a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  .policy-section a:hover {
+    text-decoration: underline;
+  }
+
+  .last-updated {
+    background: #f8f9fa;
+    padding: 24px;
+    border-radius: 8px;
+    margin-top: 32px;
+  }
+
+  @media (max-width: 640px) {
+    .editorial-policy {
+      padding: 24px 16px;
+    }
+
+    .policy-section li {
+      padding-left: 24px;
+    }
+  }
+</style>

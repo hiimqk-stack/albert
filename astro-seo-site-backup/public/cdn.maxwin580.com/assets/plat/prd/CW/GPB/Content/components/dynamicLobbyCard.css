@@ -1,0 +1,597 @@
+body {
+    --cwLobbyCardRadius: 16px;
+}
+.lca-main-wrapper {
+    padding: 0 24px 12px;
+    position: relative;
+}
+
+.lca-main-wrapper-inner{
+    width: 100%;
+}
+
+.flex_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex_center_between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lb_card_main {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-flow: row dense;
+    grid-gap: 12px;
+    /*margin-bottom: 12px;*/
+}
+
+.lb_card_main.grid_3,
+.lca-most-liked-no-slider {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.lb_card {
+    border-radius: var(--cwLobbyCardRadius);
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid var(--bg-level-3,var(--cwCardBgHover));
+    background-clip: padding-box;
+}
+
+.lb_card_body {
+    width: 100%;
+/*    border-radius: var(--cwLobbyCardRadius) var(--cwLobbyCardRadius) 0px 0px;*/
+    height: calc(142px + (171 - 142) * (100vw - 1601px) / (1920 - 1601));
+}
+
+.lb_card_v {
+    grid-row: span 2;
+}
+
+.lb_card_h {
+    grid-column: span 2;
+}
+
+.lb_card_v .lb_card_body {
+    height: calc(298px + (356 - 298) * (100vw - 1601px) / (1920 - 1601));
+}
+
+.has_card_footer .lb_card_v .lb_card_body {
+    height: calc(334px + (392 - 334) * (100vw - 1601px) / (1920 - 1601));
+}
+
+.grid_3 .lb_card_body,
+.most_liked_wrapper .lb_card_body {
+    height: calc(88px + (243 - 88) * (100vw - 768px) / (1920 - 768));
+}
+
+/*.recommended_widget_wrapper .lb_card_body {
+    height: calc(124px + (171 - 124) * (100vw - 1451px) / (1920 - 1451));
+}*/
+.lb_card_img {
+    width: 100%;
+    height: 100%;
+    border-radius:var(--cwCardRadius, var(--cwLobbyCardRadius));
+}
+
+.has_card_footer .lb_card_img {
+    border-radius: 0;
+}
+
+/*.lb_card_badge_wrapper {
+    margin: -2px 0;
+}*/
+
+.lb_card_maxwin {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    color: var(--cwCardTxt, #fff);
+    margin-inline-start: auto;
+}
+
+.lb_card_maxwin:after{
+    display: inline-block;
+    font-family: "iconsDinamicMenu";
+    content: "\E4AE";
+    font-size: 42px;
+    font-weight: 400;
+    margin-inline-start: 4px;
+    line-height: 18px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Start Most Liked*/
+.lca-most-liked-no-slider {
+    display: grid !important;
+    grid-gap: 12px;
+}
+/*End Most Liked*/
+/*Start recommended no slider*/
+.lca-recommended-no-slider {
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: repeat(5, 1fr);
+}
+.lca-recommended-no-slider.recommended-items_7{
+    grid-template-columns: repeat(7, 1fr);
+}
+.lca-recommended-no-slider.recommended-items_6{
+    grid-template-columns: repeat(6, 1fr);
+}
+.recommended_widget_wrapper .lca-recommended-no-slider .lb_card_body{
+    height: calc(88px + (243 - 88) * (100vw - 768px) / (1920 - 768));
+}
+.recommended_widget_wrapper .lca-recommended-no-slider.recommended-items_7 .lb_card_body{
+    height: calc(88px + (170 - 88) * (100vw - 768px) / (1920 - 768));
+}
+.recommended_widget_wrapper .lca-recommended-no-slider.recommended-items_6 .lb_card_body{
+    height: calc(88px + (199 - 88) * (100vw - 768px) / (1920 - 768));
+}
+/*End recommended no slider*/
+/*Card Footer*/
+.lb_card_footer {
+/*    border-radius: 0px 0px var(--cwLobbyCardRadius) var(--cwLobbyCardRadius);*/
+    background: var(--bg-level-2, var(--cwCardBg));
+    padding: 8px 12px;
+    position: relative;
+    z-index: 2;
+    height: 36px;
+}
+
+.lb_card_name {
+    overflow: hidden;
+    color: var(--text-level-high, var(--cwCardTxt));
+    text-overflow: ellipsis;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    width: 100%;
+    white-space: nowrap;
+}
+.cw-rtl-global .lb_card_name {
+    direction: ltr;
+    text-align: right;
+}
+.lb_card_price {
+    text-align: right;
+    flex-shrink: 0;
+    margin-inline-start: 8px;
+    font-size: 12px;
+    color: var(--cwPrimary, var(--cwCardAccent));
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.lb_card_price .currency_icon.irt,
+.lb_card_price .currency_icon.IRT,
+.lb_card_price .currency_icon.ron,
+.lb_card_price .currency_icon.RON {
+    font-size: 12px;
+}
+
+html[lang="FA"] .lb_card .irt:after,
+html[lang="FA"] .lb_card .IRT:after {
+    font-weight: 500;
+}
+
+.lb_card_price .currency_icon.ron:after,
+.lb_card_price .currency_icon.RON:after {
+    font-weight: 500;
+}
+
+.lb_card_limit_count {
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.lb_card_more {
+    grid-column: 1/-1;
+    margin: 12px 0;
+}
+
+.lb_card_more_btn {
+    padding: 12px 16px;
+    background: var(--bg-level-4, var(--cwCardBg2));
+    border-radius: 12px;
+    color: var(--text-level-high, var(--cwCardTxt));
+    display: inline-flex;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    border: 0;
+    cursor: pointer;
+    min-width: 103px;
+    height: 44px;
+}
+
+.lb_card_flag_wrapper{
+    margin-inline-start: auto;
+}
+
+.lb_card_maxwin + .lb_card_flag_wrapper{
+    margin-inline-start: 4px;
+}
+
+.lb_card_flag {
+    width: 18px;
+    height: 18px;
+    background-size: 18px auto;
+    background-repeat: no-repeat;
+    margin-bottom: 8px;
+    background-position: 0 0;
+    background-image: var(--cdn-circleFlag_png);
+}
+
+/*Loading more*/
+.lb_card_more_btn .loading-dots {
+    --color-dot: var(--text-level-high, var(--cwCardTxt));
+    --box-color: var(--bg-level-4, var(--cwCardBg2));
+}
+
+/*Lobby Card Hover*/
+.lb_card_hover {
+    background: var(--cwCardShadow, rgba(0, 0, 0, 0.85));
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: calc(100% + 1px);
+    z-index: 1;
+    flex-direction: column;
+}
+
+.has_card_footer .lb_card_hover {
+    height: calc(100% - 36px);
+    /*border-radius: var(--cwLobbyCardRadius) var(--cwLobbyCardRadius) 0 0;*/
+}
+
+.lb_card:hover .lb_card_hover {
+    top: -1px;
+}
+
+.has_card_footer .lb_card:hover .lb_card_hover {
+    top: 0px;
+}
+
+.lb_card_hover_top {
+    padding: 10px 12px;
+    background: linear-gradient(180deg, var(--cwCardShadow, rgba(0, 0, 0, 0.4)) 0%, var(--cwCardShadowFade, rgba(0, 0, 0, 0)) 100%);
+
+
+}
+
+.lb_card_like {
+    color: var(--cwCardTxt, #fff);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.lb_card_like:before {
+    color: var(--cwCardTxt, #fff);
+    display: inline-block;
+    font-family: "iconsDinamicMenu";
+    content: "\E115";
+    font-size: 38px;
+    font-weight: 400;
+    margin-inline-end: 7px;
+    width: 20px;
+    height: 20px;
+}
+
+.lb_card_like.active:before {
+    content: "\E213";
+}
+
+.lb_card_like,
+.lb_card_favorite {
+    cursor: pointer;
+}
+
+.lb_card_favorite::before {
+    color: var(--cwCardTxt, #fff);
+    display: inline-block;
+    font-family: "iconsDinamicMenu";
+    content: "\E180";
+    /*content: "\E347";*/
+    font-size: 38px;
+    line-height: 20px;
+}
+
+.lb_card_favorite.active::before {
+    content: "\E181";
+}
+
+.lb_card_hover_bottom {
+    padding: 10px 12px;
+}
+
+.lb_card_hover_bottom .lb_card_price{
+    margin-inline-start: auto;
+}
+
+.lb_card_buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lb_card_button {
+    cursor: pointer;
+    margin: 0 4px;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    gap: 4px;
+    color: var(--text-level-high, var(--cwCardTxt));
+    white-space: nowrap;
+}
+
+.lb_card_button.demo_btn {
+    background: var(--bg-level-4, var(--cwCardBg3));
+    color: var(--text-level-high, var(--cwCardTxt));
+}
+
+.lb_card_button.play_btn {
+    background: var(--btn-primary, var(--cwButtonG));
+    color: var(--btn-primary-text, var(--cwButtonTxt));
+}
+
+.lb_card_button.play_btn i {
+    line-height: 16px;
+    font-size: 24px;
+    width: 16px;
+    text-align: center;
+    color: var(--btn-primary-text, var(--cwButtonTxt));
+}
+
+.lb_card_jackpot_value {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 12px;
+    gap: 4px;   
+    color: var(--cwCardTxt, #dedede);
+}
+.lb_card_jackpot_value .currency_icon{
+    font-weight: 400;
+} 
+.lb_card_jackpot_value > .dynamic_icon{
+    font-size: 30px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 18px;      
+    color: var(--cwCardTxt2, #dedede);
+}
+
+.lb_card_jackpot_value .currency_icon,
+.lb_card_jackpot_value .currency_icon, 
+.lb_card_jackpot_value .currency_icon.ron:after,
+.lb_card_jackpot_value .currency_icon.ron:after,
+.lb_card_jackpot_value .currency_icon.irt:after,
+.lb_card_jackpot_value .currency_icon.IRT:after {
+    -webkit-margin-start: 0;
+    margin-inline-start: 0;
+}
+
+.lb_card_jackpot_value .currency_icon,
+.lb_card_jackpot_value .currency_icon {
+    line-height: 16px;
+    font-size: 24px;
+
+}
+
+.lb_card_jackpot_value .currency_icon.IRT,
+.lb_card_jackpot_value .currency_icon.irt,
+.lb_card_jackpot_value .currency_icon.RON,
+.lb_card_jackpot_value .currency_icon.ron {
+    font-size: 14px;
+    line-height: 13px;
+}
+
+.lb_card_jackpot_value .currency_icon.TND,
+.lb_card_jackpot_value .currency_icon.tnd {
+    font-size: 30px; 
+}
+
+.lb_card_jackpot_value .currency_icon.KRW,
+.lb_card_jackpot_value .currency_icon.krw {
+    font-weight: normal; 
+}
+
+html[lang="FA"] .lb_card_jackpot_value .irt:after,
+html[lang="FA"] .lb_card_jackpot_value .IRT:after {
+    font-weight: 700;
+}
+
+/*Start Skeleton loading Most Liked*/
+.skeleton-mostLiked__body {
+    border-radius: var(--cwLobbyCardRadius);
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: calc(100% / 5 - 10px);
+    border: 1px solid var(--bg-level-3, var(--cwCardBg2));
+}
+
+.skeleton-mostLiked__inner {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.skeleton-mostLiked__img {
+    height: calc(88px + (243 - 88) * (100vw - 768px) / (1920 - 768));
+}
+
+.no_card_footer .skeleton-mostLiked__body {
+    display: flex;
+}
+
+.lca-most-liked-no-slider .skeleton-mostLiked__body {
+    width: 100%;
+}
+
+.skeleton-mostLiked__body:not(:last-child) {
+    margin-inline-end: 12px;
+}
+
+.lca-most-liked-no-slider .skeleton-mostLiked__body:not(:last-child) {
+    margin-inline-end: 0;
+}
+
+.skeleton-mostLiked__footer {
+    height: 36px;
+    border-radius: 0px 0px var(--cwLobbyCardRadius) var(--cwLobbyCardRadius);
+}
+
+.no_card_footer .skeleton-mostLiked__footer {
+    display: none;
+}
+/*End Skeleton loading Most Liked*/
+/*Start Skeleton loading Recommended*/
+.skeleton-recommended__body {
+    border-radius: var(--cwLobbyCardRadius);
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: calc(100% / 7 - 10px);
+    border: 1px solid var(--bg-level-3, var(--cwCardBg2));
+}
+
+.skeleton-recommended__inner {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.skeleton-recommended__img {
+    height: calc(88px + (170 - 88) * (100vw - 768px) / (1920 - 768));
+}
+
+.no_card_footer .skeleton-recommended__body {
+    display: flex;
+}
+
+.lca-recommended-no-slider .skeleton-recommended__body {
+    width: 100%;
+}
+
+.skeleton-recommended__body:not(:last-child) {
+    margin-inline-end: 12px;
+}
+
+.lca-recommended-no-slider .skeleton-recommended__body:not(:last-child) {
+    margin-inline-end: 0;
+}
+
+.skeleton-recommended__footer {
+    height: 36px;
+    border-radius: 0px 0px var(--cwLobbyCardRadius) var(--cwLobbyCardRadius);
+}
+
+.no_card_footer .skeleton-recommended__footer {
+    display: none;
+}
+/*End Skeleton loading Recommended*/
+
+/*Media Queries*/
+@media only screen and (min-width: 1921px) {
+    .lb_card_body {
+        height: 171px;
+    }
+    .lb_card_v .lb_card_body {
+        height: 356px;
+    }
+    .has_card_footer .lb_card_v .lb_card_body {
+        height: 392px;
+    }
+    .grid_3 .lb_card_body, .most_liked_wrapper .lb_card_body, .skeleton-mostLiked__img {
+        height: 243px;
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .lb_card_main {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .lb_card_body {
+        height: calc(150px + (167 - 150) * (100vw - 1451px) / (1600 - 1451));
+    }
+    .lb_card_v .lb_card_body {
+        height: calc(314px + (348 - 314) * (100vw - 1451px) / (1600 - 1451));
+    }
+    .has_card_footer .lb_card_v .lb_card_body {
+        height: calc(350px + (384 - 350) * (100vw - 1451px) / (1600 - 1451));
+    }
+   /* .recommended_widget_wrapper .lb_card_body {
+        height: calc(124px + (171 - 124) * (100vw - 1451px) / (1600 - 1451));
+    }*/
+}
+
+@media only screen and (max-width: 1450px){
+    .lb_card_main {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .lb_card_body {
+        height: calc(149px + (171 - 149) * (100vw - 1200px) / (1450 - 1200));
+    }
+    .lb_card_v .lb_card_body {
+        height: calc(312px + (356 - 312) * (100vw - 1200px) / (1450 - 1200));
+    }
+    .has_card_footer .lb_card_v .lb_card_body {
+        height: calc(348px + (392 - 348) * (100vw - 1200px) / (1450 - 1200));
+    }
+   /* .recommended_widget_wrapper .lb_card_body {
+        height: calc(119px + (146 - 119) * (100vw - 1200px) / (1450 - 1200));
+    }*/
+}
+
+@media only screen and (max-width: 1199px) {
+    .lb_card_body {
+        height: calc(138px + (146 - 138) * (100vw - 1141px) / (1199 - 1141));
+    }
+    .lb_card_v .lb_card_body {
+        height: calc(290px + (306 - 290) * (100vw - 1141px) / (1199 - 1141));
+    }
+    .has_card_footer .lb_card_v .lb_card_body {
+       height: calc(326px + (342 - 326) * (100vw - 1141px) / (1199 - 1141));
+    }
+  /*  .recommended_widget_wrapper .lb_card_body {
+        height: calc(88px + (144 - 88) * (100vw - 768px) / (1199 - 768));
+    }*/
+}
+
+@media (max-width: 1140px) {
+    .lb_card_main {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .lb_card_body {
+        height: calc(113px + (175 - 113) * (100vw - 768px) / (1140 - 768));
+    }
+    .lb_card_v .lb_card_body {
+        height: calc(240px + (364 - 240) * (100vw - 768px) / (1140 - 768));
+    }
+    .has_card_footer .lb_card_v .lb_card_body {
+        height: calc(276px + (400 - 276) * (100vw - 768px) / (1140 - 768));
+    }
+}

@@ -1,0 +1,486 @@
+.top_jackpots__container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+    column-gap: 12px;
+    z-index: 11;
+}
+
+.top_jackpots__block {
+    padding: 16px;
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    border-radius: 16px;
+    border: 1px solid var(--bg-level-3, var(--cwJackpotBg2));
+    background: var(--bg-level-2, var(--cwJackpotG));
+    color: var(--text-level-medium, var(--cwJackpotTxt2));
+    z-index: 0;
+}
+
+.top_jackpots__anim {
+    width: 100%;
+    max-width: 100%;
+    max-height: 120px;
+    cursor: pointer;
+    position: relative;
+    z-index: 11;
+}
+
+.top_jackpots__content {
+    row-gap: 8px;
+    max-width: calc(100% - 108px);
+}
+
+.top_jackpots__content .my-04 {
+    margin: 4px 0;
+}
+
+.top_jackpots__name {
+    border: 1px solid var(--bg-level-1, var(--cwJackpotBg));
+    background-color: var(--bg-level-1, var(--cwJackpotBg));
+    border-radius: 24px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--text-level-high, var(--cwJackpotTxt));
+    margin: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.top_jackpot_icon {
+    display: block;
+    height: 96px;
+    width: 96px;
+    background-image: var(--cdn-jackpot_icons);
+    background-size: 96px auto;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    margin-inline-end: 12px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.skill_jackpot_icon {
+    background-image: var(--cdn-skill-jackpot_icons);
+}
+.top_jackpot_icon.ic_club,
+.top_jackpot_icon.ic_one,
+.prg_jackpot_icon.ic_grand {
+    background-position: 0 -314px;
+}
+
+.top_jackpot_icon.ic_diamond,
+.top_jackpot_icon.ic_two,
+.prg_jackpot_icon.ic_mega{
+    background-position: 0 -209px;
+}
+
+.top_jackpot_icon.ic_heart,
+.top_jackpot_icon.ic_three,
+.prg_jackpot_icon.ic_major{
+    background-position: 0 -104px;
+}
+
+.top_jackpot_icon.ic_spade,
+.top_jackpot_icon.ic_four,
+.prg_jackpot_icon.ic_minor{
+    background-position: 0 0;
+}
+
+.top_jackpots__value {
+    font-weight: 700;
+    text-align: center;
+    flex-shrink: 0;
+    margin-inline-end: 5px;
+    color: var(--cwPrimary, var(--cwJackpotAccent));
+}
+
+.top_jackpots__crns {
+    color: var(--cwPrimary, var(--cwJackpotAccent));
+}
+
+.top_jackpots__winners {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--text-level-high, var(--cwJackpotTxt));
+}
+
+.top_jackpots__hover_block {
+    position: absolute;
+    bottom: 100%;
+    inset-inline-start: -1px;
+    padding: 8px 0;
+    margin: 0;
+    width: calc(100% + 2px);
+    display: none;
+    opacity: 0;
+    z-index: -1;
+}
+
+.top_jackpots__hover_content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 16px;
+    min-height: 100px;
+    border: 1px solid var(--bg-level-3, var(--cwJackpotBg2));
+    background: var(--bg-level-2, var(--cwJackpotBg));
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+}
+
+.top_jackpots__hover_winners {
+    font-size: 16px;
+    font-weight: 700;
+    background: var(--bg-level-1, var(--cwJackpotBgHover));
+    border-radius: 12px;
+    padding: 7px 16px;
+}
+
+.top_jackpots__hover_winners__name{
+    color: var(--text-level-medium, var(--cwJackpotTxt2));
+    text-transform: capitalize;
+}
+
+.top_jackpots__hover_winners__count {
+    color: var(--text-level-high, var(--cwJackpotTxt));
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.top_jackpots__hover_value {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 4px 0 16px;
+}
+
+.top_jackpots__hover__game {
+    padding: 12px 0;
+    box-sizing: border-box;
+}
+
+.top_jackpots__hover__game:last-child {
+    padding-bottom: 0;
+}
+
+.top_jackpots__hover__game:not(:last-child) {
+    border-bottom: 1px solid var(--bg-level-1, var(--cwJackpotBg2));
+}
+
+.top_jackpots__hover__text {
+    width: 100%;
+    row-gap: 4px;
+    font-size: 16px;
+}
+
+.top_jackpots__value {
+    font-size: 30px;
+    line-height: 45px;
+}
+
+.top_jackpots__value.IRT_value,
+.top_jackpots__value.irt_value {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.top_jackpots__hover__value span {
+    font-size: 20px;
+    text-shadow: none;
+    color: var(--text-level-high, var(--cwJackpotTxt));
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.top_jackpots__hover__value span,
+.top_jackpots__hover__value .top_jackpots__crns {
+    color: var(--text-level-high, var(--cwJackpotTxt));
+}
+
+.top_jackpots__hover__value .top_jackpots__crns {
+    line-height: 20px;
+    --icoSize: 16px;
+}
+
+.top_jackpots__hover_win__name {
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--cwPrimary, var(--cwJackpotAccent));
+    text-transform: capitalize;
+}
+
+.top_jackpots__hover_win {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--text-level-low, var(--cwJackpotTxt3));
+}
+
+.top_jackpots__hover__value {
+    font-size: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    color: var(--text-level-high, var(--cwJackpotTxt));
+    line-height: 30px;
+}
+
+.top_jackpots__hover_btn {
+    margin-top: 16px;
+    padding: 11px 16px;
+    color: var(--cwPrimary, var(--cwJackpotAccent));
+    border: 1px solid;
+    border-radius: 12px;
+    text-transform: capitalize;
+}
+
+.top_jackpots__hover_btn span {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.top_jackpots__hover_btn i {
+    font-size: 22px;
+    line-height: 15px;
+    margin-inline-start: 8px;
+    margin-inline-end: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.top_jackpots__crns .cw_icon_irt,
+.top_jackpots__crns .cw_icon_IRT,
+.top_jackpots__crns .cw_icon_ron,
+.top_jackpots__crns .cw_icon_RON {
+    display: inline-flex;
+    width: auto;
+    height: auto;
+    font-size: 30px;
+    line-height: normal;
+}
+
+.top_jackpots__crns .cw_icon_irt,
+.top_jackpots__crns .cw_icon_IRT {
+    font-size: 22px;
+}
+
+.top_jackpots__hover__value .top_jackpots__crns .cw_icon_ron,
+.top_jackpots__hover__value .top_jackpots__crns .cw_icon_RON,
+.top_jackpots__hover__value .top_jackpots__crns .cw_icon_irt,
+.top_jackpots__hover__value .top_jackpots__crns .cw_icon_IRT {
+    font-size: 19px;
+    line-height: 20px;
+}
+
+.top_jackpots__hover__min_bet .top_jackpots__crns {
+    --icoSize: 15px;
+}
+
+.top_jackpots__hover__min_bet .top_jackpots__crns .cw_icon_RON,
+.top_jackpots__hover__min_bet .top_jackpots__crns .cw_icon_RON,
+.top_jackpots__hover__min_bet .top_jackpots__crns .cw_icon_IRT,
+.top_jackpots__hover__min_bet .top_jackpots__crns .cw_icon_irt {
+    font-size: 16px;
+}
+
+@media screen and (min-width: 1200px) {
+    .top_jackpots__anim:hover {
+        z-index: 13;
+    }
+    .top_jackpots__anim:hover .top_jackpots__hover_block {
+        z-index: 3;
+        opacity: 1;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1540px) {
+    .top_jackpots__value.RON_value,
+    .top_jackpots__value.ron_value,
+    .top_jackpots__value.IRT_value,
+    .top_jackpots__value.irt_value {
+        font-size: 22px;
+        line-height: 33px;
+    }
+    .top_jackpots__crns .cw_icon_ron,
+    .top_jackpots__crns .cw_icon_RON {
+        font-size: 22px;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1480px) {
+    .top_jackpots__value {
+        font-size: 28px;
+        line-height: 42px;
+    }
+
+    .top_jackpots__crns {
+        --icoSize: 22px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1420px) {
+    .top_jackpots__value {
+        font-size: 24px;
+        line-height: 36px;
+    }
+    .top_jackpots__value.IRT_value,
+    .top_jackpots__value.irt_value {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .top_jackpots__crns {
+        --icoSize: 20px;
+    }
+    .top_jackpots__crns .cw_icon_irt,
+    .top_jackpots__crns .cw_icon_IRT {
+        font-size: 20px;/*old -18px*/
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+    .top_jackpots__value {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .top_jackpots__crns {
+        --icoSize: 16px;
+    }
+    .top_jackpots__crns .cw_icon_ron,
+    .top_jackpots__crns .cw_icon_RON {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1370px) {
+    .top_jackpot_icon {
+        background-size: 80px auto;
+        width: 80px;
+        height: 80px;
+    }
+    .top_jackpot_icon.ic_club,
+    .top_jackpot_icon.ic_one,
+    .prg_jackpot_icon.ic_grand{
+        background-position: 0 -262px;
+    }
+    .top_jackpot_icon.ic_diamond,
+    .top_jackpot_icon.ic_two,
+    .prg_jackpot_icon.ic_mega{
+        background-position: 0 -174px;
+    }
+    .top_jackpot_icon.ic_heart,
+    .top_jackpot_icon.ic_three,
+    .prg_jackpot_icon.ic_major{
+        background-position: 0 -84px;
+    }
+
+    .top_jackpots__content {
+        max-width: calc(100% - 92px);
+    }
+}
+
+/*Pragmatic Play Jackpots*/
+.prg_jackpots__container,
+.prg_jackpots__anim {
+    z-index: 1;
+}
+
+.prg_jackpot_icon {
+    background-image: var(--cdn-prg-jackpot_icons);
+}
+
+/*Start Skeleton loading */
+.skeleton-jackpot__container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+    column-gap: 12px;
+}
+.skeleton-jackpot__body {
+    max-height: 120px;
+    padding: 16px;
+    border: 1px solid var(--bg-level-3, var(--cwJackpotBg2));
+    background: var(--bg-level-2), var(--cwJackpotBg));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.skeleton-jackpot__icon {
+    height: 96px;
+    width: 96px;
+    border-radius: 12px;
+    margin-inline-end: 12px;
+    flex-shrink: 0;
+}
+
+.skeleton-jackpot__content {
+    width: 60%;
+}
+
+.skeleton-jackpot__winners {
+    min-height: 20px;
+}
+
+.skeleton-jackpot__value {
+    min-height: 34px;
+    margin-bottom: 8px;
+}
+
+.prg_jackpots__container .skeleton-jackpot__value {
+    margin-bottom: 0;
+}
+
+/*End Skeleton loading */
+
+/*Start Top Jeckot Sport section*/
+.top_jackpots_sport{
+    display: flex;
+}
+
+.sport_jackpot_icon {
+    background-image: var(--cdn-sport-jackpot_icons);
+}
+/*End Top Jeckot Sport section*/
+
+/*start no jeckpot*/
+.no_jeckpots {
+    padding: 27px 16px;
+    border-radius: 16px;
+    border: 1px solid var(--bg-level-2, var(--cwCardBg));   
+    color: var(--text-level-high, var(--cwCardTxt));
+}
+
+.no_jeckpots_text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-block: 8px;
+}
+.no_jeckpots {
+    display: none;
+}
+
+.no_jeckpots.active {
+    display: flex;
+}
+/*end no jeckpot*/
+@media screen and (max-width: 1370px) {
+    .skeleton-jackpot__icon {
+        width: 80px;
+        height: 80px;
+    }
+    .no_jeckpots {
+        padding: 24px 16px;
+    }
+}

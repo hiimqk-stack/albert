@@ -1,0 +1,815 @@
+
+.sucMsgUpload {
+    color: #1a9f43;
+}
+
+.prieod_area_fully .tl_input_popup_reg:disabled{
+    cursor: auto;
+}
+
+.responsible_gaming_amount .successmassage, .errormassage {
+    padding: 0 !important;
+}
+.responsible_gaming_amount .successmassage{
+   color:#28a745;
+}
+
+.js_succ_msg {
+    color: #009900;
+}
+.js_err_msg {
+    color: #ff0000;
+}
+.responsible_gaming_update:focus,
+.res_gaming_tipe_amount input:focus {
+    outline: none;
+}
+
+.res_gaming_tipe_amount {
+    position: relative;
+}
+
+
+.res_gaming_limit_result {
+    padding-left: 10px;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.res_gaming_time_amount li:not(:last-of-type) {
+    margin-bottom: 2px;
+}
+
+.res_gaming_limit_text {
+    color: var(--text-level-low, var(--cwModalTxt2));
+}
+
+.res_gaming_time_amount {
+    display: flex;
+    font-size: 12px;
+}
+
+.responsible_gaming_update {
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    min-width: 140px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 0 12px;
+}
+
+.resp_gaming_val {
+    color: #999;
+}
+
+.ic_info_msg {
+    color: var(--text-level-low, var(--cwModalTxt2));
+}
+
+.responsible_gaming_content .tl_input_popup_reg:hover + .reg_err_mess:not(:empty) {
+    display: block;
+}
+/*self limiting removal popup*/
+.removal_popup_content {
+    padding: 25px 20px 20px !important;
+    background-color: var(--cwModalBg, #fff) !important;
+    border-radius: 6px;
+    color: var(--cwModalTxt, #333);
+    font-size: 15px;
+    max-width: 350px;
+    line-height: 1.3;
+    text-align: center;
+    font-weight: 500;
+    min-height: 100px;
+    width: 100%;
+    margin-top: 10vh;
+}
+.removal_popup_content .ui-widget-content {
+        color: var(--cwModalTxt, #333) !important;
+        /*CSSDANGER*/
+    }
+.removal_popup_content .ui-dialog-content {
+    min-height: 50px !important;
+}
+
+.removal_popup_content .ui-dialog-titlebar {
+        display: none;
+    }
+
+.removal_popup_text {
+    text-align: left;
+    padding: 0 13px;
+}
+
+.removal_popup_content .ui-dialog-buttonset {
+    width: 100%;
+}
+
+.removal_popup_content .removal_popup_footer .ok_btn,
+.removal_popup_content .removal_popup_footer .close_btn {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 35px;
+    text-transform: uppercase;
+    margin: 20px 4px 0;
+    border-radius: 3px;
+    color: #333;
+}
+
+.ui-dialog .ui-dialog-buttonpane.removal_popup_footer {
+    background-color: transparent;
+    border-top: none;
+    height: auto;
+}
+
+html .removal_popup_content a:hover {
+   color: var(--cwModalTxt, #333);
+}
+
+.removal_popup_content .removal_popup_footer .ok_btn {
+    background: var(--btn-primary, var(--cwButtonBg));
+    color: var(--btn-primary-text, var(--cwButtonTxt));
+}
+
+.removal_popup_content .removal_popup_footer .close_btn {
+    background: var(--bg-level-2, var(--cwButtonSecondaryBg));
+    color: var(--text-level-high, var(--cwButtonSecondaryTxt));
+}
+
+.removal_popup_dialog {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    right: 0;
+    left: 0;
+    max-width: 100%;
+    height: 100vh;
+}
+
+/*information on bets*/
+.bets_info_content {
+    padding: 0 10px 50px;
+    line-height: 1.4;
+    min-height: calc(100vh - 97px);
+    color: #8C8C8C;
+}
+
+.bets_info_title {
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    color: #000000;
+}
+
+.bets_info_list {
+    list-style-type: disc;
+    padding: 0 16px;
+    color: #999999;
+    margin-bottom: 16px;
+}
+
+.bets_loss_info_content {
+    background-color: #dddddd;
+    padding: 20px 24px;
+    margin-bottom: 10px;
+    min-width: 250px;
+}
+
+.bets_info_subtitle {
+    font-size: 14px;
+    font-weight: bold;
+    color: #13355e;
+    margin-bottom: 14px;
+    display: block;
+    text-transform: capitalize;
+}
+
+.total_bets_item {
+    padding-right: 30px;
+}
+
+.total_bets {
+    color: #707070;
+    display: block;
+}
+
+.bets_color {
+    color: #13355e;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.bets_info_text {
+    margin: 30px 0 15px;
+}
+
+.bets_win_text {
+    color: #8C8C8C;
+    font-size: 16px;
+    margin-bottom: 24px;
+    line-height: 1.3;
+}
+
+.bets_win_subtitle {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    line-height: 1;
+}
+/*RealityCheck*/
+
+
+
+
+.resp_gaming_btn {
+    border: none;
+    background: var(--cwButtonG, #666);
+    color: var(--cwButtonTxt, #fff);
+    width: 100%;
+    height: 35px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.resp_gaming_cont {
+    padding: 8px 24px;
+}
+
+.resp_gaming_cont .w-50{
+    width: 50%;
+}
+
+#client_dep_limit_cont {
+    margin-bottom: 24px;
+}
+.dep_limits_msg{
+    padding:14px 16px;
+}
+
+.resp_gaming_key, .resp_gaming_val {
+    font-size: 16px;
+    color: var(--text-level-low, var(--cwModalTxt2));
+}
+
+.resp_gaming_will_increase > .resp_gaming_key {
+    color: var(--cwModalTxt2, #000);
+    margin: 0 10px;
+}
+
+.respSuccess {
+    color: #28a745;
+    display: inline-block;
+    margin-bottom:12px;
+}
+
+.respFail {
+    color:var(--errorBg_global, #ff0000);
+    display: inline-block;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.resp_gaming_item .tl_input_popup_reg {
+    margin: 0 auto;
+    width: 100%;
+    display: block;
+    outline: none;
+}
+
+.resp_gaming_item > .tl_input_popup_reg:disabled,
+.resp_gaming_btn:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+/*RealityCheck*/
+/*Realitycheck info popup*/
+.re_chk_popup_cont {
+    padding: 10px;
+}
+
+.realityCheck_popup.ui-dialog-content {
+    background-color: var(--cwModalBg, #333333);
+    color: var(--cwModalTxt2, #d8d8d8);
+    border-radius: var(--cwModalRadius);
+}
+
+.realityCheck_popup > .tl_popup_content {
+    padding: 16px 24px;
+}
+
+.realityCheck_popup_item {
+    background-color: var(--cwModalBg2, #4a4a4a);
+    cursor: pointer;
+    color: var(--cwModalTxt2, d8d8d8);
+    border-radius: 4px;
+    outline: none;
+    text-decoration: none;
+    display: block;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    width: 100%;
+    border: 0;
+    margin: 12px 0;
+    font-size: 14px;
+}
+
+.realityCheck_popup a, .realityCheck_popup {
+    color: var(--cwModalTxt2, d8d8d8);
+}
+
+.realityCheck_popup {
+    display: none;
+}
+
+.realityCheck_text {
+    text-align: center;
+    font-size: 12px;
+}
+
+.exceedded .realityCheck_text_val {
+    color: var(--cwModalTxt2, e04103);
+}
+
+.exceedded .realityCheck_text_key,
+.ex_settings .realityCheck_text_val {
+    color: var(--text-level-high, var(--cwModalTxt2));
+}
+
+.realityCheck_popup .logout,
+.remain_loggedIn, .account_history,
+.realityCheck_popup .support {
+    text-transform: uppercase;
+}
+
+.net_won {
+    background: none;
+    border: 2px solid;
+    color: var(--cwPrimary, var(--cwModalAccent));
+}
+
+/*Realitycheck info popup*/
+/*Self Exclusion*/
+.self_exclusion_info {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    background-color: var(--errorBg_global, #7c0b0b);
+    color: var(--errorTxt_global, #eceaea);
+    z-index: 90;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+}
+
+.self_popup_head {
+    color:  var(--cwModalTxt, #fff);
+    padding: 10px 16px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.self_popup_body {
+    color: var(--cwModalTxt, #7d7d7d);
+    padding: 10px 16px;
+    font-size: 15px;
+    text-align: left;
+}
+
+.self_popup_btn {
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-transform: uppercase;
+    border-radius: 3px;
+    color: var(--cwModalTxt, #fff);
+}
+
+.opc {
+    opacity: 0.3;
+    pointer-events: none;
+}
+/*Self Exclusion*/
+
+
+/*Start Resposible gaming Self exclusion popup*/
+
+.selfPopup_cover {
+    position: fixed;
+    background-color: var(--cwBodyShadow, rgba(0,0,0,0.5));
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 95;
+}
+.selfPopup {
+    width: 100%;
+    max-width: 522px;
+    height: 244px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 97;
+    background-color: var(--bg-level-1, var(--cwModalBg));
+    border-radius: 16px;
+    padding: 12px 16px;
+}
+
+.selfPopup_close_icon{
+    width: 100%;
+    height: 40px;
+    padding: 8px 0;
+    margin-bottom: 12px;
+    text-align: right;
+}
+
+.selfPopup_close_icon i{
+    line-height: 24px;
+    cursor: pointer;
+    font-size: 34.9px;
+    color: var(--icon-level-medium, var(--cwModalTxt2));
+}
+
+.selfPopup_text_icon i {
+    font-size: 96px;
+    line-height: 50px;
+    color: var(--cwPrimary, var(--cwModalAccent));
+}
+
+.selfPopup_text_icon p {
+    margin-top: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--text-level-high, var(--cwModalTxt));
+}
+
+/*Start self exclusion running blocks*/
+.self_wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    justify-content: center;
+    width: 100%;
+}
+
+.self_text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translate(100%);
+}
+
+.self_slide {
+    width: calc(100% - 63px);
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 150%;
+    padding-top: 4px;
+}
+
+.self_text:hover {
+    animation-play-state: paused !important;
+}
+
+@keyframes self_slide {
+    0% {
+        transform: translate(1400px)
+    }
+
+    to {
+        transform: translate(-100%)
+    }
+}
+/*End self exclusion running blocks*/
+
+/* */
+#respDetails,
+.popup_lbl{
+    color: var(--text-level-high, var(--cwModalTxt));
+}
+.bonuses_nav_bar.flex.alCen a, .bonuses_nav_bar.flex.alCen a:active, .bonuses_nav_bar.flex.alCen a:visited {
+    font-size: 14px;
+    text-transform: capitalize;
+    border-color: var(--cwPrimary, var(--cwModalAccent));
+}
+.bonuses_nav_bar {
+    margin-bottom: 20px;
+}
+.responsible_gaming_title {
+    color: var(--text-level-high, var(--cwModalTxt));
+    font-size: 16px;
+    font-weight:700;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+.responsible_gaming_text {
+    color: var(--text-level-low, var(--cwModalTxt2));
+    font-size: 16px;
+    margin-bottom: 24px;
+    line-height: 1.3;
+}
+.cw_resp_heading {
+    margin-bottom: 12px;
+    color: var(--text-level-low, var(--cwModalTxt));
+}
+
+.resp_gaming_real_chkIs, 
+.resp_gaming_will_increase {   
+    width: 460px;
+}
+.resp_gaming_btn_cont {
+    margin-top: 24px;
+    min-width: 114px;
+    margin-inline-end: 12px;
+}
+.resp_gaming_real_chkIs {
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding:16px;
+    background-color: var(--bg-level-2, var(--cwModalBg3));
+}
+.tl_my_acc_cont .lbl{
+    margin-bottom:4px;
+}
+.resp_gaming_real_chkIs_wrp{
+    row-gap:12px;
+    flex-direction: column;
+}
+.cw_resp_gaming_inp_cont{
+    display:flex;
+    flex-direction:column;
+    row-gap:12px;
+}
+.resp_gaming_item,.resp_gaming_item .tl_input_popup_reg{
+    min-width: 280px;
+}
+
+.resp_gaming__lbl{
+    column-gap:24px;
+}
+/*Password hide/unhide button */
+.resp_gaming_item .eye_button.eye_button_resp_gaming {
+    border: none;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    right: auto;
+    inset-inline-end: 4px;
+    display: flex;
+    padding: 2px 7px;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--cwModalTxt2, #656565);
+    font-family: "iconsDinamicMenu";
+    height: 34px;
+}
+
+.eye_button.eye_button_resp_gaming:before {
+    content: "\E235";
+    font-family: "iconsDinamicMenu";
+    font-size: 40px;
+    line-height: 28px;
+}
+
+.eye_button.eye_button_resp_gaming.opened_pass:before {
+    content: "\E234";
+}
+
+input:disabled ~ .eye_button.eye_button_resp_gaming {
+    opacity: .4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.resp_gaming_item.eye_block #Password {
+    padding-inline-end: 40px !important;
+}
+
+.responsible_gaming_content {
+    padding: 0 35px 24px;
+}
+.responsible_gaming_amount{
+    column-gap:24px;
+    margin-bottom:24px;
+}
+.responsible_gaming_content .tl_sel_popup_reg{
+    max-width: 280px;
+}
+.responsible_gaming_subtitle {
+    color: var(--text-level-low, var(--cwModalTxt2));
+    font-size: 16px;
+    text-transform: none;
+    margin-bottom: 16px;
+    text-decoration: none;
+}
+.responsible_gaming_amount_item{
+    padding: 16px;
+    background-color: var(--bg-level-2, var(--cwModalBg3));
+    width: 460px;
+    min-width: 400px;
+    border-radius: 8px;
+}
+.responsible_gaming_amount .responsible_gaming_update{
+    margin:0;
+}
+.responsible_gaming_row{
+    display:flex;
+    flex-direction:column;
+    row-gap:12px;
+}
+.responsible_switcher_label {
+    display: flex;
+    align-items: center;
+    width:100%;
+}
+.responsible_switcher {
+    width: 37px;
+    height: 22px;
+    background-color: var(--icon-level-low, var(--cwModalTxt3));
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    margin-left: 8px;
+    display: block;
+}
+
+.responsible_switcher:before {
+    content: "";
+    display: block;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: var(--text-level-high, var(--cwModalTxt));
+    position: absolute;
+    right: 0;
+    left: 0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.removal_popup_footer .ui-dialog-buttonset .close_btn {
+    position: static;
+}
+
+.removal_popup_footer .ui-dialog-buttonset .close_btn:before {
+    display: none;
+}
+
+.responsible_gaming_checkbox input {
+    opacity: 0;
+    position: absolute;
+    z-index: -10;
+}
+
+.responsible_gaming_checkbox input:checked + label .responsible_switcher {
+    background-color: var(--cwPrimary, var(--cwModalAccent));
+}
+
+.responsible_gaming_checkbox input:checked + label .responsible_switcher:before {
+    left: 15px;
+}
+
+.checkbox_label {
+    display: inline-block;
+    color: var(--text-level-low, var(--cwModalTxt2));
+    flex-grow:1;
+}
+
+.perid_type {
+    margin-inline-end: 12px;
+    white-space: nowrap;
+    margin-bottom: 8px;
+    font-size:12px;
+}
+
+.responsible_gaming_update {
+    margin: 0 0 0 80px;
+}
+.res_gaming_tipe_amount .curency_text {
+    position: absolute;
+    right: 0;
+    display: block;
+    top: 0;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 6px;
+    color: var(--text-level-high, var(--cwModalTxt));
+    font-size: 12px;
+}
+
+.cw-rtl-global .res_gaming_tipe_amount .curency_text {
+    right: auto;
+    left: 0;
+}
+.resp_gaming_titles{
+    background-color: var(--bg-level-2, var(--cwModalBgHover)) ;
+}
+.resp_gaming_titles .popup_lbl{
+ color: var(--text-level-low, var(--cwModalTxt2)) !important;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 16px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+.resp_gaming_real_client_dep{
+    background-color: var(--bg-level-3, var(--cwModalBg3));
+    width: 460px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.client_dep_limit_periods_elm{
+align-items: stretch;
+}
+ .cw_table_cell_imit{
+    width: 50%;
+    flex-shrink:0;
+    min-width: 1px;
+    border: 1px solid  var(--bg-level-2, var(--cwModalBorder));
+    background-color: var(--bg-level-3, var(--cwModalBg3));
+    font-size: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: flex-start;
+ }
+
+.dep_limits_msg:empty{
+    display: none;
+}
+
+.cw_input_cur_wrapper_fixed{
+    --size:100%;
+    width: var(--size);
+    display: flex;
+    align-items: stretch;
+   flex-direction: column;
+   row-gap: 12px;
+
+}
+.cw_responsible_gaming_amount_item_footer{
+    margin-top: auto;
+}
+
+.cw_responsible_gaming_amount_item_content{
+    height: 100%;
+}
+
+.cw_table_imit.state_3x .cw_table_cell_imit {
+    width: 33.333%;
+    flex-shrink: 0;
+}
+
+.cw_table_imit,
+.resp_gaming_item {
+    height: 100%;
+}
+
+.cw_resp_cards_wrapper {
+    display: flex;
+    column-gap: 24px;
+    row-gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.cw_resp_cards_wrapper > .cw_resp_card_item{
+    width: 460px;
+    flex-shrink: 0;
+}
+
+.cw_table_imit .resp_gaming__lbl {
+    column-gap: 0;
+}

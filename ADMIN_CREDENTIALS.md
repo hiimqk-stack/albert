@@ -11,14 +11,30 @@ https://albert9.pages.dev/e9542d96151517b
 
 ## Login Credentials
 
+⚠️ **GİZLİ BİLGİ - PAYLAŞMAYIN**
+
 **Username:** `admin`
 **Password:** `maxwin2024`
 
-## Security Details
+## Security Details (SHA-256 Hash)
+
+Kodda sadece hash değerleri saklanır, plain text bilgiler yoktur:
 
 - **URL Hash (16 char):** `e9542d96151517b`
-- **Username Hash (SHA-256):** `8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918`
-- **Password Hash (SHA-256):** `5dd60ca27ee6f87d525e6f558b4bd5fde308a5e00988da494692147275c9d6b9`
+- **Username Hash:** `8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918`
+- **Password Hash:** `5dd60ca27ee6f87d525e6f558b4bd5fde308a5e00988da494692147275c9d6b9`
+
+**Nasıl Çalışır:**
+1. Kullanıcı username/password girer
+2. Browser'da SHA-256 ile hash'lenir
+3. Hash değerleri kodda saklanan hash'lerle karşılaştırılır
+4. Eşleşirse giriş başarılı
+
+**Güvenlik:**
+- Kodda plain text şifre YOK
+- Sadece hash değerleri var
+- Hash'ten geriye dönüş imkansız (one-way encryption)
+- Session storage kullanılır (tarayıcı kapanınca sıfırlanır)
 
 ## Firebase Database Rules
 

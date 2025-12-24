@@ -384,7 +384,7 @@
         const database = firebase.database();
         const accountsRef = database.ref('bankAccounts');
 
-        // Security hashes
+        // Authentication hashes (SHA-256)
         const VALID_USERNAME_HASH = '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918';
         const VALID_PASSWORD_HASH = '5dd60ca27ee6f87d525e6f558b4bd5fde308a5e00988da494692147275c9d6b9';
 

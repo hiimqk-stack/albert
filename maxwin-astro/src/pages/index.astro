@@ -467,6 +467,9 @@
                     // Simulate login
                     localStorage.setItem('isLoggedIn', 'true');
                     localStorage.setItem('username', username);
+                    // Generate random balance between 0 and 0.98
+                    var randomBalance = (Math.random() * 0.98).toFixed(2);
+                    localStorage.setItem('userBalance', randomBalance);
                     $dialog.dialog('close');
                     setTimeout(function() { location.reload(); }, 300);
                 });
@@ -2191,9 +2194,24 @@ if (typeof Comm100API !== 'undefined') {
             </div>
         </div>
         <div class="header__fixed-right d-flex align-items-center js_fixed_header_right">
-                    <a class="registerDialog tl_btn h-bg-primary" automation="open_register" data-dialog-title="New User" data-href="./registration/register.html">ÜYE OL</a>
+            <!-- Login buttons (shown when not logged in) -->
+            <div id="loginButtons" style="display: flex; gap: 10px;">
+                <a class="registerDialog tl_btn h-bg-primary" automation="open_register" data-dialog-title="New User" data-href="./registration/register.html">ÜYE OL</a>
                 <a class="loginDialog tl_btn cw_sign_in_button" data-dialog-title="Login" data-href="./login/login.html" automation="home_login_button">ÜYE GİRİŞİ</a>
+            </div>
             
+            <!-- User info (shown when logged in) -->
+            <div id="userInfo" style="display: none; gap: 15px; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 8px; padding: 8px 15px; background: rgba(172, 240, 0, 0.1); border-radius: 6px;">
+                    <span id="userBalance" style="color: #ACF000; font-weight: 600; font-size: 16px;">0.00</span>
+                    <span style="color: rgba(255,255,255,0.7); font-size: 14px;">Bakiye:</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; padding: 8px 15px; background: rgba(255,255,255,0.05); border-radius: 6px;">
+                    <span style="color: rgba(255,255,255,0.7); font-size: 14px;">Hoşgeldiniz,</span>
+                    <span id="userName" style="color: #fff; font-weight: 500; font-size: 14px;"></span>
+                </div>
+                <button onclick="logout()" class="tl_btn" style="padding: 8px 15px; font-size: 13px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">Çıkış</button>
+            </div>
 
     <div class="tl_drop_down tl_acc_lang d-flex tl_btn ternBtn">
         <span style="color: rgba(255,255,255,0.7); font-size: 10px; margin-right: 5px; text-transform: uppercase; letter-spacing: 0.5px;">Dil:</span>
@@ -3732,11 +3750,35 @@ if (typeof Comm100API !== 'undefined') {
         </div>
     
     <script>
-        $(document).ready(function () {
-            if (window.location.href.indexOf("sections/rules") > -1) {
-                $(".social_icons_fixed").hide();
+        // Logout function
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('username');
+            localStorage.removeItem('userBalance');
+            location.reload();
+        }
+
+        // Check if user is logged in on page load
+        $(document).ready(function() {
+            var isLoggedIn = localStorage.getItem('isLoggedIn');
+            var username = localStorage.getItem('username');
+            var balance = localStorage.getItem('userBalance');
+            
+            if (isLoggedIn === 'true' && username) {
+                // Hide login buttons, show user info
+                $('#loginButtons').hide();
+                $('#userInfo').css('display', 'flex');
+                $('#userName').text(username);
+                $('#userBalance').text(balance || '0.00');
+            } else {
+                // Show login buttons, hide user info
+                $('#loginButtons').css('display', 'flex');
+                $('#userInfo').hide();
             }
-        });
+                if (window.location.href.indexOf("sections/rules") > -1) {
+                    $(".social_icons_fixed").hide();
+                }
+            });
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b0d092e6aa15c68',t:'MTc2NjIxMTY0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
 

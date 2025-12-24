@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "bankAccounts": {
+      ".read": true,
+      ".write": true,
+      ".indexOn": ["createdAt", "updatedAt"]
+    }
+  }
+}

@@ -1,0 +1,562 @@
+---
+// Admin Panel - IBAN Management
+---
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin Panel - IBAN Yönetimi</title>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0d1117;
+            color: #fff;
+            min-height: 100vh;
+        }
+        
+        /* Login Screen */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .login-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+        
+        .login-box h1 {
+            color: #ACF000;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .login-box p {
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #ACF000;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #ACF000;
+            color: #0d1117;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .login-btn:hover {
+            background: #9dd600;
+        }
+        
+        .error-message {
+            background: rgba(218, 54, 51, 0.1);
+            border: 1px solid #da3633;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 20px;
+            color: #ff7b72;
+            font-size: 14px;
+            display: none;
+        }
+        
+        /* Admin Panel */
+        .admin-panel {
+            display: none;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .admin-header {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px 30px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .admin-header h1 {
+            color: #ACF000;
+            font-size: 24px;
+        }
+        
+        .logout-btn {
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        
+        .logout-btn:hover {
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .panel-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .panel-section {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .section-header {
+            background: rgba(0,0,0,0.3);
+            padding: 16px 20px;
+            border-bottom: 1px solid #30363d;
+        }
+        
+        .section-header h2 {
+            color: #58a6ff;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .section-body {
+            padding: 20px;
+        }
+        
+        .account-card {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        
+        .account-card:last-child {
+            margin-bottom: 0;
+        }
+        
+        .account-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .account-name {
+            font-weight: 600;
+            color: #ACF000;
+            font-size: 16px;
+        }
+        
+        .account-actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .btn-edit, .btn-delete {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn-edit {
+            background: #1f6feb;
+            color: #fff;
+        }
+        
+        .btn-edit:hover {
+            background: #388bfd;
+        }
+        
+        .btn-delete {
+            background: #da3633;
+            color: #fff;
+        }
+        
+        .btn-delete:hover {
+            background: #f85149;
+        }
+        
+        .account-info {
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        
+        .account-info div {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .account-info .label {
+            color: rgba(255,255,255,0.5);
+        }
+        
+        .account-info .value {
+            color: #fff;
+            font-weight: 500;
+        }
+        
+        .add-form input, .add-form button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 14px;
+        }
+        
+        .add-form input:focus {
+            outline: none;
+            border-color: #ACF000;
+        }
+        
+        .add-form button {
+            background: #238636;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        
+        .add-form button:hover {
+            background: #2ea043;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: rgba(255,255,255,0.3);
+        }
+        
+        @media (max-width: 968px) {
+            .panel-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Screen -->
+    <div class="login-container" id="loginScreen">
+        <div class="login-box">
+            <h1>🔐 Admin Panel</h1>
+            <p>IBAN Yönetim Sistemi</p>
+            
+            <div class="error-message" id="loginError"></div>
+            
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Kullanıcı Adı</label>
+                    <input type="text" id="username" autocomplete="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Şifre</label>
+                    <input type="password" id="password" autocomplete="current-password" required>
+                </div>
+                
+                <button type="submit" class="login-btn">Giriş Yap</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-header">
+            <h1>💳 IBAN Yönetim Paneli</h1>
+            <button class="logout-btn" onclick="logout()">Çıkış Yap</button>
+        </div>
+        
+        <div class="panel-grid">
+            <!-- Accounts List -->
+            <div class="panel-section">
+                <div class="section-header">
+                    <h2>Mevcut Banka Hesapları</h2>
+                </div>
+                <div class="section-body" id="accountsList">
+                    <div class="loading">Yükleniyor...</div>
+                </div>
+            </div>
+            
+            <!-- Add New Account -->
+            <div class="panel-section">
+                <div class="section-header">
+                    <h2>Yeni Hesap Ekle</h2>
+                </div>
+                <div class="section-body">
+                    <form class="add-form" onsubmit="addAccount(event)">
+                        <input type="text" id="newBankName" placeholder="Banka Adı (örn: Garanti BBVA)" required>
+                        <input type="text" id="newAccountHolder" placeholder="Hesap Sahibi" required>
+                        <input type="text" id="newIban" placeholder="IBAN (boşluksuz)" required pattern="TR[0-9]{24}">
+                        <input type="number" id="newMinAmount" placeholder="Minimum Tutar (TL)" required min="1">
+                        <button type="submit">➕ Hesap Ekle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAF66MKaDZOX7-xlXsW-YA0qV_Z617uDfE",
+            authDomain: "isaa-559ef.firebaseapp.com",
+            databaseURL: "https://isaa-559ef-default-rtdb.firebaseio.com",
+            projectId: "isaa-559ef",
+            storageBucket: "isaa-559ef.firebasestorage.app",
+            messagingSenderId: "1017838932952",
+            appId: "1:1017838932952:web:8796cfdc74b1ab3343d8ad"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+        const accountsRef = database.ref('bankAccounts');
+
+        // Security hashes
+        const VALID_USERNAME_HASH = '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918';
+        const VALID_PASSWORD_HASH = '5dd60ca27ee6f87d525e6f558b4bd5fde308a5e00988da494692147275c9d6b9';
+
+        // SHA-256 hash function
+        async function sha256(str) {
+            const buffer = new TextEncoder().encode(str);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        // Check if already logged in
+        if (sessionStorage.getItem('adminAuth') === 'true') {
+            showAdminPanel();
+        }
+
+        // Handle login
+        async function handleLogin(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            const usernameHash = await sha256(username);
+            const passwordHash = await sha256(password);
+            
+            if (usernameHash === VALID_USERNAME_HASH && passwordHash === VALID_PASSWORD_HASH) {
+                sessionStorage.setItem('adminAuth', 'true');
+                showAdminPanel();
+            } else {
+                showError('Kullanıcı adı veya şifre hatalı!');
+            }
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('loginError');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            setTimeout(() => {
+                errorDiv.style.display = 'none';
+            }, 3000);
+        }
+
+        function showAdminPanel() {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('adminPanel').style.display = 'block';
+            loadAccounts();
+        }
+
+        function logout() {
+            sessionStorage.removeItem('adminAuth');
+            location.reload();
+        }
+
+        // Load accounts
+        function loadAccounts() {
+            accountsRef.on('value', (snapshot) => {
+                const accounts = snapshot.val();
+                const container = document.getElementById('accountsList');
+                
+                if (!accounts) {
+                    container.innerHTML = '<div class="empty-state">Henüz hesap eklenmemiş.</div>';
+                    return;
+                }
+                
+                let html = '';
+                Object.keys(accounts).forEach(key => {
+                    const acc = accounts[key];
+                    const ibanFormatted = acc.iban.match(/.{1,4}/g).join(' ');
+                    
+                    html += `
+                        <div class="account-card">
+                            <div class="account-header">
+                                <div class="account-name">${acc.bankName}</div>
+                                <div class="account-actions">
+                                    <button class="btn-edit" onclick="editAccount('${key}')">Düzenle</button>
+                                    <button class="btn-delete" onclick="deleteAccount('${key}', '${acc.bankName}')">Sil</button>
+                                </div>
+                            </div>
+                            <div class="account-info">
+                                <div>
+                                    <span class="label">Hesap Sahibi:</span>
+                                    <span class="value">${acc.accountHolder}</span>
+                                </div>
+                                <div>
+                                    <span class="label">IBAN:</span>
+                                    <span class="value">${ibanFormatted}</span>
+                                </div>
+                                <div>
+                                    <span class="label">Min Tutar:</span>
+                                    <span class="value">${acc.minAmount} TL</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+            });
+        }
+
+        // Add new account
+        function addAccount(event) {
+            event.preventDefault();
+            
+            const bankName = document.getElementById('newBankName').value;
+            const accountHolder = document.getElementById('newAccountHolder').value;
+            const iban = document.getElementById('newIban').value.replace(/\s/g, '');
+            const minAmount = document.getElementById('newMinAmount').value;
+            
+            const newRef = accountsRef.push();
+            newRef.set({
+                bankName: bankName,
+                accountHolder: accountHolder,
+                iban: iban,
+                minAmount: minAmount,
+                createdAt: new Date().toISOString()
+            }).then(() => {
+                // Clear form
+                document.getElementById('newBankName').value = '';
+                document.getElementById('newAccountHolder').value = '';
+                document.getElementById('newIban').value = '';
+                document.getElementById('newMinAmount').value = '';
+                alert('✅ Hesap başarıyla eklendi!');
+            }).catch((error) => {
+                alert('❌ Hata: ' + error.message);
+            });
+        }
+
+        // Edit account
+        function editAccount(accountId) {
+            accountsRef.child(accountId).once('value').then((snapshot) => {
+                const acc = snapshot.val();
+                
+                const bankName = prompt('Banka Adı:', acc.bankName);
+                if (bankName === null) return;
+                
+                const accountHolder = prompt('Hesap Sahibi:', acc.accountHolder);
+                if (accountHolder === null) return;
+                
+                const iban = prompt('IBAN:', acc.iban);
+                if (iban === null) return;
+                
+                const minAmount = prompt('Minimum Tutar:', acc.minAmount);
+                if (minAmount === null) return;
+                
+                accountsRef.child(accountId).update({
+                    bankName: bankName || acc.bankName,
+                    accountHolder: accountHolder || acc.accountHolder,
+                    iban: iban.replace(/\s/g, '') || acc.iban,
+                    minAmount: minAmount || acc.minAmount,
+                    updatedAt: new Date().toISOString()
+                }).then(() => {
+                    alert('✅ Hesap güncellendi!');
+                }).catch((error) => {
+                    alert('❌ Hata: ' + error.message);
+                });
+            });
+        }
+
+        // Delete account
+        function deleteAccount(accountId, bankName) {
+            if (confirm(`"${bankName}" hesabını silmek istediğinizden emin misiniz?`)) {
+                accountsRef.child(accountId).remove()
+                    .then(() => {
+                        alert('✅ Hesap silindi!');
+                    })
+                    .catch((error) => {
+                        alert('❌ Hata: ' + error.message);
+                    });
+            }
+        }
+    </script>
+</body>
+</html>

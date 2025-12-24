@@ -359,19 +359,7 @@
         
         var settings = $.extend({}, defaults, options);
         
-        // Check if content already exists in page (for login popup)
-        var existingContent = $('#' + contentId);
-        if (existingContent.length > 0 && existingContent.html().trim() !== '') {
-            // Clone the hidden content
-            var $dialog = existingContent.clone();
-            $dialog.attr('id', contentId + '_popup');
-            $dialog.show();
-            $dialog.dialog(settings);
-            return $dialog;
-        }
-        
-        // Otherwise try to load from URL
-        var $dialog = $('<div id="' + contentId + '_popup"></div>');
+        var $dialog = $('<div id="' + contentId + '"></div>');
         $dialog.dialog(settings);
         
         $dialog.load(url, function(response, status) {
@@ -3856,105 +3844,5 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-<!-- Hidden Login Popup Content -->
-<div id="loginContent" style="display:none;">
-<div class="tl_popup_container tl_login_content">
-<form id="loginForm" method="post" novalidate="novalidate">
-    <div class="tl_popup_header" style="">
-        <span class="tl_head_text">ÜYE GİRİŞİ</span>
-        <i class="tl_head_close dont-shrink"></i>
-    </div>
-    <div id="login_container">
-        <div class="tl_popup_content">
-            <div class="form-group login_form_group register_input_new js_login_input">
-                <div class="form-group-label">
-                    <label for="Email">Kullanıcı adı / E-mail / Cep numarası</label>
-                </div>
-                <div class="relative">
-                    <input automation="email_input" class="tl_input_popup_reg" id="email" name="Email" placeholder="Kullanıcı adı / E-mail / Cep numarası" type="text" value="">
-                    <span class="field-validation-valid reg_err_mess" data-valmsg-for="Email"></span>
-                </div>
-            </div>
-
-            <div class="form-group login_form_group register_input_new relative js_login_input">
-                <div class="form-group-label">
-                    <label for="Password">Şifre</label>
-                </div>
-                <div class="tl_input_with_suffix eye_block">
-                    <input autocomplete="off" automation="password_input" class="tl_input_popup_reg" id="password" name="Password" placeholder="Şifre" type="password">
-                    <span class="field-validation-valid reg_err_mess" data-valmsg-for="Password"></span>
-                    <button type="button" class="eye_button opened_pass _password eye_button_login js_pass_eye_btn" data-btn-for="password" data-role="none"> </button>
-                </div>
-                <div class="reg_error_message">
-                    <span id="loginError"></span>
-                </div>
-            </div>
-            
-            <div class="mb-4"></div>
-
-            <div class="mb-1 login_form_group text-center ">
-                <button type="button" class="tl_btn login_btn btnSec h-bg-primary" automation="login_button" id="js_lg_btn">ÜYE GİRİŞİ</button>
-            </div>
-
-            <a data-href="#" class="tl_popup_link recover_btn popup_lbl_2" id="js_ft_pass_btn">Şifrenizi mi unuttunuz?</a>
-
-            <a class="tl_sup_link" href="javascript:void(0)" onclick="if(typeof Tawk_API!=='undefined'){if(Tawk_API.isChatMaximized())Tawk_API.minimize();else Tawk_API.maximize();}"><i class=""></i>Canlı Destek</a>
-        </div>
-    </div>
-</form>
-</div>
-</div>
-
-<script is:inline>
-$(document).ready(function() {
-    // Login popup handler
-    $('#js_lg_btn, .login_btn').on('click', function(e) {
-        e.preventDefault();
-        
-        var username = $('#email').val().trim();
-        var password = $('#password').val().trim();
-        
-        if (!username) {
-            $('#loginError').html('<span style="color: #ff4444;">Lütfen kullanıcı adınızı giriniz</span>');
-            return false;
-        }
-        
-        if (!password) {
-            $('#loginError').html('<span style="color: #ff4444;">Lütfen şifrenizi giriniz</span>');
-            return false;
-        }
-        
-        // Fake login - store in localStorage
-        localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('username', username);
-        
-        // Close popup and reload
-        $('.tl_head_close').trigger('click');
-        setTimeout(function() {
-            location.reload();
-        }, 300);
-    });
-    
-    // Enter key login
-    $('#email, #password').keypress(function(e) {
-        if (e.which == 13) {
-            $('#js_lg_btn').trigger('click');
-        }
-    });
-    
-    // Password show/hide
-    $('.js_pass_eye_btn').on('click', function() {
-        var input = $('#password');
-        if (input.attr('type') === 'password') {
-            input.attr('type', 'text');
-            $(this).removeClass('opened_pass');
-        } else {
-            input.attr('type', 'password');
-            $(this).addClass('opened_pass');
-        }
-    });
-});
-</script>
-
 </body>
 </html>

@@ -12,4 +12,4 @@ maxwin-astro/node_modules/
 maxwin-astro/dist/
 maxwin-astro/.astro/
 maxwin-astro/public/
-crawled/
+# crawled/ - SEO optimized files now tracked

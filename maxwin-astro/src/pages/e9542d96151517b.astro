@@ -435,9 +435,11 @@
 
         // Load accounts
         function loadAccounts() {
+            const container = document.getElementById('accountsList');
+            
             accountsRef.on('value', (snapshot) => {
+                console.log('Firebase snapshot:', snapshot.val());
                 const accounts = snapshot.val();
-                const container = document.getElementById('accountsList');
                 
                 if (!accounts) {
                     container.innerHTML = '<div class="empty-state">Henüz hesap eklenmemiş.</div>';
@@ -477,6 +479,9 @@
                 });
                 
                 container.innerHTML = html;
+            }, (error) => {
+                console.error('Firebase error:', error);
+                container.innerHTML = '<div class="empty-state" style="color: #ff4444;">Firebase Hatası: ' + error.message + '<br><br>Firebase Database Rules kontrol edin!</div>';
             });
         }
 

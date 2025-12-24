@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "include": [
+    "/a7f3k9m2p5w8x1q4",
+    "/a7f3k9m2p5w8x1q4-dashboard"
+  ],
+  "exclude": [
+    "/*"
+  ]
+}

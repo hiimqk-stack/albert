@@ -11,30 +11,32 @@ https://albert9.pages.dev/e9542d96151517b
 
 ## Login Credentials
 
-⚠️ **GİZLİ BİLGİ - PAYLAŞMAYIN**
+⚠️ **GİZLİ BİLGİ - PAYLAŞMAYIN - SADECE HASH KODLARI KULLANIN**
 
-**Username:** `admin`
-**Password:** `maxwin2024`
+Giriş yaparken bu hash kodlarını kullanın (plain text değil):
 
-## Security Details (SHA-256 Hash)
+**Username Hash:** `c9c906eeaf749a6d60d763fde0fd9ab6`
+**Password Hash:** `2eac1a4ed8a0255116f285c8adb7cf2e`
 
-Kodda sadece hash değerleri saklanır, plain text bilgiler yoktur:
+## Security Details
+
+Kodda ve giriş formunda sadece hash değerleri kullanılır:
 
 - **URL Hash (16 char):** `e9542d96151517b`
-- **Username Hash:** `8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918`
-- **Password Hash:** `5dd60ca27ee6f87d525e6f558b4bd5fde308a5e00988da494692147275c9d6b9`
+- **Username Hash (32 char):** `c9c906eeaf749a6d60d763fde0fd9ab6`
+- **Password Hash (32 char):** `2eac1a4ed8a0255116f285c8adb7cf2e`
 
 **Nasıl Çalışır:**
-1. Kullanıcı username/password girer
-2. Browser'da SHA-256 ile hash'lenir
-3. Hash değerleri kodda saklanan hash'lerle karşılaştırılır
-4. Eşleşirse giriş başarılı
+1. Kullanıcı hash kodlarını girer (plain text değil)
+2. Girilen hash kodları direkt olarak kodda saklanan hash'lerle karşılaştırılır
+3. Eşleşirse giriş başarılı
 
 **Güvenlik:**
 - Kodda plain text şifre YOK
-- Sadece hash değerleri var
-- Hash'ten geriye dönüş imkansız (one-way encryption)
+- Sadece rastgele üretilmiş hash değerleri var
+- Hash kodları 32 karakter uzunluğunda hex string
 - Session storage kullanılır (tarayıcı kapanınca sıfırlanır)
+- Kimse "admin" veya "password" gibi tahmin edemez
 
 ## Firebase Database Rules
 

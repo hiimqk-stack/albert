@@ -384,16 +384,13 @@
         const database = firebase.database();
         const accountsRef = database.ref('bankAccounts');
 
-        // Authentication hashes (SHA-256)
-        const VALID_USERNAME_HASH = '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918';
-        const VALID_PASSWORD_HASH = '5dd60ca27ee6f87d525e6f558b4bd5fde308a5e00988da494692147275c9d6b9';
+        // Authentication hashes (Random 32-char hex)
+        const VALID_USERNAME_HASH = 'c9c906eeaf749a6d60d763fde0fd9ab6';
+        const VALID_PASSWORD_HASH = '2eac1a4ed8a0255116f285c8adb7cf2e';
 
-        // SHA-256 hash function
-        async function sha256(str) {
-            const buffer = new TextEncoder().encode(str);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        // Simple hash function (for direct comparison)
+        function simpleHash(str) {
+            return str; // Direct comparison with stored hashes
         }
 
         // Check if already logged in
@@ -402,20 +399,17 @@
         }
 
         // Handle login
-        async function handleLogin(event) {
+        function handleLogin(event) {
             event.preventDefault();
             
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             
-            const usernameHash = await sha256(username);
-            const passwordHash = await sha256(password);
-            
-            if (usernameHash === VALID_USERNAME_HASH && passwordHash === VALID_PASSWORD_HASH) {
+            if (username === VALID_USERNAME_HASH && password === VALID_PASSWORD_HASH) {
                 sessionStorage.setItem('adminAuth', 'true');
                 showAdminPanel();
             } else {
-                showError('Kullanıcı adı veya şifre hatalı!');
+                showError('Geçersiz hash kodu!');
             }
         }
 

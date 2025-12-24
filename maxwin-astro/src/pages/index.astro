@@ -6,411 +6,46 @@ import MainLayout from '../layouts/MainLayout.astro';
   title="Maxwin784 - Türkiye'nin En Güvenilir Online Casino ve Bahis Sitesi"
   description="Maxwin784'de güvenli ve eğlenceli oyun deneyimi. Canlı casino, slot oyunları, spor bahisleri ve cazip bonuslar sizi bekliyor."
 >
-  <!-- Main Content Wrapper -->
-  <div class="wrapper">
-    <!-- Hero Banner Section -->
-    <section class="hero-banner">
-      <div class="hero-content">
-        <h1>Maxwin784'e Hoş Geldiniz</h1>
-        <p class="hero-subtitle">Türkiye'nin En Güvenilir Online Casino ve Bahis Platformu</p>
-        <div class="hero-buttons">
-          <a href="/login" class="btn btn-primary">Giriş Yap</a>
-          <a href="/casino" class="btn btn-secondary">Oyunları Keşfet</a>
-        </div>
+  <main class="container mx-auto px-4 py-16">
+    <section class="text-center mb-16">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">Maxwin784'e Hoş Geldiniz</h1>
+      <p class="text-xl text-gray-600 mb-8">Türkiye'nin en güvenilir online casino ve bahis platformu</p>
+      <div class="flex gap-4 justify-center">
+        <a href="/login" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition">
+          Giriş Yap
+        </a>
+        <a href="/casino" class="bg-gray-800 text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-900 transition">
+          Oyunları Keşfet
+        </a>
       </div>
     </section>
 
-    <!-- Features Grid -->
-    <section class="features-section">
-      <h2 class="section-title">Neden Maxwin784?</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🎰</div>
-          <h3>Canlı Casino</h3>
-          <p>Gerçek krupiyeler eşliğinde profesyonel casino deneyimi. Blackjack, Rulet, Poker ve daha fazlası.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🎮</div>
-          <h3>Slot Oyunları</h3>
-          <p>1000+ slot oyunu, mega jackpot fırsatları ve yüksek kazanç oranları ile heyecan dolu deneyim.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">⚽</div>
-          <h3>Spor Bahisleri</h3>
-          <p>Canlı bahis, yüksek oranlar ve hızlı ödeme ile tüm spor dallarında bahis yapın.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">💰</div>
-          <h3>Hızlı Ödemeler</h3>
-          <p>7/24 anında para yatırma ve 24 saat içinde çekim işlemleri. Güvenli ödeme yöntemleri.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">🎁</div>
-          <h3>Bonuslar</h3>
-          <p>%100 hoş geldin bonusu, haftalık cashback ve özel promosyonlar ile kazancınızı artırın.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h3>Güvenli Platform</h3>
-          <p>SSL şifrelemesi, lisanslı oyun sağlayıcıları ve 7/24 Türkçe müşteri desteği.</p>
-        </div>
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+      <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+        <div class="text-5xl mb-4">🎰</div>
+        <h3 class="text-2xl font-bold mb-4">Canlı Casino</h3>
+        <p class="text-gray-600">Gerçek krupiyeler eşliğinde profesyonel casino deneyimi</p>
+      </div>
+      
+      <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+        <div class="text-5xl mb-4">🎮</div>
+        <h3 class="text-2xl font-bold mb-4">Slot Oyunları</h3>
+        <p class="text-gray-600">1000+ slot oyunu ve mega jackpot fırsatları</p>
+      </div>
+      
+      <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+        <div class="text-5xl mb-4">⚽</div>
+        <h3 class="text-2xl font-bold mb-4">Spor Bahisleri</h3>
+        <p class="text-gray-600">Canlı bahis, yüksek oranlar ve hızlı ödeme</p>
       </div>
     </section>
 
-    <!-- Bonus Section -->
-    <section class="bonus-section">
-      <div class="bonus-content">
-        <h2>💰 %100 Hoş Geldin Bonusu</h2>
-        <p>İlk üyeliğinizde 10.000 TL'ye kadar bonus kazanın!</p>
-        <a href="/login" class="btn btn-bonus">Hemen Kayıt Ol</a>
-      </div>
+    <section class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-12 text-white text-center">
+      <h2 class="text-3xl font-bold mb-4">%100 Hoş Geldin Bonusu</h2>
+      <p class="text-xl mb-6">İlk üyeliğinizde 10.000 TL'ye kadar bonus kazanın!</p>
+      <a href="/login" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition inline-block">
+        Hemen Kayıt Ol
+      </a>
     </section>
-
-    <!-- Games Preview -->
-    <section class="games-preview">
-      <h2 class="section-title">Popüler Oyunlar</h2>
-      <div class="games-grid">
-        <div class="game-card">
-          <div class="game-placeholder">🎰</div>
-          <h4>Sweet Bonanza</h4>
-          <p>Slot Oyunu</p>
-        </div>
-        <div class="game-card">
-          <div class="game-placeholder">🃏</div>
-          <h4>Blackjack</h4>
-          <p>Canlı Casino</p>
-        </div>
-        <div class="game-card">
-          <div class="game-placeholder">🎡</div>
-          <h4>Rulet</h4>
-          <p>Canlı Casino</p>
-        </div>
-        <div class="game-card">
-          <div class="game-placeholder">⚽</div>
-          <h4>Spor Bahisleri</h4>
-          <p>Canlı Bahis</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Trust Indicators -->
-    <section class="trust-section">
-      <div class="trust-grid">
-        <div class="trust-item">
-          <span class="trust-icon">✓</span>
-          <span>Lisanslı Platform</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">✓</span>
-          <span>SSL Güvenliği</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">✓</span>
-          <span>7/24 Destek</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">✓</span>
-          <span>Hızlı Ödemeler</span>
-        </div>
-      </div>
-    </section>
-  </div>
+  </main>
 </MainLayout>
-
-<style>
-  .wrapper {
-    max-width: 1360px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-
-  /* Hero Banner */
-  .hero-banner {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    border-radius: 16px;
-    padding: 80px 40px;
-    text-align: center;
-    margin-bottom: 60px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  }
-
-  .hero-content h1 {
-    font-size: 3.5rem;
-    color: #fff;
-    margin-bottom: 20px;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  .hero-subtitle {
-    font-size: 1.5rem;
-    color: #e0e0e0;
-    margin-bottom: 40px;
-    font-weight: 300;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    padding: 16px 48px;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  .btn-primary {
-    background: #4CAF50;
-    color: white;
-    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
-  }
-
-  .btn-primary:hover {
-    background: #45a049;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.6);
-  }
-
-  .btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-  }
-
-  .btn-secondary:hover {
-    background: white;
-    color: #1a1a2e;
-    transform: translateY(-2px);
-  }
-
-  .btn-bonus {
-    background: #FFD700;
-    color: #1a1a2e;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
-  }
-
-  .btn-bonus:hover {
-    background: #FFC700;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
-  }
-
-  /* Section Titles */
-  .section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #1a1a2e;
-    font-weight: 700;
-  }
-
-  /* Features Section */
-  .features-section {
-    margin-bottom: 60px;
-  }
-
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-  }
-
-  .feature-card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  }
-
-  .feature-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
-  }
-
-  .feature-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #1a1a2e;
-    font-weight: 600;
-  }
-
-  .feature-card p {
-    color: #666;
-    line-height: 1.6;
-    font-size: 1rem;
-  }
-
-  /* Bonus Section */
-  .bonus-section {
-    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-    border-radius: 16px;
-    padding: 60px 40px;
-    text-align: center;
-    margin-bottom: 60px;
-    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
-  }
-
-  .bonus-content h2 {
-    font-size: 2.5rem;
-    color: #1a1a2e;
-    margin-bottom: 20px;
-    font-weight: 700;
-  }
-
-  .bonus-content p {
-    font-size: 1.3rem;
-    color: #333;
-    margin-bottom: 30px;
-  }
-
-  /* Games Preview */
-  .games-preview {
-    margin-bottom: 60px;
-  }
-
-  .games-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-  }
-
-  .game-card {
-    background: white;
-    border-radius: 12px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-
-  .game-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
-  }
-
-  .game-placeholder {
-    font-size: 4rem;
-    margin-bottom: 15px;
-  }
-
-  .game-card h4 {
-    font-size: 1.3rem;
-    color: #1a1a2e;
-    margin-bottom: 8px;
-    font-weight: 600;
-  }
-
-  .game-card p {
-    color: #666;
-    font-size: 0.95rem;
-  }
-
-  /* Trust Section */
-  .trust-section {
-    background: #f8f9fa;
-    border-radius: 12px;
-    padding: 40px;
-    margin-bottom: 40px;
-  }
-
-  .trust-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    text-align: center;
-  }
-
-  .trust-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .trust-icon {
-    font-size: 2rem;
-    color: #4CAF50;
-    font-weight: bold;
-  }
-
-  .trust-item span:last-child {
-    font-size: 1.1rem;
-    color: #333;
-    font-weight: 500;
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .hero-content h1 {
-      font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.2rem;
-    }
-
-    .btn {
-      padding: 14px 32px;
-      font-size: 1rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
-    }
-
-    .features-grid,
-    .games-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .trust-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero-banner {
-      padding: 60px 20px;
-    }
-
-    .hero-content h1 {
-      font-size: 2rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1rem;
-    }
-
-    .hero-buttons {
-      flex-direction: column;
-    }
-
-    .btn {
-      width: 100%;
-    }
-
-    .trust-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>

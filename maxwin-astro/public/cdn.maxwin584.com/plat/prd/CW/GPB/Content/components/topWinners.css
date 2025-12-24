@@ -1,0 +1,402 @@
+.top_winners__page, .no_winners {
+    display: none;
+}
+
+.top_winners__page.active, .no_winners.active {
+    display: flex;
+}
+
+.top_winners__game {
+    padding: 10px;
+    border: 1px solid var(--bg-level-3, var(--cwCardBg2));
+    background: var(--bg-level-2, var(--cwCardG));
+    color: var(--text-level-medium, var(--cwCardTxt2));
+    border-radius: 16px;
+    display: flex;
+}
+
+.top_winners__img_link {
+    display: block;
+    width: 110px;
+    height: 74px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-inline-end: 12px;
+    flex-shrink: 0;
+}
+
+.top_winners__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.top_winners__text {
+    row-gap: 1px;
+    align-items: flex-start;
+}
+
+.top_winners__id {
+    /*    border: 1px solid var(--bg-level-1);
+    background-color: var(--bg-level-1);
+    border-radius: 24px;
+    row-gap: 8px;
+    padding: 8px 12px;*/
+    /*column-gap: 8px;*/
+    color: var(--text-level-medium, var(--cwCardTxt2));
+    white-space: nowrap;
+}
+
+.top_winners__id.me_badge{
+    padding: 0px;
+}
+
+.top_winners__id span {
+    margin: 0 4px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+
+.top_winners__id.me_badge span{
+    margin: 0;
+}
+
+.top_winners__id i{
+    font-size: 40px;
+    line-height: 20px;
+    height: 20px;
+    width: 20px;
+}
+
+.top_winners__game a {
+    outline: none;
+}
+
+.top_winners__date,
+.top_winners__bet {
+    color: var(--text-level-low, var(--cwCardTxt3));
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
+}
+
+.top_winners__bet {
+    color: var(--text-level-high, var(--cwCardTxt));
+}
+
+.top_winners__bet span:not(.top_jackpots__crns) {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.top_winners__bet span:last-child:not(.top_jackpots__crns) {
+    margin-inline-start: 4px;
+}
+
+.top_winners__value .top_winners__value_split + span:not(.top_jackpots__crns) {
+    font-size: 20px;
+}
+
+.top_winners__bet .top_jackpots__crns {
+    color: var(--text-level-high, var(--cwCardTxt));
+    margin-inline-start: 3px;
+    --icoSize: 14px;
+}
+
+.top_winners__value {
+    color: var(--cwPrimary, var(--cwCardAccent));
+    white-space: nowrap;
+    line-height: 30px;
+    min-height: 30px;
+    align-items: center;
+}
+
+.top_winners__value_split {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.top_winners__value .top_jackpots__crns {
+    display: inline-flex;
+    line-height: 24px;
+    --icoSize: 15px;
+}
+
+.top_winners__value .top_jackpots__crns.tw_krw,
+.top_winners__value .top_jackpots__crns.tw_KRW,
+.top_winners__value .top_jackpots__crns.tw_usd,
+.top_winners__value .top_jackpots__crns.tw_USD{
+    line-height: 23px;
+    --icoSize: 18px;
+}
+
+.top_winners__value .cw_icon_irt, .top_winners__value .cw_icon_IRT, .top_winners__value .cw_icon_ron, .top_winners__value .cw_icon_RON {
+    font-size: 18px;
+    line-height: 18px;
+    width: auto;
+}
+
+.top_winners__bet .cw_icon_irt, .top_winners__bet .cw_icon_IRT, .top_winners__bet .cw_icon_ron, .top_winners__bet .cw_icon_RON {
+    font-size: 16px;
+    width: auto;
+}
+
+.no_winners {
+    padding: 16px;
+    border: 1px solid var(--bg-level-2, var(--cwCardBg));
+    border-radius: 16px;
+    padding: 16px 16px;
+    color: var(--text-level-high, var(--cwCardTxt));
+}
+
+.no_winners i {
+    line-height: 24px;
+    font-size: 52px;
+    height: 24px;
+}
+
+.no_winners_text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin: 8px 0;
+}
+
+.top_winners_block .rd_header_tabs {
+    max-width: calc(100% - 112px);
+    width: 100%;
+}
+
+.top_winners_block .rd_header_tab_item {
+    padding: 9px 16px;
+    max-width: calc(100% / 3);
+    overflow: hidden;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.widget_arrow__wrapper {
+    column-gap: 8px;
+    position: absolute;
+    bottom: 124px;
+    inset-inline-end: 0;
+}
+
+/*Start Skeleton loading */
+.skeleton-topWinners__container{
+    display: flex;
+}
+
+.skeleton-topWinners__body {
+    padding: 10px;
+    border: 1px solid var(--bg-level-3, var(--cwCardBg2));
+    background: var(--bg-level-2, var(--cwCardG));
+    color: var(--text-level-high, var(--cwCardTxt));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    width: calc(25% - 6px);
+    margin-inline-end: 12px;
+}
+
+.skeleton-topWinners__body:nth-child(4){
+    margin-inline-end: 0;
+}
+
+.skeleton-topWinners__icon {
+    width: 110px;
+    height: 74px;
+    border-radius: 12px;
+    margin-inline-end: 12px;
+    flex-shrink: 0;
+}
+
+.skeleton-topWinners__content {
+    width: 50%;
+    gap: 1px;
+}
+
+.skeleton-topWinners__content > *{
+    width: 100%;
+}
+
+.skeleton-topWinners__id {
+    border-radius: 24px;
+    min-height: 24px;
+}
+
+.skeleton-topWinners__value {
+    min-height: 24px;
+    margin: 3px 0;
+}
+
+.skeleton-topWinners__date {
+    min-height: 20px;
+}
+
+@media screen and (max-width: 1439px) {
+    .skeleton-topWinners__body {
+        width: calc(100% / 3 - 6px);
+    }
+    .skeleton-topWinners__body:nth-child(4){
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .skeleton-topWinners__body {
+        width: calc(100% / 2 - 6px);
+    }
+    .skeleton-topWinners__body:nth-child(3) {
+        display: none;
+    }
+}
+
+/*End Skeleton loading */
+/*Homepage Top Winners start*/
+.topWinsCategory_dropdown {
+    display: flex;
+    gap: 12px;
+}
+
+.no_dropdwon .topWinsCategory_dropdown {
+    max-width: 100%;
+}
+.tabs_dropdown, .topWinsCategory_heading, .has_dropdown .topWins_divider {
+    display: none;
+}
+
+.topWinsDropdown_heading {
+    border-radius: 48px;
+    background: var(--bg-level-4,var(--cwTabBg2Hover));
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    padding: 10px 12px;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--text-level-high,var(--cwTabTxt));
+    height: 44px;
+}
+
+.topWinsDropdown_heading.single{
+    cursor: default;
+}
+
+.topWinsDropdown_heading:not(.single):after{
+    content: "\E364";
+    font-family: "iconsDinamicMenu";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    width: 24px;
+    height: 24px;
+    transition: all .25s;
+}
+
+.topWinsCategory_wrapper.open .topWinsDropdown_heading:after,
+.topWinsTypes_wrapper.open .topWinsDropdown_heading:after {
+    transform: rotate(180deg);
+}
+
+.tabs_dropdown {
+    background: var(--bg-level-4,var(--cwTabBg2Hover));
+    border-radius: 22px;
+    gap: 4px;
+    padding: 4px 0;
+    position: absolute;
+    inset-inline-start: 0;
+    top: calc(100% + 8px);
+    z-index: 12;
+    flex-direction: column;
+}
+
+.tabs_dropdown .rd_header_tab_item {
+    background-color: transparent;
+    border: none;
+    padding: 8px 12px;
+    line-height: 20px;
+    color: var(--text-level-high,var(--cwTabTxt));
+}
+
+.home_winners .open .tabs_dropdown,
+.has_dropdown .topWinsDropdown_heading {
+    display: flex;
+}
+
+.home_winners .rd_header_tab_item {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.no_dropdwon .topWinsCategory_wrapper {
+    display: flex;
+    max-width: calc(100% - 270px);
+}
+
+.no_dropdwon .topWinsCategory_wrapper .rd_header_tab_item {
+    max-width: calc((100vw - 460px) / 2);
+}
+
+.no_dropdwon .topWinsTypes_wrapper{
+    margin-inline-start: 12px;
+}
+
+.no_dropdwon .topWinsTypes_wrapper:before {
+    content: "";
+    height: 44px;
+    width: 1px;
+    background: var(--bg-level-4,var(--cwBodyBg2));
+    position: absolute;
+    inset-inline-start: -12px;
+}
+
+/*.home_winners .widget_arrow__wrapper {
+    top: 66px;
+}*/
+
+.no_dropdwon .topWinsTypes_wrapper {
+    max-width: 258px;
+    flex-shrink: 0;
+}
+
+.home_winners .topWins_tab_name,
+.topWinsTypes_heading span {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 1px;
+}
+
+.topWinsCategory_heading > span {
+    gap: 8px;
+    max-width: calc(100% - 28px);
+}
+
+.topWins_tab_icon{
+    flex-shrink: 0;
+}
+
+@media only screen and (min-width: 1025px){
+    .tabs_dropdown .rd_header_tab_item:hover {
+        color: var(--text-level-medium,var(--cwTabTxt2));
+    }
+    .has_dropdown .topWinsTypes_wrapper,
+    .has_dropdown .topWinsCategory_wrapper {
+        max-width: 50%;
+    }
+}
+/*Homepage Top Winners end*/

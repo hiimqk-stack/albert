@@ -322,6 +322,50 @@
 
     setCookie('ClientTimeZone', hours, 100);
 
+    // setCookie helper function
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    // showPopup function for login/register dialogs
+    function showPopup(url, contentId, options) {
+        var defaults = {
+            width: 400,
+            height: 500,
+            modal: true,
+            position: { my: "center", at: "center", of: window },
+            dialogClass: 'tl_popup_dialog js_popup_dialog',
+            responsive: true,
+            close: function() {
+                click = 0;
+                $(this).dialog('destroy').remove();
+            }
+        };
+        
+        var settings = $.extend({}, defaults, options);
+        
+        var $dialog = $('<div id="' + contentId + '"></div>');
+        $dialog.dialog(settings);
+        
+        $dialog.load(url, function(response, status) {
+            if (status === "error") {
+                $dialog.html('<div style="padding: 20px; text-align: center;"><p>Giriş sayfası yükleniyor...</p><p><a href="/login" style="color: #4CAF50; font-weight: bold;">Giriş Sayfasına Git</a></p></div>');
+            }
+        });
+        
+        return $dialog;
+    }
+    
+    function showAccountPopup(url, tabId, options) {
+        return showPopup(url, tabId, options);
+    }
+
     $(document).ready(function () {
 
         function handleDOMBlurForDropdownMenu(e) {

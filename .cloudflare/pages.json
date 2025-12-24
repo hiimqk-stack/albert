@@ -1,0 +1,7 @@
+{
+  "build": {
+    "command": "cd maxwin-astro && npm run build",
+    "cwd": "/",
+    "destination": "maxwin-astro/dist"
+  }
+}

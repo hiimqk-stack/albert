@@ -355,8 +355,164 @@
         }
         
         @media (max-width: 768px) {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            
+            .page-header {
+                padding: 15px 0;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                backdrop-filter: blur(10px);
+                background: rgba(22,27,34,0.95);
+            }
+            
+            .page-header .container {
+                padding: 0 15px;
+            }
+            
+            .page-header .logo img {
+                height: 32px;
+            }
+            
+            .page-header .back-link {
+                font-size: 13px;
+                padding: 6px 12px;
+                background: rgba(172,240,0,0.1);
+                border-radius: 6px;
+            }
+            
+            .main-content {
+                margin: 20px auto;
+                padding: 0 12px;
+            }
+            
+            .page-title h1 {
+                font-size: 22px;
+            }
+            
+            .page-title p {
+                font-size: 13px;
+            }
+            
             .sections {
                 grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .section {
+                border-radius: 12px;
+            }
+            
+            .section-header {
+                padding: 16px;
+            }
+            
+            .section-header h2 {
+                font-size: 16px;
+            }
+            
+            .section-body {
+                padding: 12px;
+            }
+            
+            .account {
+                padding: 16px;
+                margin-bottom: 12px;
+            }
+            
+            .account-name {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+            
+            .account-row {
+                padding: 8px 0;
+                font-size: 13px;
+            }
+            
+            .account-row .label {
+                font-size: 12px;
+            }
+            
+            .account-row .value {
+                font-size: 14px;
+            }
+            
+            .account-row .value.iban-value {
+                font-size: 13px;
+                letter-spacing: 1px;
+            }
+            
+            .copy-btn {
+                padding: 5px 10px;
+                font-size: 11px;
+            }
+            
+            .crypto-address {
+                font-size: 11px;
+                padding: 10px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .crypto-address .copy-btn {
+                margin-top: 8px;
+                width: 100%;
+            }
+            
+            .min-badge {
+                font-size: 11px;
+                padding: 5px 12px;
+                margin-top: 10px;
+            }
+            
+            .info-box {
+                padding: 16px;
+                margin-top: 20px;
+            }
+            
+            .info-box h3 {
+                font-size: 14px;
+            }
+            
+            .info-box p {
+                font-size: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-header .logo img {
+                height: 28px;
+            }
+            
+            .page-title h1 {
+                font-size: 20px;
+            }
+            
+            .section-header h2 {
+                font-size: 15px;
+            }
+            
+            .account-name {
+                font-size: 15px;
+            }
+            
+            .account-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+            
+            .account-row .value {
+                width: 100%;
+            }
+            
+            .account-row .value.iban-value {
+                font-size: 12px;
+                word-break: break-all;
             }
         }
     </style>

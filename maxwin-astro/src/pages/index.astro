@@ -3187,7 +3187,13 @@ if (typeof Comm100API !== 'undefined') {
         hasStaticLoginPage: JSON.parse('false'),
         gameCardType: '0'
     }
-    GamesCommon.init(settings);
+    // Wait for DOM and all scripts to load before initializing GamesCommon
+    $(document).ready(function() {
+        if (typeof GamesCommon !== 'undefined') {
+            GamesCommon.init(settings);
+        }
+    });
+    
     (() => {
         let gamesByGroupData = {
             input: []

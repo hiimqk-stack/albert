@@ -192,7 +192,7 @@
 
 <!-- Initialize spWidgetConfigs early -->
 <script is:inline>
-    var spWidgetConfigs = [];
+    window.spWidgetConfigs = window.spWidgetConfigs || [];
 </script>
 
 
@@ -2712,28 +2712,40 @@ if (typeof Comm100API !== 'undefined') {
                                 </div>
                         <div class="dynamic_container">
                                     <div id="js-sport-Live-cont"><sport-live></sport-live></div>
-                                    <script>
-                                        spWidgetConfigs.push(
-                                            {
-                                                appConfig: { containerId: 'js-sport-Live-cont', type: 'Live' },
-                                                bootConfig: { name: 'EventWidget' },
-                                                instanceName: 'Live',
-                                                method: 'boot',
-                                            },);
-                                    </script>
                         </div>
                         <div class="dynamic_container">
                                     <div id="js-sport-Prematch-cont"><sport-prematch></sport-prematch></div>
-                                    <script>
-                                        spWidgetConfigs.push(
-                                            {
-                                                appConfig: { containerId: 'js-sport-Prematch-cont', type: 'Prematch' },
-                                                bootConfig: { name: 'EventWidget' },
-                                                instanceName: 'Prematch',
-                                                method: 'boot',
-                                            },);
-                                    </script>
                         </div>
+                        <script is:inline>
+                            (function() {
+                                if (!Array.isArray(window.spWidgetConfigs)) {
+                                    window.spWidgetConfigs = [];
+                                }
+                                var hasLive = window.spWidgetConfigs.some(function(cfg) {
+                                    return cfg && cfg.instanceName === 'Live';
+                                });
+                                if (!hasLive) {
+                                    window.spWidgetConfigs.push({
+                                        appConfig: { containerId: 'js-sport-Live-cont', type: 'Live' },
+                                        bootConfig: { name: 'EventWidget' },
+                                        instanceName: 'Live',
+                                        method: 'boot'
+                                    });
+                                }
+
+                                var hasPrematch = window.spWidgetConfigs.some(function(cfg) {
+                                    return cfg && cfg.instanceName === 'Prematch';
+                                });
+                                if (!hasPrematch) {
+                                    window.spWidgetConfigs.push({
+                                        appConfig: { containerId: 'js-sport-Prematch-cont', type: 'Prematch' },
+                                        bootConfig: { name: 'EventWidget' },
+                                        instanceName: 'Prematch',
+                                        method: 'boot'
+                                    });
+                                }
+                            })();
+                        </script>
                                 <div class="dynamic_container empty_title">
                                     
             <div id="js_rectangleAd_1799" class="dynamicBanners banners_rectangleAd">

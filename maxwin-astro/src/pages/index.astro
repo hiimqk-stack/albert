@@ -359,12 +359,102 @@
         
         var settings = $.extend({}, defaults, options);
         
+        // For login popup, use inline content if available
+        if (contentId === 'loginContent') {
+            var loginHTML = `
+                <div class="tl_popup_container tl_login_content">
+                    <form id="loginForm" method="post" novalidate="novalidate">
+                        <div class="tl_popup_header">
+                            <span class="tl_head_text">ÜYE GİRİŞİ</span>
+                            <i class="tl_head_close dont-shrink"></i>
+                        </div>
+                        <div id="login_container">
+                            <div class="tl_popup_content">
+                                <div class="form-group login_form_group register_input_new js_login_input">
+                                    <div class="form-group-label">
+                                        <label for="login_email">Kullanıcı adı / E-mail / Cep numarası</label>
+                                    </div>
+                                    <div class="relative">
+                                        <input automation="email_input" class="tl_input_popup_reg" id="login_email" name="Email" placeholder="Kullanıcı adı / E-mail / Cep numarası" type="text" value="">
+                                        <span class="field-validation-valid reg_err_mess" data-valmsg-for="Email"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group login_form_group register_input_new relative js_login_input">
+                                    <div class="form-group-label">
+                                        <label for="login_password">Şifre</label>
+                                    </div>
+                                    <div class="tl_input_with_suffix eye_block">
+                                        <input autocomplete="off" automation="password_input" class="tl_input_popup_reg" id="login_password" name="Password" placeholder="Şifre" type="password">
+                                        <span class="field-validation-valid reg_err_mess" data-valmsg-for="Password"></span>
+                                        <button type="button" class="eye_button opened_pass _password eye_button_login js_pass_eye_btn" data-btn-for="login_password" data-role="none"> </button>
+                                    </div>
+                                    <div class="reg_error_message">
+                                        <span id="loginError"></span>
+                                    </div>
+                                </div>
+                                <div class="mb-4"></div>
+                                <div class="mb-1 login_form_group text-center">
+                                    <button type="button" class="tl_btn login_btn btnSec h-bg-primary" automation="login_button" id="js_lg_btn">ÜYE GİRİŞİ</button>
+                                </div>
+                                <a data-href="#" class="tl_popup_link recover_btn popup_lbl_2" id="js_ft_pass_btn">Şifrenizi mi unuttunuz?</a>
+                                <a class="tl_sup_link" href="javascript:void(0)" onclick="if(typeof Tawk_API!=='undefined'){if(Tawk_API.isChatMaximized())Tawk_API.minimize();else Tawk_API.maximize();}"><i class=""></i>Canlı Destek</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            `;
+            
+            var $dialog = $('<div id="' + contentId + '">' + loginHTML + '</div>');
+            $dialog.dialog(settings);
+            
+            // Add event handlers after dialog is created
+            setTimeout(function() {
+                $('#js_lg_btn').off('click').on('click', function(e) {
+                    e.preventDefault();
+                    var username = $('#login_email').val().trim();
+                    var password = $('#login_password').val().trim();
+                    
+                    if (!username) {
+                        $('#loginError').html('<span style="color: #ff4444;">Lütfen kullanıcı adınızı giriniz</span>');
+                        return false;
+                    }
+                    if (!password) {
+                        $('#loginError').html('<span style="color: #ff4444;">Lütfen şifrenizi giriniz</span>');
+                        return false;
+                    }
+                    
+                    localStorage.setItem('isLoggedIn', 'true');
+                    localStorage.setItem('username', username);
+                    $dialog.dialog('close');
+                    setTimeout(function() { location.reload(); }, 300);
+                });
+                
+                $('#login_email, #login_password').off('keypress').on('keypress', function(e) {
+                    if (e.which == 13) $('#js_lg_btn').trigger('click');
+                });
+                
+                $('.js_pass_eye_btn').off('click').on('click', function() {
+                    var input = $('#login_password');
+                    if (input.attr('type') === 'password') {
+                        input.attr('type', 'text');
+                        $(this).removeClass('opened_pass');
+                    } else {
+                        input.attr('type', 'password');
+                        $(this).addClass('opened_pass');
+                    }
+                });
+            }, 100);
+            
+            return $dialog;
+        }
+        
+        // For other popups, try to load from URL
         var $dialog = $('<div id="' + contentId + '"></div>');
         $dialog.dialog(settings);
         
         $dialog.load(url, function(response, status) {
             if (status === "error") {
-                $dialog.html('<div style="padding: 20px; text-align: center;"><p>Giriş sayfası yükleniyor...</p><p><a href="/login" style="color: #4CAF50; font-weight: bold;">Giriş Sayfasına Git</a></p></div>');
+                $dialog.html('<div style="padding: 20px; text-align: center;"><p>İçerik yüklenemedi</p></div>');
             }
         });
         

@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSEO from '../components/HeroSEO.astro';
+import FAQSection from '../components/FAQSection.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Maxwin580",
+  "url": "https://maxwin580.com",
+  "description": "Türkiye'nin en güvenilir online casino ve bahis sitesi",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://maxwin580.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+
+const faqs = [
+  {
+    "question": "Maxwin580 güvenilir mi?",
+    "answer": "Maxwin580, lisanslı ve düzenlenmiş bir online casino ve bahis platformudur. SSL şifreleme, güvenli ödeme yöntemleri ve 7/24 müşteri desteği ile güvenli oyun deneyimi sunar."
+  },
+  {
+    "question": "Maxwin580'de hangi oyunlar var?",
+    "answer": "Canlı casino, slot oyunları, spor bahisleri, e-spor bahisleri, TV oyunları, sanal spor ve hızlı oyunlar dahil 1000+ oyun seçeneği sunulmaktadır."
+  },
+  {
+    "question": "Hoş geldin bonusu nasıl alınır?",
+    "answer": "Yeni üyeler ilk para yatırma işlemlerinde %100'e varan hoş geldin bonusu kazanır. Kayıt olduktan sonra ilk yatırımınızı yapmanız yeterlidir."
+  },
+  {
+    "question": "Para çekme işlemi ne kadar sürer?",
+    "answer": "Çekim talepleri genellikle 24 saat içinde işleme alınır. Banka transferi 1-3 iş günü, e-cüzdan işlemleri ise anında gerçekleşir."
+  },
+  {
+    "question": "Mobil uygulama var mı?",
+    "answer": "Maxwin580, responsive tasarımı sayesinde tüm mobil cihazlarda sorunsuz çalışır. Ayrıca iOS ve Android için optimize edilmiş mobil site mevcuttur."
+  }
+];
+---
+
+<BaseLayout
+  title="Maxwin580 - Türkiye'nin En Güvenilir Online Casino ve Bahis Sitesi"
+  description="Maxwin580'de güvenli ve eğlenceli oyun deneyimi. Canlı casino, slot oyunları, spor bahisleri ve cazip bonuslar sizi bekliyor."
+  keywords="online casino, canlı casino, slot oyunları, spor bahisleri, maxwin580"
+  ogType="website"
+>
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <main>
+    <!-- First 100 Words (Golden Zone) -->
+    <HeroSEO
+      title="Türkiye'nin En Güvenilir Online Casino ve Bahis Sitesi - Maxwin580"
+      subtitle="<strong>Maxwin580</strong>, Türkiye'nin en popüler <strong>online casino</strong> ve <strong>spor bahisleri</strong> platformudur. <strong>Canlı casino</strong>, <strong>slot oyunları</strong>, <strong>spor bahisleri</strong> ve <strong>e-spor</strong> seçenekleriyle 7/24 kesintisiz eğlence sunuyoruz."
+      features={[
+        "Hoş Geldin Bonusu: %100'e varan ilk yatırım bonusu",
+        "Hızlı Ödemeler: 24 saat içinde para çekme",
+        "Güvenli Platform: SSL şifreleme ve lisanslı",
+        "Canlı Destek: 7/24 Türkçe müşteri hizmetleri"
+      ]}
+      cta={{
+        text: "Hemen Üye Ol ve Bonus Kazan",
+        link: "/registration"
+      }}
+    />
+
+    <section class="features">
+      <div class="feature">
+        <h2>🎰 Canlı Casino</h2>
+        <p>Gerçek krupiyeler eşliğinde canlı casino deneyimi</p>
+        </article>
+        <article class="feature">
+          <h3>⚡ Hızlı Ödemeler</h3>
+          <p>7/24 anında para yatırma ve çekme işlemleri</p>
+        </article>
+        <article class="feature">
+          <h3>🔒 Güvenli Platform</h3>
+          <p>SSL şifrelemesi ve lisanslı oyun sağlayıcıları</p>
+        </article>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    background: #4796EC;
+    color: white;
+  }
+
+  .btn-secondary {
+    background: white;
+    color: #667eea;
+  }
+
+  .features {
+    margin-bottom: 4rem;
+  }
+
+  .features h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature {
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+
+  .feature:hover {
+    transform: translateY(-4px);
+  }
+
+  .feature h3 {
+    margin-bottom: 0.5rem;
+    color: #667eea;
+  }
+
+  .feature p {
+    color: #666;
+  }
+</style>

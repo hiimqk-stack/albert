@@ -265,6 +265,39 @@
             border: 1px solid rgba(172,240,0,0.1);
             color: rgba(255,255,255,0.9);
             letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .crypto-row {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .loading-state {
+            text-align: center;
+            padding: 40px;
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+        }
+        
+        .loading-state::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(172,240,0,0.3);
+            border-top-color: #ACF000;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
         
         .min-badge {
@@ -350,8 +383,8 @@
                     <h2>Banka Hesapları</h2>
                 </div>
                 <div class="section-body" id="bankAccounts">
-                    <div style="text-align: center; padding: 40px; color: rgba(255,255,255,0.5);">
-                        <p>Yükleniyor...</p>
+                    <div class="loading-state">
+                        Banka hesapları yükleniyor...
                     </div>
                 </div>
             </div>
@@ -367,11 +400,11 @@
                             <span class="label">Ağ</span>
                             <span class="value">Bitcoin Network</span>
                         </div>
-                        <div class="account-row" style="flex-direction: column; align-items: flex-start;">
+                        <div class="account-row crypto-row">
                             <span class="label">Adres</span>
                             <div class="crypto-address">
                                 bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
-                                <button class="copy-btn" style="margin-left: 8px;" onclick="copyText('bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh', this)">Kopyala</button>
+                                <button class="copy-btn" onclick="copyText('bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh', this)">Kopyala</button>
                             </div>
                         </div>
                         <span class="min-badge">Min: 0.001 BTC</span>
@@ -383,11 +416,11 @@
                             <span class="label">Ağ</span>
                             <span class="value">ERC-20</span>
                         </div>
-                        <div class="account-row" style="flex-direction: column; align-items: flex-start;">
+                        <div class="account-row crypto-row">
                             <span class="label">Adres</span>
                             <div class="crypto-address">
                                 0x71C7656EC7ab88b098defB751B7401B5f6d8976F
-                                <button class="copy-btn" style="margin-left: 8px;" onclick="copyText('0x71C7656EC7ab88b098defB751B7401B5f6d8976F', this)">Kopyala</button>
+                                <button class="copy-btn" onclick="copyText('0x71C7656EC7ab88b098defB751B7401B5f6d8976F', this)">Kopyala</button>
                             </div>
                         </div>
                         <span class="min-badge">Min: 0.01 ETH</span>
@@ -399,11 +432,11 @@
                             <span class="label">Ağ</span>
                             <span class="value">TRC-20</span>
                         </div>
-                        <div class="account-row" style="flex-direction: column; align-items: flex-start;">
+                        <div class="account-row crypto-row">
                             <span class="label">Adres</span>
                             <div class="crypto-address">
                                 TJYeasypBXvLNw3XgQodgGy4cVYYJxZsK9
-                                <button class="copy-btn" style="margin-left: 8px;" onclick="copyText('TJYeasypBXvLNw3XgQodgGy4cVYYJxZsK9', this)">Kopyala</button>
+                                <button class="copy-btn" onclick="copyText('TJYeasypBXvLNw3XgQodgGy4cVYYJxZsK9', this)">Kopyala</button>
                             </div>
                         </div>
                         <span class="min-badge">Min: 10 USDT</span>

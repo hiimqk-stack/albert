@@ -231,20 +231,20 @@ Allow: /sikca-sorulan-sorular
 # SITEMAPS - For Maximum Indexing
 # ============================================
 # Main Sitemap Index
-Sitemap: https://albert9.pages.dev/sitemap-index.xml
+Sitemap: https://albert-ek5.pages.dev/sitemap-index.xml
 
 # Individual Sitemaps (for faster discovery)
-Sitemap: https://albert9.pages.dev/sitemap-pages.xml
-Sitemap: https://albert9.pages.dev/sitemap-blog.xml
-Sitemap: https://albert9.pages.dev/sitemap-games.xml
-Sitemap: https://albert9.pages.dev/sitemap-landing.xml
-Sitemap: https://albert9.pages.dev/sitemap.xml
+Sitemap: https://albert-ek5.pages.dev/sitemap-pages.xml
+Sitemap: https://albert-ek5.pages.dev/sitemap-blog.xml
+Sitemap: https://albert-ek5.pages.dev/sitemap-games.xml
+Sitemap: https://albert-ek5.pages.dev/sitemap-landing.xml
+Sitemap: https://albert-ek5.pages.dev/sitemap.xml
 
 # ============================================
 # ADDITIONAL SEO DIRECTIVES
 # ============================================
 # Host directive (for Yandex)
-Host: https://albert9.pages.dev
+Host: https://albert-ek5.pages.dev
 
 # Clean-param (remove tracking parameters)
 Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term

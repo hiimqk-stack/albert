@@ -9,7 +9,7 @@ export async function GET() {
     
     <!-- Homepage -->
     <url>
-        <loc>https://maxwin584.com/</loc>
+        <loc>https://albert9.pages.dev/</loc>
         <lastmod>2025-12-24</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
@@ -17,7 +17,7 @@ export async function GET() {
     
     <!-- Sport Pages -->
     <url>
-        <loc>https://maxwin584.com/sport</loc>
+        <loc>https://albert9.pages.dev/sport</loc>
         <lastmod>2025-12-24</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
@@ -25,7 +25,7 @@ export async function GET() {
     
     <!-- Casino Pages -->
     <url>
-        <loc>https://maxwin584.com/casino</loc>
+        <loc>https://albert9.pages.dev/casino</loc>
         <lastmod>2025-12-24</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
@@ -33,7 +33,7 @@ export async function GET() {
     
     <!-- Promotions -->
     <url>
-        <loc>https://maxwin584.com/promotions</loc>
+        <loc>https://albert9.pages.dev/promotions</loc>
         <lastmod>2025-12-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -41,7 +41,7 @@ export async function GET() {
     
     <!-- Login -->
     <url>
-        <loc>https://maxwin584.com/login</loc>
+        <loc>https://albert9.pages.dev/login</loc>
         <lastmod>2025-12-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
@@ -49,7 +49,7 @@ export async function GET() {
     
     <!-- Para Yatır -->
     <url>
-        <loc>https://maxwin584.com/para-yatir</loc>
+        <loc>https://albert9.pages.dev/para-yatir</loc>
         <lastmod>2025-12-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -57,7 +57,7 @@ export async function GET() {
     
     <!-- Papara ile Para Yatırma -->
     <url>
-        <loc>https://maxwin584.com/papara-ile-para-yatirma</loc>
+        <loc>https://albert9.pages.dev/papara-ile-para-yatirma</loc>
         <lastmod>2025-12-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -65,7 +65,7 @@ export async function GET() {
     
     <!-- Banka Hesapları -->
     <url>
-        <loc>https://maxwin584.com/banka-hesaplari</loc>
+        <loc>https://albert9.pages.dev/banka-hesaplari</loc>
         <lastmod>2025-12-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>

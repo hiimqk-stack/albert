@@ -1,0 +1,265 @@
+# ============================================
+# MAXWIN584.COM - Advanced SEO Robots.txt
+# Optimized for Hacklink/Backlink Strategy
+# Last Updated: 2025-12-25
+# ============================================
+
+# ============================================
+# GOOGLE BOT - Maximum Priority
+# ============================================
+User-agent: Googlebot
+Allow: /
+Disallow: /e9542d96151517b
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*utm_source=
+Disallow: /*?*session=
+Disallow: /*?*sid=
+Crawl-delay: 0
+# Allow high-priority landing pages
+Allow: /blog/
+Allow: /oyun/
+Allow: /oyunlar/
+Allow: /guvenilir-bahis-siteleri
+Allow: /en-iyi-casino-siteleri
+Allow: /deneme-bonusu-veren-siteler
+Allow: /canli-bahis-siteleri
+
+# ============================================
+# GOOGLE BOT IMAGE - For Image SEO
+# ============================================
+User-agent: Googlebot-Image
+Allow: /
+Allow: /images/
+Allow: /assets/
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.webp
+Allow: /*.svg
+Disallow: /e9542d96151517b
+
+# ============================================
+# GOOGLE BOT MOBILE - Mobile Optimization
+# ============================================
+User-agent: Googlebot-Mobile
+Allow: /
+Disallow: /e9542d96151517b
+Disallow: /admin/
+Crawl-delay: 0
+# Prioritize mobile-friendly pages
+Allow: /mobil-uygulama
+Allow: /mobil-bahis
+Allow: /android-bahis-uygulamasi
+Allow: /ios-bahis-uygulamasi
+
+# ============================================
+# BING BOT - Secondary Search Engine
+# ============================================
+User-agent: Bingbot
+Allow: /
+Disallow: /e9542d96151517b
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 1
+
+# ============================================
+# YANDEX BOT - Russian Market
+# ============================================
+User-agent: Yandex
+Allow: /
+Disallow: /e9542d96151517b
+Disallow: /admin/
+Crawl-delay: 2
+
+# ============================================
+# BAIDU BOT - Asian Market
+# ============================================
+User-agent: Baiduspider
+Allow: /
+Disallow: /e9542d96151517b
+Disallow: /admin/
+Crawl-delay: 2
+
+# ============================================
+# DUCKDUCKGO BOT - Privacy Search
+# ============================================
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /e9542d96151517b
+Crawl-delay: 1
+
+# ============================================
+# SOCIAL MEDIA BOTS - For Backlinks
+# ============================================
+User-agent: facebookexternalhit
+Allow: /
+Disallow: /e9542d96151517b
+# Allow social sharing
+Allow: /blog/
+Allow: /promotions
+Allow: /casino-bonuslari
+
+User-agent: Twitterbot
+Allow: /
+Disallow: /e9542d96151517b
+Allow: /blog/
+Allow: /promotions
+
+User-agent: LinkedInBot
+Allow: /
+Disallow: /e9542d96151517b
+
+User-agent: TelegramBot
+Allow: /
+Disallow: /e9542d96151517b
+
+User-agent: WhatsApp
+Allow: /
+Disallow: /e9542d96151517b
+
+# ============================================
+# SEO TOOLS - For Backlink Analysis
+# ============================================
+User-agent: AhrefsBot
+Allow: /
+Disallow: /e9542d96151517b
+Crawl-delay: 2
+
+User-agent: SemrushBot
+Allow: /
+Disallow: /e9542d96151517b
+Crawl-delay: 2
+
+User-agent: MJ12bot
+Allow: /
+Disallow: /e9542d96151517b
+Crawl-delay: 3
+
+User-agent: DotBot
+Allow: /
+Disallow: /e9542d96151517b
+Crawl-delay: 2
+
+User-agent: Screaming Frog SEO Spider
+Allow: /
+Disallow: /e9542d96151517b
+
+# ============================================
+# BAD BOTS - Block Scrapers & Spam
+# ============================================
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+# ============================================
+# ALL OTHER BOTS - Default Rules
+# ============================================
+User-agent: *
+Allow: /
+Disallow: /e9542d96151517b
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*utm_source=
+Disallow: /*?*session=
+Disallow: /*?*sid=
+Disallow: /*?*ref=
+Disallow: /search?
+Disallow: /filter?
+Crawl-delay: 2
+
+# ============================================
+# ALLOW HIGH-PRIORITY PAGES (Backlink Targets)
+# ============================================
+Allow: /blog/
+Allow: /oyun/
+Allow: /oyunlar/
+Allow: /guvenilir-bahis-siteleri
+Allow: /en-iyi-casino-siteleri
+Allow: /deneme-bonusu-veren-siteler
+Allow: /cevrimsiz-bonus-veren-siteler
+Allow: /canli-bahis-siteleri
+Allow: /canli-casino-siteleri
+Allow: /slot-siteleri
+Allow: /aviator-oynatan-siteler
+Allow: /sweet-bonanza-oynatan-siteler
+Allow: /hizli-para-cekilen-siteler
+Allow: /yuksek-oranli-bahis
+Allow: /papara-bahis-siteleri
+Allow: /kripto-para-kabul-eden-siteler
+Allow: /mobil-bahis-siteleri
+Allow: /futbol-bahis-siteleri
+Allow: /lisansli-bahis-siteleri
+Allow: /hakkimizda
+Allow: /iletisim
+Allow: /sikca-sorulan-sorular
+
+# ============================================
+# SITEMAPS - For Maximum Indexing
+# ============================================
+# Main Sitemap Index
+Sitemap: https://maxwin584.com/sitemap-index.xml
+
+# Individual Sitemaps (for faster discovery)
+Sitemap: https://maxwin584.com/sitemap-pages.xml
+Sitemap: https://maxwin584.com/sitemap-blog.xml
+Sitemap: https://maxwin584.com/sitemap-games.xml
+Sitemap: https://maxwin584.com/sitemap-landing.xml
+Sitemap: https://maxwin584.com/sitemap.xml
+
+# ============================================
+# ADDITIONAL SEO DIRECTIVES
+# ============================================
+# Host directive (for Yandex)
+Host: https://maxwin584.com
+
+# Clean-param (remove tracking parameters)
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
+Clean-param: fbclid&gclid&msclkid
+Clean-param: ref&source&session&sid
+
+# ============================================
+# NOTES FOR SEO OPTIMIZATION
+# ============================================
+# 1. Google bots have priority (crawl-delay: 0)
+# 2. High-priority landing pages explicitly allowed
+# 3. Social media bots allowed for backlink sharing
+# 4. SEO tool bots allowed for backlink analysis
+# 5. AI scrapers blocked to prevent content theft
+# 6. Admin panel and sensitive areas blocked
+# 7. Tracking parameters cleaned for better indexing
+# 8. Multiple sitemaps for comprehensive coverage
+# ============================================

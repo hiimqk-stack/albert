@@ -126,14 +126,15 @@
         }
         
         .account {
-            background: linear-gradient(135deg, rgba(172,240,0,0.05) 0%, rgba(0,0,0,0.3) 100%);
+            background: linear-gradient(135deg, rgba(30,35,45,0.95) 0%, rgba(22,27,34,0.95) 100%);
             border: 1px solid rgba(172,240,0,0.15);
             border-radius: 12px;
-            padding: 20px;
+            padding: 24px;
             margin-bottom: 16px;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         
         .account::before {
@@ -144,12 +145,13 @@
             width: 4px;
             height: 100%;
             background: linear-gradient(180deg, #ACF000 0%, rgba(172,240,0,0.3) 100%);
+            z-index: 1;
         }
         
         .account:hover {
             transform: translateY(-2px);
             border-color: rgba(172,240,0,0.3);
-            box-shadow: 0 8px 24px rgba(172,240,0,0.1);
+            box-shadow: 0 8px 24px rgba(172,240,0,0.15);
         }
         
         .account:last-child {
@@ -162,12 +164,15 @@
             color: #ACF000;
             margin-bottom: 16px;
             padding-bottom: 12px;
+            padding-left: 8px;
             border-bottom: 2px solid rgba(172,240,0,0.2);
             display: flex;
             align-items: center;
             gap: 10px;
             text-shadow: 0 2px 8px rgba(172,240,0,0.3);
             letter-spacing: 0.5px;
+            position: relative;
+            z-index: 2;
         }
         
         .account-name::before {
@@ -180,9 +185,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0;
+            padding: 10px 0 10px 8px;
             font-size: 14px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+            z-index: 2;
         }
         
         .account-row:last-child {
